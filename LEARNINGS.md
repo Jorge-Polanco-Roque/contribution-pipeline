@@ -535,3 +535,20 @@ feature-gated como serde)→gate scoped→commit (Jorge + sign-off)→**PR borra
 - 🛠️ Regla: probar exactamente lo que el diff activa, no "todo". Menos y más preciso.
 
 **No-regresión:** sandbox statkit (sin features → default) GATE OK; `pipeline-lab` 10/10.
+
+---
+
+## 2026-08-29 — Primer review real (smallvec #496): 3 nits → 3 reglas
+
+El maintainer (@alejandro-vaz) revisó #496: **"looks good"** al impl, con 3 nits (CHANGES_REQUESTED,
+no rechazo). Los atendí (rebase + cambios + comentario). Herramienta `pr_retrospective.sh` los surfaceó.
+
+- 🔎 **Feature redundante:** declaré `arbitrary = ["dep:arbitrary"]` en `[features]`, pero una **dep
+  opcional ya crea su feature homónima**. → No declarar `feature = ["dep:X"]` cuando la dep se llama X.
+- 🔎 **Convención de test cambió bajo mis pies:** puse un unit test inline, pero el repo **acababa de
+  mover TODO a tests de integración** (#495, mergeado justo antes). → Re-chequear la convención de test
+  del repo **al momento de codear** (no asumir); aquí el patrón es `[[test]] required-features`.
+- 🔎 **Orden de deps:** mantener el `[dependencies]` ordenado. Nit de estilo, fácil de respetar.
+- 🛠️ Regla (→ contributor.md): antes de tocar Cargo.toml, mirar cómo el repo declara features/deps/tests
+  **recientes** y copiar ese patrón exacto. "El repo manda" también en los detalles de empaquetado.
+- 🎯 Meta: `pr_retrospective.sh` funciona para reviews, no solo rechazos — me avisó del review que no había visto.

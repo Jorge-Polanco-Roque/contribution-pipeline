@@ -2,7 +2,7 @@
 
 | Campo | Valor |
 |---|---|
-| Estado | **enviado** (PR abierto, esperando review del maintainer) |
+| Estado | **en review** — maintainer pidió cambios, atendidos (rebase + 3 nits), MERGEABLE |
 | Nicho | infra/data-structures (Rust) |
 | Salud del repo | GO — 1.7k★, 28 merges/30d, 22... externos, sin `test=false` |
 | Stack | Rust |
@@ -29,6 +29,9 @@ El PR ya está publicado bajo tu cuenta. Siguiente: **responder al review del ma
 
 ## Bitácora
 - 2026-08-29: seleccionado (recon + verificación), implementado (dry-run T6), PR #496 abierto.
+- 2026-08-29: review del maintainer (@alejandro-vaz, "looks good" + 3 nits). Atendido: rebase sobre v2
+  (#495 movió tests a integración), test → `tests/arbitrary.rs` (`required-features`), quitada la feature
+  redundante, reordenada la dep. Force-push + comentario. PR MERGEABLE. Lección en LEARNINGS.
 
 ## Lección (al cerrar)
 <pendiente del resultado del review/merge>

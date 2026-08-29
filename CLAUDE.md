@@ -288,6 +288,19 @@ Tras seleccionar o cerrar algo, resumen **extremadamente corto, 3 líneas**:
 - **Higiene:** cero secretos y cero deps vulnerables introducidas (lo asegura el gate).
 - Fechas absolutas siempre.
 
+## Aprender de reviews y rechazos (obligatorio)
+
+Cuando un PR real recibe review o se cierra sin merge:
+1. `bash tools/pr_retrospective.sh <owner/repo> <pr>` — reúne reviews, comentarios (generales +
+   inline) y el motivo de cierre.
+2. **Si pidieron cambios (CHANGES_REQUESTED):** atenderlos (yo redacto/codeo; el accionista publica),
+   push a la rama del PR. Es el loop de review.
+3. **Si se cerró sin merge (rechazo):** escribir una entrada en `LEARNINGS.md` (✅ bien · ❌ por qué ·
+   🔎 causa raíz: selección/código/estilo/social/timing · 🛠️ regla), mover el `contributions/active/CNNN`
+   a `passed/` con la lección, y **recalibrar el filtro de SOUL §5**. La tasa de aceptación es el North Star:
+   cada rechazo es la señal más valiosa para afinar la selección.
+4. El Action semanal (`pr-status`) marca 🔴 los cerrados → no se escapa ninguno.
+
 ## Interacción entre sub-agentes
 
 `SOUL` fija la prioridad → `CLAUDE` ejecuta el pipeline y actualiza `DASHBOARD` →
