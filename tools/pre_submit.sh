@@ -83,6 +83,23 @@ changed_files() { # <base> → archivos que introdujo esta rama (commits + worki
   } | sort -u
 }
 
+added_lines() { # "file:line" (nueva numeración) de las líneas AÑADIDAS por esta rama vs la base (o vacío)
+  local base; base="$(diff_base)"; [ -n "$base" ] || return
+  git diff --unified=0 "$base" -- . 2>/dev/null | awk '
+    /^\+\+\+ /{ f=$2; sub(/^b\//,"",f); next }
+    /^@@ /{ p=$3; sub(/^\+/,"",p); split(p,a,","); ln=a[1]+0; next }
+    /^\+/{ print f":"ln; ln++ }
+  '
+}
+
+diff_features() { # nombres de features que INTRODUJO el diff (de [features] en Cargo.toml), separados por coma
+  local base; base="$(diff_base)"; [ -n "$base" ] || return
+  # líneas '+name = [...]' añadidas a Cargo.toml (una feature); excluye deps (que usan '{')
+  git diff "$base" -- Cargo.toml '**/Cargo.toml' 2>/dev/null \
+    | grep -E '^\+[a-zA-Z0-9_-]+ *= *\[' \
+    | sed -E 's/^\+([a-zA-Z0-9_-]+) *=.*/\1/' | sort -u | paste -sd, -
+}
+
 deps_touched() { # <lista_cambiados> <archivos_dep...> → 1 si el diff tocó algún manifiesto/lock
   local changed="$1"; shift
   local f
@@ -158,14 +175,36 @@ security_stage() { # depende de $STACKS ya calculado
   diff_risk_scan
 }
 
+clippy_diff_aware() { # <featflag> lint diff-aware: bloquea solo por hallazgos de clippy en TU diff (no la deuda del repo)
+  local featflag="${1:-}"
+  echo "  · lint: cargo clippy (diff-aware${featflag:+ $featflag})"
+  local added out locs ours pre
+  added="$(added_lines | sort -u)"
+  # sin -D warnings: lista todo y no aborta; capturamos file:line de warnings/errores
+  out="$(cargo clippy --all-targets $featflag --message-format=short 2>&1)"
+  locs="$(printf '%s\n' "$out" | sed -nE 's#^([^ ]+\.rs):([0-9]+):[0-9]+: (warning|error).*#\1:\2#p' | sort -u)"
+  if [ -z "$locs" ]; then echo "    ✅ ok (sin hallazgos)"; return; fi
+  if [ -z "$added" ]; then
+    echo "    ⚠ $(printf '%s\n' "$locs" | grep -c .) hallazgos, sin base de diff → informativo (no bloquea)"; return
+  fi
+  ours="$(comm -12 <(printf '%s\n' "$locs") <(printf '%s\n' "$added"))"
+  pre=$(( $(printf '%s\n' "$locs" | grep -c .) - $(printf '%s\n' "$ours" | grep -c .) ))
+  if [ -n "$ours" ]; then
+    echo "    ❌ FALLÓ — hallazgos de clippy en TU diff:"; printf '%s\n' "$ours" | sed 's/^/        /'; fail=1
+  else
+    echo "    ✅ ok (tu diff limpio; $pre hallazgos pre-existentes del repo, no bloquean)"
+  fi
+}
+
 quality_generic() { # checks genéricos por stack (fallback cuando no hay CI portable)
   for st in $STACKS; do case "$st" in
     rust)
       step "Rust"
+      local feats featflag=""; feats="$(diff_features)"; [ -n "$feats" ] && { featflag="--features $feats"; echo "  (features introducidas por el diff → se prueban: $feats)"; }
       have cargo && run "formato" cargo fmt --all -- --check
-      have cargo && run "lint"    cargo clippy --all-targets -- -D warnings
-      have cargo && run "build"   cargo build --all-targets
-      have cargo && run "tests"   cargo test --all ;;
+      have cargo && clippy_diff_aware "$featflag"
+      have cargo && run "build"   cargo build --all-targets $featflag
+      have cargo && run "tests"   cargo test --all $featflag ;;
     go)
       step "Go"
       have gofmt && run "formato" bash -c 'test -z "$(gofmt -l .)"'

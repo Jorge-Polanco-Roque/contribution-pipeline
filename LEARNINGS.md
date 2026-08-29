@@ -514,3 +514,24 @@ feature-gated como serde)→gate scoped→commit (Jorge + sign-off)→**PR borra
   (solo fallar por lints en líneas cambiadas). (→ gate)
 - 🔎 Confirma el patrón de T6: el gate da ~90% local; la verificación final de utils/crates reales es
   su **CI** (toolchain/plataforma fijados). Mi cambio es limpio; el "rojo" de clippy es ruido ajeno.
+
+---
+
+## 2026-08-29 — Cerrados los 2 gaps de T6 en el gate (clippy diff-aware + feature-aware)
+
+**clippy diff-aware** (`added_lines()` + `clippy_diff_aware()`)
+- ✅ El lint corre sin `-D warnings` (lista todo), y **bloquea SOLO si un hallazgo cae en las líneas
+  que introdujo el diff** (`comm` de las ubicaciones de clippy vs `added_lines`); la deuda pre-existente
+  del repo se reporta como informativa. Verificado en smallvec: "tu diff limpio; 34 pre-existentes, no bloquean" → **GATE OK** (antes ROJO).
+- 🛠️ Mismo principio que SAST/SCA: la seguridad Y la calidad son diff-aware; nunca bloquear por deuda ajena.
+
+**feature-aware** (`diff_features()`) — y por qué NO `--all-features`
+- ❌ Primer intento: `--all-features`. Rompió en smallvec porque activa features **nightly**
+  (`specialization`, `may_dangle`) que no compilan en stable. `--all-features` es una **trampa** en
+  repos con features nightly o mutuamente excluyentes.
+- ✅ Fix correcto: `diff_features()` parsea el `[features]` del `Cargo.toml` en el diff y prueba SOLO
+  con la feature que **nuestro cambio introdujo** (`arbitrary`). Así se compila/testea/lintea el código
+  feature-gated que añadimos, sin tocar el resto. Verificado: build+test `--features arbitrary` verde.
+- 🛠️ Regla: probar exactamente lo que el diff activa, no "todo". Menos y más preciso.
+
+**No-regresión:** sandbox statkit (sin features → default) GATE OK; `pipeline-lab` 10/10.
