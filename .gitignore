@@ -1,0 +1,5 @@
+# efímeros / locales
+.DS_Store
+.playwright-mcp/
+.claude/settings.local.json
+pipeline-lab/results/

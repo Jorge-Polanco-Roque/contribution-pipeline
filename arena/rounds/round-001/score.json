@@ -1,0 +1,17 @@
+{
+  "round": 1,
+  "date": "2026-08-29",
+  "repo": "Jorge-Polanco-Roque/Testing_Pipelines",
+  "issue": 1,
+  "pr": 2,
+  "type": "seeded",
+  "hidden_test": { "before_fix": "fail", "after_fix": "pass" },
+  "gate_first_try": true,
+  "gate_attempts": 1,
+  "github_ci": "pass",
+  "review_rounds": 0,
+  "diff_lines": 13,
+  "security_introduced": 0,
+  "merged": true,
+  "notes": "M0: Claude cableó ambos roles (Reporter y Contributor); sin separación real de agentes todavía."
+}

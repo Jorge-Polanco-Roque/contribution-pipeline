@@ -1,0 +1,19 @@
+{
+  "round": 2,
+  "date": "2026-08-29",
+  "milestone": "M3",
+  "repo": "Jorge-Polanco-Roque/Testing_Pipelines",
+  "issue": 3,
+  "pr": 4,
+  "type": "seeded",
+  "agents": "separados: Reporter (subagente) + Contributor (subagente, ciego)",
+  "collusion": false,
+  "bug": "variance() usaba n-1 (muestral) en vez de n (poblacional); latente por test con valores constantes",
+  "bug_designed_by_me": false,
+  "hidden_test": { "before_fix": "fail", "after_fix": "pass" },
+  "gate_first_try": true,
+  "github_ci": "pass",
+  "review_rounds": 0,
+  "security_introduced": 0,
+  "merged": true
+}
