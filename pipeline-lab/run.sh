@@ -39,6 +39,17 @@ build_wt_repo() {
   git -C "$d" checkout -q -b feature
 }
 
+# build_wt_rust <dir> <contenido_lib_base>: crate rust con bare origin/main + rama 'feature'
+build_wt_rust() {
+  local d="$1" o="$1.origin.git"
+  build_git "$d"
+  printf '[package]\nname = "labcrate"\nversion = "0.1.0"\nedition = "2021"\n\n[dependencies]\n' > "$d/Cargo.toml"
+  mkdir -p "$d/src"; printf '%s\n' "$2" > "$d/src/lib.rs"; commit "$d"
+  git init -q --bare "$o"; git -C "$d" remote add origin "$o"; git -C "$d" branch -M main
+  git -C "$d" push -q -u origin main; git -C "$d" remote set-head origin -a >/dev/null 2>&1
+  git -C "$d" checkout -q -b feature
+}
+
 # run_case <name> <sec|full> <exitN|grep:STR> <dir>
 run_case() {
   local name="$1" mode="$2" assert="$3" dir="$4" out rc ok
@@ -84,6 +95,22 @@ run_case risk-scan sec "grep:construcciones riesgosas" "$d"
 d="$LAB/risk-clean"; build_wt_repo "$d"
 printf 'fn add(a: i32, b: i32) -> i32 {\n    a + b\n}\n' > "$d/clean.rs"
 run_case risk-clean sec "grep:sin construcciones riesgosas nuevas" "$d"
+
+# ---------- Fixtures del gate diff-aware de calidad (clippy + feature-aware) ----------
+# clippy: hallazgo NUEVO en el diff → bloquea (surfacea "en TU diff").
+d="$LAB/clippy-new"; build_wt_rust "$d" 'pub fn ok() -> i32 { 1 }'
+printf '\npub fn bad() -> i32 { return 2; }\n' >> "$d/src/lib.rs"   # needless_return en código NUEVO
+run_case clippy-new full "grep:en TU diff" "$d"
+
+# clippy: hallazgo PRE-EXISTENTE (en el base) + diff limpio → NO bloquea (deuda ajena).
+d="$LAB/clippy-pre"; build_wt_rust "$d" 'pub fn bad() -> i32 { return 2; }'
+printf '\npub fn ok() -> i32 { 3 }\n' >> "$d/src/lib.rs"           # adición limpia; el warning es del base
+run_case clippy-pre full "grep:pre-existentes" "$d"
+
+# feature-aware: el diff añade una feature → el gate la detecta y prueba con ella.
+d="$LAB/feat-aware"; build_wt_rust "$d" 'pub fn ok() -> i32 { 1 }'
+printf '\n[features]\nfoo = []\n' >> "$d/Cargo.toml"
+run_case feat-aware full "grep:features introducidas por el diff" "$d"
 
 # ---------- Fixtures de detección / exit codes ----------
 d="$LAB/unknown";       build_git "$d"; echo hi > "$d/README.md"; commit "$d"

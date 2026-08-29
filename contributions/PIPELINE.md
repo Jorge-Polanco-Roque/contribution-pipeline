@@ -66,8 +66,31 @@ repo sano, convención de test sana, y `Arbitrary` es un impl mecánico bien def
 > zizmor #1252) y **`grep 'test = false'`** antes de codear (así se explica #9060). Docs-GFI puros
 > escasean en los repos top ahora mismo — de ahí que el mejor candidato sea un impl acotado, no docs.
 
+## Prospectos (2026-08-29, iteración 2) — para trabajar de a poco
+
+**Insight:** los GFIs *verdaderamente* cómodos escasean en repos top; la mayoría son "beginner-friendly
+pero trabajo real". Estrategia: **minar la veta de `smallvec`** (reputación compone, codebase ya conocido,
+#496 en curso) para los próximos 1–2, y diversificar después.
+
+### Veta primaria: servo/rust-smallvec (GO, ya contribuido)
+| Issue | Tipo | Comodidad |
+|---|---|---|
+| #416 `try_with_capacity` | feature/impl acotado | ✅ alta (patrón conocido, como `arbitrary`) |
+| #492 / #491 docs | docs | media (ver C002: warning feature-dependiente) |
+| #444 `retain_mut` panic/drop match Vec | bug con spec clara (Vec) | media (toca drop/unsafe → cuidado) |
+
+### Diversificación (verificar a fondo antes de tocar: comentarios + convención de test)
+| Repo | Issue | Nota |
+|---|---|---|
+| nushell/nushell | #9573 help vs behavior mismatches | docs/help; alcance a acotar (¿un comando o todos?) |
+| sharkdp/bat | #1618 `--list-themes` + `BAT_OPTS` | bug; verificar repro |
+| reubeno/brush | #183 warn en exit si jobs suspendidos | comportamiento bash; matiz en comentarios |
+
+> Antes de tocar cualquiera: `recon.sh profile` + leer comentarios (¿en curso?) + `grep 'test = false'`.
+> **Uno a la vez** hasta que #496 tenga veredicto (gate F0).
+
 ## Próximo paso
 
-Ejecutar **T6** (tras visto bueno del accionista sobre el issue): resolver #9060 en local, gate en
-modo `--parity`, dejar el PR **como borrador SIN abrir**, y que el accionista revise.
+Cuando #496 resuelva → lanzar el siguiente (candidato en la recámara: `contributions/active/C002`,
+primario **smallvec #416** `try_with_capacity`). Redacto yo, publicas tú.
 3. Primer issue acotado con causa raíz clara → `active/C001-slug.md` desde `_TEMPLATE.md`.
