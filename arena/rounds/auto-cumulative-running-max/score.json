@@ -1,0 +1,3 @@
+{ "slug":"cumulative-running-max","repo":"Jorge-Polanco-Roque/Testing_Pipelines","real_issue":27,"pr":30,
+  "oracle":"fail->pass","github_ci":"pass","merged":true,
+  "cross_regression":"pass","generated_by":"arena/run.sh" }

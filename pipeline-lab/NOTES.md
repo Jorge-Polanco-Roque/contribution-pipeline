@@ -58,3 +58,28 @@ casos base no regresaron. `--check` del gate sigue verde.
 Correrlo antes de tocar `pre_submit.sh` en el futuro. Próximos casos a añadir cuando
 se instale tooling: SCA diff-aware (vuln introducida por nosotros vs pre-existente),
 falso positivo de `pytest` exit 5, y `npm audit` sin lockfile.
+
+---
+
+## Iteración 3 — 2026-08-29 (la presencia de tooling cambia el comportamiento)
+
+**Regresión al instalar gitleaks:** 5/8 casos pasaron a verde en falso. Causa: los fixtures
+usaban la clave AWS de ejemplo `AKIAIOSFODNN7EXAMPLE`, que gitleaks **allowlistea** (y que además
+no es un secreto — un Access Key ID solo no es sensible). Cuando gitleaks estaba ausente, el
+grep-fallback (más tonto) sí la marcaba; al instalarlo, gitleaks toma el mando y la ignora.
+
+**Fix:** fixtures ahora usan secretos reales-sintéticos que gitleaks **y** el grep cazan:
+`github-pat` (ghp_+36), `slack-bot-token` (xoxb-…), `private-key` (bloque OpenSSH). Lab 8/8 verde
+con o sin tooling. Regla: **revalidar el lab cada vez que cambie el tooling instalado** — un
+gate que delega en herramientas externas cambia de comportamiento cuando esas herramientas aparecen.
+
+## Iteración 4 — 2026-08-29 (caso hyper-experto: risk-scan del diff)
+
+Añadidos 2 casos permanentes: `risk-scan` (diff con unwrap/unsafe/`as` → el gate los surfacea) y
+`risk-clean` (diff limpio → "sin construcciones riesgosas"). Requieren `build_wt_repo` (repo con
+bare origin + rama `feature`) para que `diff_base` del gate resuelva. Lab: 8 → **10 casos, 10/10**.
+
+**Bonus (lo cazó este caso):** `pip-audit` crashea en esta máquina (Python 3.14 + `defusedxml`).
+Al principio el fixture creaba un `pyproject.toml` nuevo → SCA en modo bloqueante → pip-audit
+crash → gate rojo. Fix: manifiesto en el commit base (no tocado) → SCA advisory → el crash no
+tumba el gate. Deferido: el gate no distingue crash-de-herramienta de vuln-encontrada.

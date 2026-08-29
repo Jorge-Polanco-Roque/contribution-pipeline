@@ -308,3 +308,87 @@ ambos mergeados, no-regresión cruzada verde, score.json auto. Guardado como wor
 - Manual: yo invoco Reporter/Contributors + `run.sh prep/finalize` (máximo control, para depurar).
 - Semi: `run.sh prep-parallel` + tanda de Agent + `run.sh finalize-parallel` (referee automatizado).
 - One-command: `Workflow({name:'arena-round', args:{n}})` (todo automatizado). (→ elegir según el caso)
+
+---
+
+## 2026-08-29 — Arena Ronda 008: sin novedad (madurez confirmada)
+
+3 bugs (harmonic_mean/running_max/trimmed_mean, archivos disjuntos) → `prep-parallel` → 3
+Contributors ∥ → `finalize-parallel`. PRs #29/#30/#31 mergeados, cross-regresión verde,
+`score.json` emitidos automáticamente por el harness. **Sin intervención manual, a la primera.**
+
+- ✅ Los 3 Contributors ciegos diagnosticaron su causa raíz (división invertida / prefix-max /
+  divisor `n−2k`) solo desde el issue, con diff mínimo y test de regresión que falla sin el fix.
+- 🔎 Ronda rutinaria: nada nuevo que arreglar en el sistema. El valor de registrarla es la
+  **serie** — 15/15 bugs mergeados, 15/15 gate verde a la primera, 0 falsos verdes de seguridad.
+  Un sistema maduro produce rondas aburridas; esa es la meta.
+
+---
+
+## 2026-08-29 — Iteración fuerte: 10 retos hyper-experto + auditoría de puntos ciegos
+
+Diseñé 10 retos de nivel industria (`arena/CHALLENGES.md`), cada uno un defecto que **pasa el
+gate naïve en verde** y aun así es incorrecto. Objetivo: auditar los puntos ciegos del pipeline,
+no probar al Contributor. Testeé el gate empíricamente y lo endurecí.
+
+**El hallazgo central: un gate estático es CIEGO a la correctitud no cubierta por tests**
+- ✅ Verificado: un crate con `median` que **panica con NaN** (reto 2) y `checksum` **UB con slice
+  vacío** (retos 4/5) pasó el gate completo en **VERDE** (fmt/clippy/build/test + seguridad). Los
+  tests solo usaban datos limpios. El gate confía en los tests del repo; si no cubren el caso, no hay red.
+- 🛠️ Regla: la defensa es **en capas** — gate (mecánico) + property/fuzz tests del repo (semántico)
+  + deep-gate opt-in (miri/loom/semver/criterion) cuando el diff lo amerita. Ningún gate estático
+  garantiza correctitud numérica, ausencia de UB, rendimiento ni semver por sí solo. (→ CHALLENGES.md)
+
+**Mejora añadida: risk-scan del diff (advisory, diff-aware)**
+- ✅ Nuevo stage en `pre_submit.sh`: surfacea construcciones riesgosas **nuevas** en el diff —
+  `unsafe`, `unwrap/expect/panic!`, casts `as`, errores tragados (`let _`/`.ok()`/`unwrap_or_default`),
+  `#[allow]`. Verificado: en el fixture flaggeó exactamente el `unwrap`, el `as u8` y el `unsafe`.
+  No bloquea (a veces son legítimas) — pone el riesgo frente al revisor. Ataca 2,4,5,10.
+
+**Bug real del pipeline cazado al testear #1: lockfile untracked → SCA en falso**
+- ❌ Mal: `cargo build` genera `Cargo.lock` untracked; `changed_files` lo contaba y `deps_touched`
+  incluía lockfiles → el SCA se activaba como "deps tocadas" **sin que tocáramos deps**.
+- 🛠️ Fix: `deps_touched` keyea SOLO en el **manifiesto** (`Cargo.toml`/`go.mod`/`pyproject`/
+  `package.json`), no en lockfiles generados. Ceiling: un `cargo update` solo-lockfile se pierde (raro).
+
+**Bug real del pipeline cazado al testear #2: instalar tooling cambió el comportamiento**
+- ❌ Mal: al instalar `gitleaks` (Fase 0), `secrets_scan` pasó de grep-fallback a gitleaks — que
+  **allowlistea** la clave de ejemplo `AKIAIOSFODNN7EXAMPLE` que usaban los fixtures del lab.
+  Resultado: 5/8 casos del lab pasaron a verde en falso; el lab dejó de probar detección.
+- 🔎 Doble lección: (a) los fixtures usaban un secreto que las herramientas **ignoran a propósito**
+  (peor test posible); (b) **la presencia de tooling cambia el comportamiento del gate** → revalidar
+  el lab cuando cambia el tooling. Además: una **AWS Access Key ID (`AKIA…`) sola NO es secreto**
+  (lo sensible es la *secret* key); gitleaks correctamente no la marca.
+- 🛠️ Fix: fixtures del lab ahora usan secretos que gitleaks **y** el grep cazan (github-pat, slack,
+  private-key) → lab 8/8 verde con o sin tooling, validando detección real.
+
+**Mejoras de proceso/tooling**
+- Contrato del Contributor: en cambios numéricos exige test de **propiedad/borde** (NaN/vacío/datos
+  grandes) + `// SAFETY:` en `unsafe`. Ataca 1,2,9 a nivel proceso.
+- `bootstrap.sh`: añade `cargo-semver-checks` (reto 6) y documenta el deep-gate opt-in.
+
+**Bug real del pipeline cazado al testear #3 (al añadir el caso al lab): pip-audit roto + tool-crash ≠ finding**
+- ❌ Mal: el caso `risk-clean` con un `pyproject.toml` nuevo activó pip-audit en modo bloqueante, y
+  **pip-audit crashea en esta máquina** (Python 3.14 + `defusedxml` incompatibles). El gate lo trató
+  como fallo → rojo. El gate **no distingue "la herramienta encontró una vuln" de "la herramienta crasheó"**.
+- 🛠️ Fix inmediato (lab): el manifiesto va en el commit base (no tocado por la rama) → SCA advisory
+  → un crash de la herramienta no tumba el gate. Lab 10/10.
+- ✅ **pip-audit ARREGLADO** (misma sesión): la causa raíz NO era pip-audit sino Homebrew
+  `python@3.14` — su `pyexpat.so` referencia el símbolo `_XML_SetAllocTrackerActivationThreshold`
+  en `/usr/lib/libexpat.1.dylib` (sistema, viejo) que no lo tiene → cualquier `xml.parsers.expat`
+  crashea. Fix: `brew uninstall pip-audit` + `uv tool install pip-audit --python python3.12` (queda
+  en `~/.local/bin`, primero en PATH). Verificado: encuentra 23 CVEs reales en `requests==2.19.0`
+  y corre bloqueante en el gate sin crash. `bootstrap.sh` ahora instala pip-audit vía uv/pipx, NO brew.
+- 🔎 Gap que SIGUE deferido: en modo bloqueante, un crash de herramienta SCA (infra) se confunde
+  con "vuln encontrada". Mitigación futura: distinguir crash vs finding por exit-code, o marcar la
+  herramienta como no-saludable. (→ gate, deferido)
+- 🛠️ Regla: para herramientas Python del pipeline, **preferir uv/pipx sobre brew** — brew engancha
+  el python@3.14 roto. Un tool "instalado" que crashea es peor que ausente (rojo espurio en bloqueante).
+
+**Nuevo caso permanente en el lab:** `risk-scan` (diff con unwrap/unsafe/`as` → surfacea) y `risk-clean`
+(diff limpio → "sin construcciones riesgosas"). Requirió un helper `build_wt_repo` (repo con bare
+origin+rama) para que `diff_base` del gate resuelva. Lab pasó de 8 a **10 casos**.
+
+**Meta-lección:** *testear el pipeline con retos hyper-experto encontró 3 bugs reales del propio
+gate* (lockfile untracked, allowlist de gitleaks, tool-crash≠finding) que las rondas "aburridas"
+nunca habrían tocado. Los tests fáciles confirman; los tests difíciles descubren.

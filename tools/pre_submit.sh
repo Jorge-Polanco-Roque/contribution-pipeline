@@ -118,18 +118,43 @@ sca_run() { # <label> <touched:0|1> <bin> <cmd...> — SCA diff-aware
   fi
 }
 
+diff_risk_scan() { # advisory: construcciones riesgosas NUEVAS en el diff (surfacea al revisor, NO bloquea)
+  step "Revisión de riesgo del diff (advisory)"
+  local base; base="$(diff_base)"
+  [ -n "$base" ] || { echo "  · sin base de diff — omitido"; return; }
+  local added
+  added="$( { git diff --unified=0 "$base" -- . 2>/dev/null | grep '^+' | grep -v '^+++'
+              git ls-files --others --exclude-standard 2>/dev/null | while read -r f; do sed 's/^/+/' "$f" 2>/dev/null; done
+            } )"
+  [ -n "$added" ] || { echo "  ✅ sin líneas añadidas"; return; }
+  # patrones de riesgo (Rust-centric): panics, unsafe, casts truncantes, errores tragados, lints silenciados
+  local re='\.unwrap\(\)|\.expect\(|panic!\(|unreachable!\(|todo!\(|unimplemented!\(|[^A-Za-z_]unsafe[ {]| as (u|i)(8|16|32|64|128|size)| as f(32|64)|let _ =|\.ok\(\)|unwrap_or_default\(\)|#\[allow'
+  local hits; hits="$(printf '%s\n' "$added" | grep -nE "$re" || true)"
+  if [ -n "$hits" ]; then
+    echo "  ⚠ construcciones riesgosas introducidas por este diff (revisar — advisory, no bloquea):"
+    printf '%s\n' "$hits" | sed 's/^/    /' | head -25
+    echo "    → justifica cada unsafe (// SAFETY:); evita unwrap/panic en libs; revisa casts 'as' (truncan/desbordan) y errores tragados (let _ / .ok())"
+  else
+    echo "  ✅ sin construcciones riesgosas nuevas"
+  fi
+}
+
 security_stage() { # depende de $STACKS ya calculado
   secrets_scan
   step "Seguridad · dependencias (CVE conocidas) — diff-aware"
   local base changed t; base="$(diff_base)"; changed="$(changed_files "$base")"
+  # ponytail: keyed en el MANIFIESTO, no en lockfiles. Un lockfile generado sin commitear
+  # (p.ej. Cargo.lock untracked tras build) NO debe contar como "deps tocadas" → falso positivo.
+  # Ceiling: un `cargo update`/`npm update` solo-lockfile se pierde (raro; suele venir con manifiesto).
   for st in $STACKS; do case "$st" in
-    rust)   t=$(deps_touched "$changed" Cargo.toml Cargo.lock);                          sca_run "cargo audit"  "$t" cargo-audit cargo audit ;;
-    go)     t=$(deps_touched "$changed" go.mod go.sum);                                  sca_run "govulncheck"  "$t" govulncheck govulncheck ./... ;;
-    python) t=$(deps_touched "$changed" pyproject.toml requirements.txt requirements.in setup.py setup.cfg poetry.lock Pipfile Pipfile.lock); sca_run "pip-audit" "$t" pip-audit pip-audit ;;
-    node)   t=$(deps_touched "$changed" package.json package-lock.json yarn.lock pnpm-lock.yaml); sca_run "npm audit" "$t" npm npm audit --audit-level=high ;;
+    rust)   t=$(deps_touched "$changed" Cargo.toml);                                      sca_run "cargo audit"  "$t" cargo-audit cargo audit ;;
+    go)     t=$(deps_touched "$changed" go.mod);                                          sca_run "govulncheck"  "$t" govulncheck govulncheck ./... ;;
+    python) t=$(deps_touched "$changed" pyproject.toml requirements.txt requirements.in setup.py setup.cfg Pipfile); sca_run "pip-audit" "$t" pip-audit pip-audit ;;
+    node)   t=$(deps_touched "$changed" package.json);                                    sca_run "npm audit"    "$t" npm npm audit --audit-level=high ;;
     cpp)    echo "  · C/C++: sin audit estándar de deps — revisar manualmente." ;;
   esac; done
   sast_semgrep
+  diff_risk_scan
 }
 
 # --- self-test de la única lógica no trivial: la detección de stack ---

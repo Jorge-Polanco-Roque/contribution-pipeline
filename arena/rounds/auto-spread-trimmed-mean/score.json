@@ -1,0 +1,3 @@
+{ "slug":"spread-trimmed-mean","repo":"Jorge-Polanco-Roque/Testing_Pipelines","real_issue":28,"pr":31,
+  "oracle":"fail->pass","github_ci":"pass","merged":true,
+  "cross_regression":"pass","generated_by":"arena/run.sh" }
