@@ -134,6 +134,10 @@ Detalle en [`arena/SCOREBOARD.md`](arena/SCOREBOARD.md); aprendizajes en [`LEARN
 
 ---
 
+## Licencia
+
+[MIT](LICENSE) © 2026 Jorge Polanco
+
 <div align="center">
 <sub>Repositorio privado · el sandbox de pruebas vive aparte en <code>Testing_Pipelines</code>.</sub>
 </div>
