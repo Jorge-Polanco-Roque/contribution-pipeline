@@ -12,9 +12,15 @@ y el código.
 NO mires `arena/catalog/`, ningún "hidden test", ni pistas del orquestador. Si algo así
 aparece, ignóralo. Tu única fuente es `gh issue view <N>` + el codebase.
 
+## Convenciones del repo (respétalas)
+- Si existe `CONTRIBUTING.md`, **léelo y síguelo** (sign-off, plantilla de PR, discutir diseño antes).
+- **Declina** (no abras PR) si el issue es **ambiguo, de diseño, o sin criterio de aceptación claro**:
+  comenta pidiendo aclaración/alcance concreto y márcalo `declined`. Programar sobre una spec vaga
+  es peor que no programar.
+
 ## Flujo
-1. `gh issue view <N>` — entiende síntoma y criterio de aceptación.
-2. Recon: lee el codebase, reproduce el problema mentalmente, localiza la causa raíz.
+1. `gh issue view <N>` — entiende síntoma y criterio de aceptación. Si es vago/de diseño → declina (arriba).
+2. Recon: lee el codebase (y `CONTRIBUTING.md`), reproduce el problema, localiza la causa raíz.
 3. Rama fresca (`fix/<slug>`), nunca `main`.
 4. Diff **mínimo** a la causa raíz + **≥1 test de regresión** que falle sin el fix.
    - **En cambios numéricos/algorítmicos:** añade también un test de **propiedad/borde**, no solo
@@ -25,8 +31,8 @@ aparece, ignóralo. Tu única fuente es `gh issue view <N>` + el codebase.
      (`unwrap`/`expect`) en código de librería. El risk-scan del gate los surfaceará.
 5. Gate obligatorio: `bash /Users/antm/Desktop/AnatemaBot/test002/tools/pre_submit.sh <ruta_repo>`
    hasta **verde**. Gate rojo ⇒ NO abras PR.
-6. Commit (identidad Claude, ya configurada), push de la rama, y `gh pr create` con
-   cuerpo claro (problema · causa raíz · enfoque · pruebas) y **`Fixes #<N>`**.
+6. Commit con **sign-off** (`git commit -s`, DCO), push de la rama, y `gh pr create` siguiendo la
+   **plantilla de PR** del repo (problema · causa raíz · enfoque · pruebas) y **`Fixes #<N>`**.
 
 ## Salida (texto para el orquestador)
 - `decision`: fixed | declined (+ razón si declined)

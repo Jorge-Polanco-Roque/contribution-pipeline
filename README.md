@@ -119,7 +119,19 @@ playbook/quality-gate.md           proceso obligatorio antes de un PR
 
 ---
 
-## Resultados (a la fecha)
+## Contribuciones reales
+
+PRs abiertos bajo la cuenta del accionista (`Jorge-Polanco-Roque`):
+
+| PR | Repo | Cambio | Estado |
+|---|---|---|---|
+| [servo/rust-smallvec **#496**](https://github.com/servo/rust-smallvec/pull/496) | `servo/rust-smallvec` (1.7k★) | Implement `arbitrary::Arbitrary` for `SmallVec` — closes [#494](https://github.com/servo/rust-smallvec/issues/494) | 🟡 enviado (esperando review) |
+
+> Detalle por contribución en [`contributions/`](contributions/). Selección + pre-lanzamiento en [`LAUNCH-PLAN.md`](LAUNCH-PLAN.md).
+
+---
+
+## Resultados del arena (simulación)
 
 | Métrica | Valor |
 |---|---|

@@ -245,9 +245,9 @@ playbook/
   quality-gate.md     proceso obligatorio de calidad + seguridad + qué skill uso
 tools/
   pre_submit.sh       gate actual: formato+lint+build+tests + SEGURIDAD (→ evoluciona a gate.sh)
-  bootstrap.sh        (Fase 0) instala/verifica el tooling de calidad+seguridad
-  recon.sh            (Fase 1) perfila el repo objetivo (salud+CI+convenciones)
-  gate.sh             (Fase 2+) orquestador con etapas parity/quality/security/hygiene
+  bootstrap.sh        instala/verifica el tooling de calidad+seguridad (Fase 0) ✓
+  recon.sh            v1 ✓: profile/find/issues (salud + veredicto GO/MAYBE/SKIP, ≥100★). v2 pendiente: CI-parity
+  gate.sh             (futuro) orquestador con etapas parity/quality/security/hygiene
   lib/                (Fase 2+) funciones compartidas
   scan_bounties.sh    (heredado; repurposar a scan de issues cuando toque)
 pipeline-lab/         banco de pruebas del gate: fixtures efímeros + suite de no-regresión
@@ -261,6 +261,7 @@ arena/                simulación 2-agentes (Reporter ⇄ Contributor) — test 
   catalog/            casos seeded (bug + hidden test/oráculo) por slug
   rounds/             artefactos por ronda (issue/review/score.json)
   SCOREBOARD.md       agregado de rondas
+LAUNCH-PLAN.md        plan de pre-lanzamiento: gaps + tests (en sandbox) + ruta gradual R0→R4
 LEARNINGS.md          ledger de aprendizajes (bien/mal) de todo el proceso
 archive/              pivotes históricos (faceless, bounties, dinero→reputación)
 ```

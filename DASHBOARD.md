@@ -11,7 +11,7 @@ _Última actualización: 2026-08-29_
 | Métrica | Valor |
 |---|---|
 | ✅ PRs mergeados | **0** |
-| 📤 PRs enviados | **0** |
+| 📤 PRs enviados (reales) | **1** — [smallvec#496](https://github.com/servo/rust-smallvec/pull/496) |
 | 🎯 Tasa de aceptación (North Star) | **—** (meta ≥ 50%) |
 | 📦 Repos distintos con merge | **0** |
 | ⭐ Estrellas / seguidores ganados | **0** |
@@ -22,7 +22,7 @@ _Última actualización: 2026-08-29_
 
 | KPI | Valor | Meta |
 |---|---|---|
-| PRs enviados | 0 | — |
+| PRs enviados | **1** | — |
 | Merges ganados | 0 | ≥1 en 2 semanas (gate F0) |
 | **Tasa de aceptación** (North Star) | — | ≥ 50% |
 | Repos distintos con merge | 0 | crecer sostenido |
@@ -33,7 +33,7 @@ _Última actualización: 2026-08-29_
 
 | ID | Repo #issue | Nicho | Estado | Merge? | Horas |
 |---|---|---|---|---|---|
-| — | *(seleccionando primeros repos objetivo)* | — | — | — | — |
+| C001 | servo/rust-smallvec #494 → [PR #496](https://github.com/servo/rust-smallvec/pull/496) | Rust/data-structures | enviado (esperando review) | — | — |
 
 ## Timeline de eventos
 

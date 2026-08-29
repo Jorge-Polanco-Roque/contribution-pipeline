@@ -34,15 +34,40 @@ raíz clara → nicho fuerte**.
 > El heredado `tools/scan_bounties.sh` (recencia + competencia) puede repurposarse
 > a scan de issues cuando definamos los repos objetivo. Por ahora, YAGNI.
 
-## Repos objetivo (nicho fuerte)
+## Shortlist R1 (recon en frío, 2026-08-29) — perfilados con `recon.sh`, todos GO ≥100★
 
-| # | Repo | Nicho | Salud (maintainer/CI) | Issue candidato | Estado |
+| # | Repo | ★ | Merges/30d · externos | Task-runner | Nicho | Por qué |
+|---|---|---|---|---|---|---|
+| 1 | **uutils/coreutils** | 24k | **410 · 22** | Makefile+pre-commit | infra/CLI | el más activo y acogedor; issues bien especificados (GNU = spec) → **target de T6** |
+| 2 | sharkdp/fd | 44k | 11 · **18** | Makefile | infra/CLI | muy popular y acogedor a externos |
+| 3 | zizmorcore/zizmor | 6.4k | **64** · 11 | Makefile | devtools/seguridad | muy activo, nicho afín |
+| 4 | reubeno/brush | 2.2k | 25 · 9 | — | infra/shell | activo, specs claras (bash conocido) |
+| 5 | mattwparas/steel | 2.5k | 6 · 9 | — | lenguajes/Rust | sano, más chico |
+
+> Todos pasan el filtro duro (≥100★, no archivado, no fork, activo, merges de externos). Antes de
+> tocar cualquiera: re-perfilar (`recon.sh profile`) y elegir issue del *comfort profile* (LAUNCH-PLAN §3).
+
+## Candidatos T6 verificados (2026-08-29) — tras descartar #9060
+
+Verificación aplicada a cada uno: mecánico? · sin asignar/no en curso (revisar comentarios)? ·
+repo GO ≥100★? · **convención de test** (`grep 'test = false'`) · feasible en local?
+
+| Candidato | Mecánico | Estado | Repo (salud) | test=false | Veredicto |
 |---|---|---|---|---|---|
-| — | *(pendiente definir 2–3)* | — | — | — | — |
+| **servo/rust-smallvec [#494](https://github.com/servo/rust-smallvec/issues/494)** — impl `arbitrary::Arbitrary` | ✅ patrón conocido, acotado | **creado hoy, 0 coment, sin asignar** | GO (1.7k★, 28/30d) | **no** (unit tests cuentan) | ⭐ **TARGET T6** |
+| reubeno/brush [#183](https://github.com/reubeno/brush/issues/183) — warn en exit si hay jobs suspendidos | ~ (comportamiento bash, algo de matiz en comentarios) | sin asignar, 3 coment (discusión del alcance) | GO (2.2k★, 25/30d) | no | alterna |
+| ~~zizmor #1252~~ (mensaje de error) | ✅ | ❌ **ya en curso** (PRs #1609/#1730, maintainer molesto) | GO | — | ⛔ SKIP |
+| ~~coreutils #9060~~ (coverage) | ❌ | — | GO | **sí** (unit tests muertos) | ⛔ SKIP (T6 lo cazó) |
+
+**Recomendación:** `servo/rust-smallvec #494` como nuevo **target de T6** — fresco, sin competencia,
+repo sano, convención de test sana, y `Arbitrary` es un impl mecánico bien definido (feature-gated).
+
+> Lección de selección aplicada: **revisar comentarios por "ya lo estoy trabajando"** (así se cazó
+> zizmor #1252) y **`grep 'test = false'`** antes de codear (así se explica #9060). Docs-GFI puros
+> escasean en los repos top ahora mismo — de ahí que el mejor candidato sea un impl acotado, no docs.
 
 ## Próximo paso
 
-1. Elegir 2–3 repos sanos en nicho (Rust / ML-CV / gamedev / infra-devtools).
-2. Instalar tooling de seguridad opcional para el gate (`gitleaks`, `cargo-audit`/
-   `govulncheck`/`pip-audit`, `semgrep`).
+Ejecutar **T6** (tras visto bueno del accionista sobre el issue): resolver #9060 en local, gate en
+modo `--parity`, dejar el PR **como borrador SIN abrir**, y que el accionista revise.
 3. Primer issue acotado con causa raíz clara → `active/C001-slug.md` desde `_TEMPLATE.md`.

@@ -392,3 +392,125 @@ origin+rama) para que `diff_base` del gate resuelva. Lab pasó de 8 a **10 casos
 **Meta-lección:** *testear el pipeline con retos hyper-experto encontró 3 bugs reales del propio
 gate* (lockfile untracked, allowlist de gitleaks, tool-crash≠finding) que las rondas "aburridas"
 nunca habrían tocado. Los tests fáciles confirman; los tests difíciles descubren.
+
+---
+
+## 2026-08-29 — R0: recon CI-parity + gate en modo paridad (T1, T2 verdes)
+
+Arrancó el pre-lanzamiento (`LAUNCH-PLAN.md`). Construido `tools/recon.sh` (profile/find/issues/ci/t1)
+y el modo `--parity` del gate.
+
+**recon acierta el veredicto (T1 5/5)** contra ground truth conocido: SKIP por <100★ (sandbox) y por
+archivado (angular.js); GO en ripgrep/coreutils/bat. Read-only, seguro sobre repos reales.
+
+**El gate reproduce el CI del repo (T2), con un límite honesto**
+- ✅ `--parity` parsea el `.github/workflows` local, extrae los comandos de verificación
+  (`cargo fmt/clippy/test` en el sandbox) y los corre → reproduce Actions en ambos sentidos
+  (main limpio→verde; violación de fmt→rojo). Verificado.
+- 🔎 Límite: solo corre comandos **portables** (whitelist de herramientas conocidas, sin
+  `${{ }}`/matrix/infra). Un CI con templating (ej. ripgrep usa `${{ env.CARGO }}`) cae al
+  **fallback genérico** — no se puede replayear un CI arbitrario localmente, y pretenderlo sería
+  frágil. La paridad real total es responsabilidad de abrir el PR y ver su CI; el gate da el 90%.
+- 🛠️ Regla: preferir el task-runner del repo (make/just/pre-commit) cuando exista; sobre workflows,
+  extraer solo lo portable y ser explícito sobre el fallback. (→ recon v2: detectar make/just/pre-commit)
+
+---
+
+## 2026-08-29 — R0: recon v2 (salud fina) + T3 (Agent C + rondas de review)
+
+**recon v2 — señales finas que sí distinguen repos**
+- ✅ Añadidas a `profile`: PRs mergeados en 30d, **merges de externos** (¿aceptan de fuera?), DCO
+  (Signed-off-by), y **task-runner** (make/just/pre-commit). Ejemplo real: `uutils/coreutils` = 410
+  merges/30d + 22 de externos + Makefile+pre-commit → candidato ideal; `ripgrep` = 2 merges/30d
+  (maintainer cuidadoso) — la señal lo refleja. T1 sigue 5/5.
+
+**T3 — la capa social funciona (con un límite de identidad honesto)**
+- ✅ Loop completo con Agent C real: Contributor→PR #33 → Referee pide un nit (comentario) →
+  Contributor lo atiende (2º commit, gate verde) → Referee LGTM + merge. Issue #32 cerrado, oráculo
+  pasa. 1 ronda de review real ejercida.
+- 🔎 Límite real: con **una sola cuenta**, GitHub no deja *aprobar formalmente* el propio PR
+  (`--approve` bloqueado) → el referee aprueba por **comentario**. El loop es idéntico; solo cambia
+  el mecanismo. La separación total (aprobación formal) necesitaría una 2ª cuenta.
+- 🔎 Nota operativa: el subagente referee disparó un **security warning** al comentar en el PR bajo
+  la identidad de Jorge — esperado y aceptable en el sandbox `Testing_Pipelines` (autorizado), pero
+  es justo la fricción que en repos reales exige el **gate humano** (el accionista revisa/envía).
+- 🛠️ Regla: crear `arena/agents/referee.md`; toda ronda futura puede incluir la capa de review. (→ arena)
+
+---
+
+## 2026-08-29 — R0: T4 (firma/DCO) + T5 (convenciones + declinar ambiguo)
+
+**T4 — el mecanismo de firma + sign-off funciona**
+- ✅ Commit firmado con llave SSH efímera ("Good signature" verificada localmente vía allowedSignersFile)
+  **y** con `Signed-off-by:` (DCO, `git commit -s`). Config: `gpg.format=ssh` + `user.signingkey` + `commit.gpgsign`.
+- 🔎 Gate humano: el badge "Verified" en GitHub necesita subir la **llave pública a la cuenta de Jorge**.
+
+**T5 — convenciones seguidas y ambigüedad declinada**
+- ✅ Enriquecí el sandbox (CONTRIBUTING.md + PR template) para que deje de ser "oráculo limpio".
+  Actualicé el contrato del Contributor: sign-off + seguir CONTRIBUTING + **declinar issues de diseño**.
+- ✅ El Contributor declinó el issue de diseño #34 ("¿API más ergonómica?", 3 propuestas incompatibles,
+  sin criterio) citando CONTRIBUTING, pidió API/aceptación concretas y sugirió un primer paso acotado.
+  **Sin PR, sin código.** Juicio correcto: programar sobre spec vaga es peor que no programar.
+
+**Patrón recurrente → guardrail nuevo: agentes REDACTAN, accionista PUBLICA**
+- 🔎 Los subagentes referee (T3) y contributor (T5) dispararon **security warnings** al comentar en
+  GitHub bajo la identidad de Jorge. En el sandbox está autorizado, pero es la señal clara para repos
+  reales: el agente **redacta** el comentario/PR y **el accionista lo publica**. Añadido a §7 del LAUNCH-PLAN.
+- 🛠️ Regla: en R3 (real), toda escritura outward-facing (comentarios, PR) es *borrador* hasta el gate humano.
+
+---
+
+## 2026-08-29 — R1/T6: el dry-run REAL evitó un PR que dañaba la reputación
+
+R1: shortlist de 5 repos GO (coreutils/fd/zizmor/brush/steel) con `recon.sh`. T6: dry-run en
+`uutils/coreutils` #9060 ("improve code coverage de who/unix.rs"), **sin abrir PR, cero huella externa**.
+
+**T6 funcionó — y su valor fue DECIR QUE NO**
+- ✅ Ciclo completo local: clonar (22M) → entender `who/unix.rs` → añadir tests → build+test
+  scoped (`cargo test -p uu_who --lib` → 2/2 verde) → **nada pusheado**.
+- ❌ Pero el issue **NO era cómodo**, y solo se ve tras diligencia real:
+  1. Los flags obvios (`-d`/`--dead`, `-a`/`--all`, etc.) **ya están testeados**.
+  2. `who/unix.rs` es platform IO (utmpx) + i18n (`translate!`) + stdout → casi nada es pure-testable.
+  3. La única función pura (`idle_string`) sí la testeé y **pasa**… pero el crate tiene
+     **`[lib] test = false`**: coreutils **desactiva los unit tests de los utils a propósito** y solo
+     prueba por integración. Mi unit test es **código muerto** para su CI → un maintainer lo rechaza.
+  4. La cobertura restante necesita **fixtures de utmp** o comparaciones contra GNU-`who` (muchos
+     tests existentes van `#[ignore]` por flaky). En macOS ni siquiera se puede verificar (BSD `who`).
+- 🎯 **Ese es exactamente el propósito de T6 / R2:** un dry-run con diligencia real cazó una
+  mala selección **antes** de que un PR saliera bajo la cuenta de Jorge. Un junior habría enviado el
+  unit test y cosechado un rechazo. Costo del hallazgo: cero reputación.
+
+**Reglas nuevas (selección + gate)**
+- 🛠️ "Improve code coverage" es un **anti-patrón de selección**, sobre todo en módulos platform/FFI/IO.
+  Antes de aceptar un issue de tests: ¿los paths obvios ya están cubiertos? ¿el repo unit-testea o solo
+  integración (`grep 'test = false'`)? ¿la cobertura restante necesita fixtures/comparación flaky? (→ comfort profile)
+- 🛠️ El gate `cargo test --all` **no escala a monorepos** (coreutils es enorme) → hace falta test
+  **scoped** (`-p <crate>`), y para utils cross-platform la **verificación real es el CI del repo**, no local. (→ gate futuro)
+- 🛠️ Regla dura: el **primer** PR real debe ser **mecánico e inequívoco** (docs con links rotos, un bug
+  con repro claro), en un repo cuyas **convenciones de test verifiqué**. Pivotar #9060 → algo así.
+
+---
+
+## 2026-08-29 — T6 (2º intento) EXITOSO: servo/rust-smallvec #494
+
+Tras descartar #9060, re-selección verificada → `smallvec #494` (impl `arbitrary::Arbitrary`).
+Dry-run completo: seleccionar→verificar→clonar→**implementar** (portar v1→v2 `SmallVec<T,const N>`,
+feature-gated como serde)→gate scoped→commit (Jorge + sign-off)→**PR borrador**. **Cero push.**
+
+**El pipeline produjo una contribución real, limpia**
+- ✅ Compila `--features arbitrary`, `test_arbitrary` pasa (67+ verde), `cargo fmt --check` limpio.
+- ✅ Las lecciones de selección FUNCIONARON: verifiqué comentarios (no en curso), `test=false` (no),
+  freshness (creado hoy, 0 competencia). El anti-patrón de #9060 no se repitió.
+- ✅ **Seguridad diff-aware sobre una dep REAL:** añadir `arbitrary` a Cargo.toml → SCA lo detectó
+  como "deps tocadas" y corrió `cargo audit` sobre él (sin vulns) → verde. Exactamente su propósito.
+
+**Hallazgo nuevo del gate: el clippy genérico NO es diff-aware (deuda de lint ajena)**
+- ❌ `cargo clippy -D warnings` (genérico) falló con 5 errores… **todos en código PRE-EXISTENTE de
+  smallvec** (líneas 198/204/295/300/2736), ninguno en mi diff. Causa: mi clippy local es más nuevo
+  que el toolchain fijado por el CI de smallvec → marca lints que su CI no marca.
+- 🛠️ Regla: la etapa de calidad/lint sufre el mismo problema que SAST/SCA — **no bloquear por deuda
+  de lint pre-existente del repo**. Mitigación: usar `--parity` (comando del repo) y, para lints
+  toolchain-dependientes, **la verdad es el CI del repo** (toolchain fijado). Futuro: clippy diff-aware
+  (solo fallar por lints en líneas cambiadas). (→ gate)
+- 🔎 Confirma el patrón de T6: el gate da ~90% local; la verificación final de utils/crates reales es
+  su **CI** (toolchain/plataforma fijados). Mi cambio es limpio; el "rojo" de clippy es ruido ajeno.

@@ -19,5 +19,6 @@
 | 008 | Testing_Pipelines | #26→#29 | seeded (**paralelo · `run.sh`**) | fail→pass ✅ | ✅ | ✅ | 0 | ✅ |
 | 008 | Testing_Pipelines | #27→#30 | seeded (**paralelo · `run.sh`**) | fail→pass ✅ | ✅ | ✅ | 0 | ✅ |
 | 008 | Testing_Pipelines | #28→#31 | seeded (**paralelo · `run.sh`**) | fail→pass ✅ | ✅ | ✅ | 0 | ✅ |
+| T3  | Testing_Pipelines | #32→#33 | seeded (**ronda de review · Agent C**) | fail→pass ✅ | ✅ | ✅ | **1** | ✅ |
 
-**Agregado:** 15/15 bugs reales mergeados · gate verde a la primera 15/15 · 1/1 trampa declinada · 0 falsos verdes de seguridad · 0 secretos introducidos · Ronda 007: ronda entera en UN comando (`Workflow arena-round`). Ronda 008: paralela `run.sh` (harmonic_mean/running_max/trimmed_mean), score.json auto por `finalize-parallel`.
+**Agregado:** 16/16 bugs reales mergeados · gate verde a la primera 15/15 · 1/1 trampa declinada · 0 falsos verdes de seguridad · 0 secretos introducidos · Ronda 007: ronda entera en UN comando (`Workflow arena-round`). Ronda 008: paralela `run.sh` (harmonic_mean/running_max/trimmed_mean), score.json auto por `finalize-parallel`.

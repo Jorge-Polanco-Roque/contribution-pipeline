@@ -8,6 +8,7 @@
 # Uso:
 #   bash tools/pre_submit.sh [ruta_repo]        # calidad + seguridad (default: .)
 #   bash tools/pre_submit.sh --security [ruta]  # solo la etapa de seguridad
+#   bash tools/pre_submit.sh --parity [ruta]    # calidad = comandos REALES del CI del repo (+ seguridad)
 #   bash tools/pre_submit.sh --check            # self-test de detección de stack
 set -uo pipefail
 
@@ -157,28 +158,11 @@ security_stage() { # depende de $STACKS ya calculado
   diff_risk_scan
 }
 
-# --- self-test de la única lógica no trivial: la detección de stack ---
-if [ "${1:-}" = "--check" ]; then
-  t=$(mktemp -d); mkdir -p "$t/r" "$t/p"; : > "$t/r/Cargo.toml"; : > "$t/p/pyproject.toml"
-  [ "$(detect "$t/r")" = "rust" ]   || { echo "FAIL: rust";   rm -rf "$t"; exit 1; }
-  [ "$(detect "$t/p")" = "python" ] || { echo "FAIL: python"; rm -rf "$t"; exit 1; }
-  rm -rf "$t"; echo "OK: detección de stack correcta"; exit 0
-fi
-
-SECURITY_ONLY=0
-if [ "${1:-}" = "--security" ]; then SECURITY_ONLY=1; shift; fi
-
-REPO="${1:-.}"; cd "$REPO" 2>/dev/null || { echo "No existe: $REPO"; exit 1; }
-STACKS=$(detect .)
-[ -z "$STACKS" ] && { echo "Stack desconocido en $REPO — corre los checks del repo a mano."; exit 2; }
-echo "Repo: $(pwd)"; echo "Stack(s): $STACKS"
-
-if [ "$SECURITY_ONLY" -eq 0 ]; then
+quality_generic() { # checks genéricos por stack (fallback cuando no hay CI portable)
   for st in $STACKS; do case "$st" in
     rust)
       step "Rust"
       have cargo && run "formato" cargo fmt --all -- --check
-      # ponytail: -D warnings iguala el rigor de muchos CI; relajar si el repo ya trae warnings viejos
       have cargo && run "lint"    cargo clippy --all-targets -- -D warnings
       have cargo && run "build"   cargo build --all-targets
       have cargo && run "tests"   cargo test --all ;;
@@ -199,6 +183,57 @@ if [ "$SECURITY_ONLY" -eq 0 ]; then
       step "C/C++"
       echo "  · build/test de C/C++ varía por repo; replica su CI local a mano." ;;
   esac; done
+}
+
+ci_verify_cmds() { # comandos de verificación PORTABLES extraídos del CI local (.github/workflows), o vacío
+  local wf=".github/workflows"; [ -d "$wf" ] || return
+  # solo comandos de herramientas de verificación conocidas…
+  local keep='^(cargo |cargo-|go |gofmt|golangci|pytest|python -m pytest|ruff|mypy|black|flake8|npm |npx |pnpm |yarn |make |just |pre-commit|nox|tox|deno |dotnet |mvn |gradle )'
+  cat "$wf"/*.yml "$wf"/*.yaml 2>/dev/null | awk '
+    function trim(s){ gsub(/^[ \t]+|[ \t]+$/,"",s); return s }
+    { raw=$0; ind=match(raw,/[^ ]/)
+      if(inblk){ if(raw ~ /^[ \t]*$/) next; if(ind<=blk){inblk=0} else { if(trim(raw)!~/^#/) print trim(raw); next } }
+      if(raw ~ /run:[ \t]*[|>]/){ blk=index(raw,"run"); inblk=1; next }
+      if(raw ~ /run:[ \t]*[^ \t|>]/){ c=raw; sub(/^.*run:[ \t]*/,"",c); print trim(c); next }
+    }' | grep -aE "$keep" \
+       | grep -avE '\$\{\{|matrix|sudo |apt|curl |wget |docker|install ' \
+       | awk '!seen[$0]++'   # …sin templating/infra, deduplicados
+}
+
+quality_parity() { # corre los comandos REALES del CI del repo; fallback a genérico si no son portables
+  step "Calidad — paridad de CI (reproduce el CI del repo)"
+  local -a cmds=(); local c
+  while IFS= read -r c; do [ -n "$c" ] && cmds+=("$c"); done < <(ci_verify_cmds)
+  if [ "${#cmds[@]}" -gt 0 ]; then
+    echo "  Reproduciendo ${#cmds[@]} comando(s) de verificación del CI:"
+    for c in "${cmds[@]}"; do run "CI: $c" bash -c "$c"; done
+  else
+    echo "  · sin comandos de CI portables (matrix/templating/infra) → fallback a checks genéricos"
+    quality_generic
+  fi
+}
+
+# --- self-test de la única lógica no trivial: la detección de stack ---
+if [ "${1:-}" = "--check" ]; then
+  t=$(mktemp -d); mkdir -p "$t/r" "$t/p"; : > "$t/r/Cargo.toml"; : > "$t/p/pyproject.toml"
+  [ "$(detect "$t/r")" = "rust" ]   || { echo "FAIL: rust";   rm -rf "$t"; exit 1; }
+  [ "$(detect "$t/p")" = "python" ] || { echo "FAIL: python"; rm -rf "$t"; exit 1; }
+  rm -rf "$t"; echo "OK: detección de stack correcta"; exit 0
+fi
+
+SECURITY_ONLY=0; PARITY=0
+case "${1:-}" in
+  --security) SECURITY_ONLY=1; shift ;;
+  --parity)   PARITY=1; shift ;;
+esac
+
+REPO="${1:-.}"; cd "$REPO" 2>/dev/null || { echo "No existe: $REPO"; exit 1; }
+STACKS=$(detect .)
+[ -z "$STACKS" ] && { echo "Stack desconocido en $REPO — corre los checks del repo a mano."; exit 2; }
+echo "Repo: $(pwd)"; echo "Stack(s): $STACKS"
+
+if [ "$SECURITY_ONLY" -eq 0 ]; then
+  if [ "$PARITY" -eq 1 ]; then quality_parity; else quality_generic; fi
 fi
 
 security_stage
