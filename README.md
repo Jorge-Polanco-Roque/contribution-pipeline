@@ -121,11 +121,15 @@ playbook/quality-gate.md           proceso obligatorio antes de un PR
 
 ## Contribuciones reales
 
-PRs abiertos bajo la cuenta del accionista (`Jorge-Polanco-Roque`):
+PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualizado automáticamente** cada lunes:
 
+<!-- PRS:START -->
 | PR | Repo | Cambio | Estado |
 |---|---|---|---|
-| [servo/rust-smallvec **#496**](https://github.com/servo/rust-smallvec/pull/496) | `servo/rust-smallvec` (1.7k★) | Implement `arbitrary::Arbitrary` for `SmallVec` — closes [#494](https://github.com/servo/rust-smallvec/issues/494) | 🟡 enviado (esperando review) |
+| [servo/rust-smallvec #496](https://github.com/servo/rust-smallvec/pull/496) | `servo/rust-smallvec` | Implement arbitrary::Arbitrary for SmallVec | 🟡 abierto |
+
+<sub>Actualizado automáticamente: 2026-08-29 (workflow semanal).</sub>
+<!-- PRS:END -->
 
 > Detalle por contribución en [`contributions/`](contributions/). Selección + pre-lanzamiento en [`LAUNCH-PLAN.md`](LAUNCH-PLAN.md).
 
