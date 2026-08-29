@@ -12,11 +12,15 @@ GATE="$HERE/../tools/pre_submit.sh"
 RESULTS="$HERE/results"; rm -rf "$RESULTS"; mkdir -p "$RESULTS"
 LAB="$(mktemp -d)"; trap 'rm -rf "$LAB"' EXIT
 
-# Secretos sintéticos que gitleaks Y el grep-fallback cazan (NO allowlisteados).
-# Nota: una AWS Access Key ID (AKIA…) por sí sola NO es secreto → gitleaks no la marca; no la usamos.
-GHP='ghp_1a2B3c4D5e6F7g8H9i0JkLmNoPqRsTuVwXyz'                          # github-pat (ghp_ + 36)
-SLACK='xoxb-1234567890123-1234567890123-aBcDeFgHiJkLmNoPqRsTuVwX'       # slack-bot-token
-PRIVKEY='-----BEGIN OPENSSH PRIVATE KEY-----\nb3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAAB\n-----END OPENSSH PRIVATE KEY-----'
+# Secretos SINTÉTICOS construidos en RUNTIME (no se guardan literales en el repo → público limpio).
+# gitleaks y el grep-fallback los cazan igual (matchean los patrones). Ver .gitleaks.toml.
+# Nota: una AWS Access Key ID (AKIA…) sola NO es secreto → gitleaks no la marca; no la usamos.
+rand()    { LC_ALL=C tr -dc 'A-Za-z0-9' < /dev/urandom | head -c "${1:-36}"; }
+randnum() { LC_ALL=C tr -dc '0-9'       < /dev/urandom | head -c "${1:-12}"; }
+GHP="ghp_$(rand 36)"                                                    # github-pat sintético
+SLACK="xoxb-$(randnum 12)-$(randnum 12)-$(rand 24)"                     # slack-bot-token sintético (formato real)
+KEYHDR="-----BEGIN OPENSSH PRIVATE ""KEY-----"                          # header partido → no queda literal en el repo
+PRIVKEY="$(printf '%s\n%s\n%s' "$KEYHDR" "$(rand 48)" "${KEYHDR/BEGIN/END}")"
 
 pass=0; fail=0
 declare -a ROWS

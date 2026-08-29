@@ -1,0 +1,16 @@
+# Config de gitleaks para este repo.
+# El banco de pruebas (`pipeline-lab/`) usa secretos SINTÉTICOS para verificar que el detector de
+# secretos del gate funciona. No son credenciales reales (se construyen en runtime, o son ejemplos).
+# Esta allowlist evita falsos positivos en un repo público sin desactivar la detección real.
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Fixtures sintéticos del banco de pruebas y patrones documentados (no son secretos reales)"
+paths = [
+  '''pipeline-lab/run\.sh''',
+  '''pipeline-lab/NOTES\.md''',
+  '''tools/pre_submit\.sh''',
+  '''LEARNINGS\.md''',
+]
