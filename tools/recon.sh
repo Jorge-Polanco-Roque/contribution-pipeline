@@ -51,9 +51,30 @@ cmd_profile() {
   [ -z "$tr" ] && tr=" (ninguno)"
   local dco_note="no"; [ "$dco" -gt 7 ] && dco_note="sí (Signed-off-by)"
 
+  # --- política de IA (regla dura: si el repo/org prohíbe IA, contribuir DAÑA la reputación) ---
+  # Best-effort: leemos el CONTRIBUTING del repo y, si no, el del repo .github del owner.
+  # Limitación: una política que solo vive en un book/URL externo (p.ej. servo) puede no
+  # detectarse aquí → por eso SIEMPRE se surfacea el campo para revisión humana.
+  local ai_policy ai_txt owner="${repo%%/*}" src
+  ai_txt=""
+  # Unimos las ubicaciones comunes de la política (repo + nivel-org). Ninguna es canónica,
+  # por eso se concatenan todas y, si nada matchea, se fuerza verificación humana.
+  for src in "repos/$repo/contents/CONTRIBUTING.md" "repos/$repo/contents/README.md" \
+             "repos/$owner/.github/contents/CONTRIBUTING.md" "repos/$owner/.github/contents/profile/README.md"; do
+    ai_txt+=$'\n'"$(gh api "$src" -H "Accept: application/vnd.github.raw" 2>/dev/null)"
+  done
+  if printf '%s' "$ai_txt" | grep -qiE "\bAI\b[^.]{0,60}(not allowed|prohibited|forbidden|not accepted|banned|disallow)|no[ -]AI|(reject|refuse)[^.]{0,40}\bAI\b"; then
+    ai_policy="⛔ PROHÍBE IA"
+  elif printf '%s' "$ai_txt" | grep -qiE "AI-assisted[^.]{0,40}allowed|\bAI\b[^.]{0,40}(allowed|permitted|welcome)"; then
+    ai_policy="✅ permite IA (con estándares)"
+  else
+    ai_policy="⚠️ sin mención — VERIFICAR la guía/book de contribución del repo/org antes de codear"
+  fi
+
   # --- veredicto ---
   local verdict reason=""
   if [ "$archived" = true ]; then verdict="⛔ SKIP"; reason="archivado"
+  elif [[ "$ai_policy" == ⛔* ]]; then verdict="⛔ SKIP"; reason="el repo/org PROHÍBE contribuciones de IA (contribuir dañaría la reputación)"
   elif [ "$isfork" = true ]; then verdict="⛔ SKIP"; reason="es un fork (posible honeypot)"
   elif [ "$stars" -lt "$MIN_STARS" ]; then verdict="⛔ SKIP"; reason="<$MIN_STARS estrellas ($stars)"
   elif [ "$age" -gt 60 ]; then verdict="⚠️ MAYBE"; reason="último push hace $age días (maintainer lento)"
@@ -71,6 +92,7 @@ cmd_profile() {
   🧩 issues      : good-first-issue=$gfi · help-wanted=$hw
   🔁 PRs         : mergeados 30d=$merged30 · de externos (muestra 30)=$ext
   📜 CONTRIBUTING: $contrib · CI workflows: $ci · DCO: $dco_note
+  🤖 política IA : $ai_policy
   🔧 task-runner : $tr
   🏷️ archivado=$archived · fork=$isfork
   VEREDICTO: $verdict — $reason

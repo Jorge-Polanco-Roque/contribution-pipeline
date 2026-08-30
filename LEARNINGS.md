@@ -552,3 +552,32 @@ no rechazo). Los atendí (rebase + cambios + comentario). Herramienta `pr_retros
 - 🛠️ Regla (→ contributor.md): antes de tocar Cargo.toml, mirar cómo el repo declara features/deps/tests
   **recientes** y copiar ese patrón exacto. "El repo manda" también en los detalles de empaquetado.
 - 🎯 Meta: `pr_retrospective.sh` funciona para reviews, no solo rechazos — me avisó del review que no había visto.
+
+## 2026-08-29 — 🟢 PRIMER MERGE (smallvec #496) + 🔴 cierre por POLÍTICA DE IA (#500)
+
+Doble evento el mismo día, decisivo para la estrategia.
+
+**✅ #496 (arbitrary::Arbitrary) — MERGEADO** por @alejandro-vaz (23:36 UTC). Primer merge real bajo la
+cuenta del accionista → pasa el gate F0. Qué salió bien: selección de repo sano, impl pedido explícitamente,
+atención rápida y limpia de los 3 nits del review.
+
+**🔴 #500 (try_with_capacity) — CERRADO sin merge** (23:53 UTC), por DOS motivos:
+- 🔎 **Causa raíz 1 — social/política (la grave):** *"AI contributions are not allowed in any @servo
+  repository"* (book.servo.org/.../ai-contributions). **Servo prohíbe contribuciones de IA.** #496 alcanzó
+  a mergear antes de que el maintainer lo notara; #500 lo cerró citando la política. → **Todo servo queda
+  vetado.** Insistir ahí no suma reputación: la resta (riesgo de quedar marcado como cuenta que ignora reglas).
+- 🔎 **Causa raíz 2 — código/correctitud:** mi `try_with_capacity` delegaba en `try_grow`, que reverifica
+  estado (¿spilled?, ¿len?) innecesariamente. Lo correcto: asignar directo sabiendo que arranca vacío/inline.
+  Lección técnica válida aunque el PR se cerró por la política.
+
+**🛠️ Reglas resultantes:**
+- **(→ SOUL §5 + `recon.sh`) Verificar la política de IA del repo/org ANTES de seleccionar.** Es ahora el
+  PRIMER filtro duro (junto a archivado). `recon profile` añade el campo `🤖 política IA` y hace SKIP ante
+  prohibición explícita. Limitación honesta: políticas en un *book*/URL externa (como servo) no se
+  autodetectan → el campo fuerza verificación humana ("VERIFICAR la guía/book").
+- **(→ selección) Preferir repos con política de IA *explícitamente permisiva*** (p.ej. uutils: *"AI-assisted
+  contributions are allowed, but the same standards apply"* + no derivar de código GPL). Ahí la contribución
+  suma sin ambigüedad.
+- 🎯 El pivote a **uutils/sed** (C003) resultó ser el objetivo correcto: política pro-IA verificada, y la
+  implementación se escribió desde el código propio (MIT) de uutils + comportamiento *documentado* de GNU,
+  no de la fuente GPL → cumple la condición anti-GPL.

@@ -10,10 +10,10 @@ _Última actualización: 2026-08-29_
 
 | Métrica | Valor |
 |---|---|
-| ✅ PRs mergeados | **0** |
-| 📤 PRs enviados (reales) | **1** — [smallvec#496](https://github.com/servo/rust-smallvec/pull/496) |
-| 🎯 Tasa de aceptación (North Star) | **—** (meta ≥ 50%) |
-| 📦 Repos distintos con merge | **0** |
+| ✅ PRs mergeados | **1** — [smallvec#496](https://github.com/servo/rust-smallvec/pull/496) 🟢 |
+| 📤 PRs enviados (reales) | **2** — [#496](https://github.com/servo/rust-smallvec/pull/496) 🟢 · [#500](https://github.com/servo/rust-smallvec/pull/500) 🔴 |
+| 🎯 Tasa de aceptación (North Star) | **50%** (1/2) (meta ≥ 50%) |
+| 📦 Repos distintos con merge | **1** (servo/rust-smallvec) |
 | ⭐ Estrellas / seguidores ganados | **0** |
 | 🔥 Racha de actividad (semanas seguidas con ≥1 aporte) | **0** |
 | ⏱️ Horas del accionista usadas | **0** |
@@ -22,18 +22,24 @@ _Última actualización: 2026-08-29_
 
 | KPI | Valor | Meta |
 |---|---|---|
-| PRs enviados | **1** | — |
-| Merges ganados | 0 | ≥1 en 2 semanas (gate F0) |
-| **Tasa de aceptación** (North Star) | — | ≥ 50% |
-| Repos distintos con merge | 0 | crecer sostenido |
-| Contribuciones en `active/` | 0 | 1 a la vez, en profundidad |
+| PRs enviados | **2** | — |
+| Merges ganados | **1** ✅ (gate F0 cumplido) | ≥1 en 2 semanas (gate F0) |
+| **Tasa de aceptación** (North Star) | **50%** (1/2) | ≥ 50% |
+| Repos distintos con merge | **1** | crecer sostenido |
+| Contribuciones en `active/` | **1** (C003 sed) | 1 a la vez, en profundidad |
 | Higiene (secretos/deps vulnerables introducidas) | 0 | **0 siempre** (lo fuerza el gate) |
 
 ## Contribuciones (registro)
 
 | ID | Repo #issue | Nicho | Estado | Merge? | Horas |
 |---|---|---|---|---|---|
-| C001 | servo/rust-smallvec #494 → [PR #496](https://github.com/servo/rust-smallvec/pull/496) | Rust/data-structures | enviado (esperando review) | — | — |
+| C001 | servo/rust-smallvec #494 → [PR #496](https://github.com/servo/rust-smallvec/pull/496) | Rust/data-structures | 🟢 **MERGEADO** | ✅ | — |
+| C002 | servo/rust-smallvec #416 → [PR #500](https://github.com/servo/rust-smallvec/pull/500) | Rust/data-structures | 🔴 cerrado (servo prohíbe IA) | — | — |
+| C003 | uutils/sed #394 (comando `R`) | Rust/devtools | rama lista + gate verde, PR pendiente de OK | — | — |
+
+> ⚠️ **Nota de reputación:** el único merge (C001) está en **servo, que prohíbe contribuciones de IA**
+> (cerraron C002 por ello). Todo servo queda **vetado** (SOUL §5 filtro 0). El método funcionó; se
+> reorienta a repos con política pro-IA (uutils). El valor real de reputación se construye desde C003 en adelante.
 
 ## Timeline de eventos
 
@@ -42,6 +48,8 @@ _Última actualización: 2026-08-29_
 | 2026-08-29 | Proyecto creado como máquina de bounties (dinero) | 0 |
 | 2026-08-29 | Algora verificado muerto como board de bounties; cuenta borrada por desconfianza | 0 |
 | 2026-08-29 | **Pivote dinero → reputación**; reestructura a `contributions/` | 0 |
+| 2026-08-29 | 🟢 **PRIMER MERGE** (smallvec #496, arbitrary) — gate F0 cumplido | **1** |
+| 2026-08-29 | 🔴 #500 cerrado: **servo prohíbe IA** → servo vetado; pivote a uutils (política pro-IA) | 1 |
 | 2026-08-29 | Pipeline dev+test **+ etapa de seguridad** en `pre_submit.sh` (self-test ✓) | 0 |
 | 2026-08-29 | [SIM] Arena Ronda 001 (M0): issue→PR→CI→merge en `Testing_Pipelines`; oráculo fail→pass ✓ | 0 (simulación) |
 | 2026-08-29 | [SIM] Arena Ronda 002 (M3): **agentes separados sin colusión**; Contributor ciego resolvió #3→PR#4→merge ✓ | 0 (simulación) |

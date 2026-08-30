@@ -2,7 +2,7 @@
 
 | Campo | Valor |
 |---|---|
-| Estado | **en review** — maintainer pidió cambios, atendidos (rebase + 3 nits), MERGEABLE |
+| Estado | **🟢 MERGEADO 2026-08-29** (por @alejandro-vaz) — primer merge real (gate F0) |
 | Nicho | infra/data-structures (Rust) |
 | Salud del repo | GO — 1.7k★, 28 merges/30d, 22... externos, sin `test=false` |
 | Stack | Rust |
@@ -34,4 +34,7 @@ El PR ya está publicado bajo tu cuenta. Siguiente: **responder al review del ma
   redundante, reordenada la dep. Force-push + comentario. PR MERGEABLE. Lección en LEARNINGS.
 
 ## Lección (al cerrar)
-<pendiente del resultado del review/merge>
+**MERGEADO** — primer merge real bajo la cuenta del accionista. Bien: selección de repo sano, impl pedido
+explícito, 3 nits de review atendidos rápido y limpio. **Ironía/riesgo:** el mismo maintainer cerró #500
+citando que **servo prohíbe IA** — este merge se coló antes de que lo notara. No repetir en servo; el valor
+está en el *método* (que sí funcionó), aplicado a repos con política pro-IA (uutils). Ver LEARNINGS 2026-08-29.

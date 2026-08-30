@@ -50,6 +50,11 @@ maintainer**:
 
 ## 5. Reglas de decisión (a qué contribuyo y qué ignoro)
 
+0. **Política de IA del repo/org — FILTRO CERO (regla dura).** Antes que nada: ¿el repo/org
+   **permite contribuciones asistidas por IA**? Si las **prohíbe** (p.ej. **servo**: veto explícito),
+   **NO se contribuye** — hacerlo resta reputación, no suma. Preferir repos con política **explícitamente
+   permisiva** (p.ej. **uutils**: permitido con mismos estándares + no derivar de código GPL). `recon profile`
+   lo surfacea (`🤖 política IA`); si vive en un book/URL externa, verificarlo a mano. *(Lección: PR #500, LEARNINGS.)*
 1. **Salud del repo primero.** Antes de codear: ¿maintainer mergeó algo en <30
    días? ¿CI verde? ¿issues con `good first issue`/`help wanted` bien definidos?
    Si no, paso.
