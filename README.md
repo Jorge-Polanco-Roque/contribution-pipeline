@@ -126,6 +126,7 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 <!-- PRS:START -->
 | PR | Repo | Cambio | Estado |
 |---|---|---|---|
+| [uutils/coreutils #14264](https://github.com/uutils/coreutils/pull/14264) | `uutils/coreutils` | ls: honor LC_NUMERIC for the -h decimal separator | 🟡 abierto |
 | [moeru-ai/airi #2408](https://github.com/moeru-ai/airi/pull/2408) | `moeru-ai/airi` | fix(better-ws): publish the package so server-sdk installs | 🟡 abierto |
 | [Automattic/harper #4253](https://github.com/Automattic/harper/pull/4253) | `Automattic/harper` | Add a linter for confusing `wary` and `weary` | 🟡 abierto |
 | [RustPython/RustPython #8610](https://github.com/RustPython/RustPython/pull/8610) | `RustPython/RustPython` | Give dict a CPython-style message for unhashable keys | 🟡 abierto |
