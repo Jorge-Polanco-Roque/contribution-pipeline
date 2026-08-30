@@ -2,7 +2,7 @@
 
 | Campo | Valor |
 |---|---|
-| Estado | **PR abierto** ([#2408](https://github.com/moeru-ai/airi/pull/2408)) — esperando review |
+| Estado | **🟢 MERGEADO 2026-08-30** ([#2408](https://github.com/moeru-ai/airi/pull/2408)) — 2º merge real (48.5k★) |
 | Nicho | infra/AI-companion (TypeScript monorepo, pnpm) |
 | Salud del repo | GO — 48.5k★, MIT, muy activo (144 merges/30d) · ⚠️ solo 6/30 merges de externos |
 | Stack | TypeScript (pnpm workspaces) |
@@ -61,4 +61,8 @@ de código + hacer el bootstrap de ops de `better-ws` en npm).
 - 2026-08-29: review P1 de Codex (OIDC/bootstrap) — verificado y válido; respuesta publicada aclarando el alcance.
 
 ## Lección (al cerrar)
-<pendiente del review/merge>
+**MERGEADO** — 2º merge real (1º en un repo pro-IA de alta visibilidad, 48.5k★). El fix de 1 línea
+(quitar `private: true`) resolvió una SDK pública rota. Codex marcó (válido) que el 1er publish por OIDC
+necesita bootstrap de mantenedor — se aclaró en el hilo y aun así lo mergearon (el prerrequisito de código
+era correcto). Confirma: **first-win pequeño y de alto impacto en repo pro-IA = alta P(merge)**, incluso en
+repos core-driven (airi era 6/30 externos). La divulgación honesta y la respuesta técnica al review sostuvieron el merge.

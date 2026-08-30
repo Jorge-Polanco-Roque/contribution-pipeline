@@ -2,12 +2,12 @@
 
 | Campo | Valor |
 |---|---|
-| Estado | **rama lista + gate verde + pusheada al fork** — PR PENDIENTE de tu visto bueno |
+| Estado | **PR abierto** ([#544](https://github.com/uutils/sed/pull/544)) — esperando review |
 | Nicho | infra/devtools (Rust, org uutils) |
 | Salud del repo | GO — 104★, 34 merges/30d, 21/30 externos, CONTRIBUTING sí, activo hoy |
 | Stack | Rust |
 | Issue URL | https://github.com/uutils/sed/issues/394 |
-| PR URL | (pendiente de abrir) · rama: `Jorge-Polanco-Roque:feat/R-read-one-line` |
+| PR URL | **https://github.com/uutils/sed/pull/544** |
 | Etiquetas | good first issue |
 | Estimación | P(merge) alta (feature pedida, patrón `W`#531 fresco de referencia) · +74/−0 + `named_reader.rs` |
 | Fechas | seleccionado 2026-08-29 · PR — · merge — |
