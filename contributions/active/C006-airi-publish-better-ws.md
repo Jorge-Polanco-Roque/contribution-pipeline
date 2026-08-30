@@ -36,11 +36,29 @@ de bajo riesgo** (bug de empaquetado) para construir confianza antes de una feat
 - **Filtro "PRs compitiendo":** #1477 (Fish Audio TTS) era un cementerio (1 abierto + 4 cerrados) → descartado.
 - **Causa raíz > síntoma:** el bug no se arregla añadiendo la dep (ya estaba), sino quitando el flag que impide publicarla.
 
+## Review recibido (Codex bot) + lección técnica — OIDC trusted publishing
+Un bot de revisión (chatgpt-codex-connector) marcó un **P1 válido**: el workflow `release-pkg.yaml` publica
+por **OIDC trusted publishing** (`id-token: write`, sin `NODE_AUTH_TOKEN`). npm solo acepta OIDC si el paquete
+**ya existe** en npm con su *trusted publisher* configurado → un paquete **nunca publicado** (como `better-ws`,
+404) **no puede** publicarse por OIDC en su primer release. Verifiqué el workflow: es OIDC-only, el bot tiene razón.
+
+- 🔎 **Lección:** "quitar el bloqueador de código" (el `private: true`) es **necesario pero a veces no suficiente**
+  cuando el despliegue depende de un paso de **ops que solo el mantenedor puede dar** (aquí: bootstrap inicial =
+  publish autenticado + configurar trusted publisher). El fix de código sigue siendo correcto; la parte de ops no
+  cabe en el PR de un externo.
+- 🛠️ **Regla (→ recon/selección):** para issues de *publicación/release*, chequear el método de auth del workflow
+  (OIDC vs token) y si el paquete existe ya en npm; si el arreglo real necesita credenciales del org, el PR entrega
+  el prerrequisito y lo declara explícitamente, sin prometer que resuelve solo el 100%.
+- **Respuesta publicada** (yo redacté, se publicó bajo la cuenta): reconoce el punto, defiende la necesidad del
+  cambio, aclara que el bootstrap es acción de mantenedor. https://github.com/moeru-ai/airi/pull/2408#issuecomment-5466127165
+
 ## Acción del accionista
-PR publicado bajo tu cuenta. Siguiente: responder al review cuando llegue (yo redacto, tú publicas).
+PR publicado + respuesta al review publicada. Siguiente: esperar decisión del mantenedor (mergear el prerrequisito
+de código + hacer el bootstrap de ops de `better-ws` en npm).
 
 ## Bitácora
 - 2026-08-29: seleccionado (first-win tras descartar #2297 ya-resuelto y #1477 contestado), fix mínimo, PR #2408 abierto.
+- 2026-08-29: review P1 de Codex (OIDC/bootstrap) — verificado y válido; respuesta publicada aclarando el alcance.
 
 ## Lección (al cerrar)
 <pendiente del review/merge>
