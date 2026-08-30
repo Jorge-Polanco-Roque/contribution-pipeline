@@ -126,6 +126,8 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 <!-- PRS:START -->
 | PR | Repo | Cambio | Estado |
 |---|---|---|---|
+| [RustPython/RustPython #8610](https://github.com/RustPython/RustPython/pull/8610) | `RustPython/RustPython` | Give dict a CPython-style message for unhashable keys | 🟡 abierto |
+| [uutils/sed #544](https://github.com/uutils/sed/pull/544) | `uutils/sed` | Implement GNU R (read one line from file) command | 🟡 abierto |
 | [servo/rust-smallvec #500](https://github.com/servo/rust-smallvec/pull/500) | `servo/rust-smallvec` | Add try_with_capacity fallible constructor | 🔴 cerrado |
 | [servo/rust-smallvec #496](https://github.com/servo/rust-smallvec/pull/496) | `servo/rust-smallvec` | Implement arbitrary::Arbitrary for SmallVec | 🟢 mergeado |
 
