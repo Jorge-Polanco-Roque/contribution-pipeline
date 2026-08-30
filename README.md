@@ -126,6 +126,7 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 <!-- PRS:START -->
 | PR | Repo | Cambio | Estado |
 |---|---|---|---|
+| [scikit-image/scikit-image #8306](https://github.com/scikit-image/scikit-image/pull/8306) | `scikit-image/scikit-image` | Fix pyramid_laplacian to build a reconstructable Laplacian pyramid | 🟡 abierto |
 | [Nixtla/statsforecast #1225](https://github.com/Nixtla/statsforecast/pull/1225) | `Nixtla/statsforecast` | docs: document both ConformalSeasonalPool interval thresholds and validate n_samples | 🟡 abierto |
 | [aeon-toolkit/aeon #3773](https://github.com/aeon-toolkit/aeon/pull/3773) | `aeon-toolkit/aeon` | [BUG] Preserve input dtype in shift_scale_invariant zero-padding | 🟡 abierto |
 | [sktime/sktime #10967](https://github.com/sktime/sktime/pull/10967) | `sktime/sktime` | [BUG] Fix get_slice handling of zero and omitted bounds | 🟡 abierto |

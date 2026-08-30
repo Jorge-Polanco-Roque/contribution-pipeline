@@ -2,7 +2,7 @@
 
 | Campo | Valor |
 |---|---|
-| Estado | **PR abierto** ([#5500](https://github.com/boa-dev/boa/pull/5500)) + claim posteado — esperando review |
+| Estado | 🟢 **MERGEADO** ([#5500](https://github.com/boa-dev/boa/pull/5500)) — aprobado por @jedel1043 |
 | Nicho | Rust / devtools / language-impl (motor JavaScript embebible) |
 | Salud del repo | GO — 7.5k★, activo, 240 issues, welcoming (good-first-issue) |
 | Stack | Rust |
@@ -10,7 +10,7 @@
 | Política IA | ✅ **sin política de IA** (revisado CONTRIBUTING + code-search: cero menciones) → filtro 0 OK |
 | Reto | medio-alto: bug de conformidad en el pretty-printer del AST; **2 intentos previos cerrados** (#5029, #1694) por fix incompleto |
 | Estimación | P(merge) alta (bug real, fix mínimo + correcto + test que prueba el fix, gate del repo verde) · 2 archivos |
-| Fechas | seleccionado 2026-08-30 · PR — · merge — |
+| Fechas | seleccionado 2026-08-30 · PR 2026-08-30 · **merge 2026-08-30** |
 
 ## Qué pide
 `PropertyName::to_interned_string` (el pretty-printer del AST) emite las claves **crudas**. Para claves que
@@ -45,7 +45,13 @@ fix acotado pero no trivial (2 intentos incompletos previos).
 
 ## Bitácora
 - 2026-08-30: seleccionado tras vetar 4 issues churny; fix implementado + verificado; gate verde.
-- 2026-08-30: claim posteado en #3975; **PR #5500 abierto** bajo cuenta de Jorge. Esperando review.
+- 2026-08-30: claim posteado en #3975; **PR #5500 abierto** bajo cuenta de Jorge.
+- 2026-08-30: 🟢 **MERGEADO** (aprobado por @jedel1043; test262 delta 0.00% = cero regresiones).
 
 ## Lección (al cerrar)
-<pendiente del review/merge>
+✅ **Bien:** el ciclo "reproducir en main → vetar issues churny/ya-arreglados/reclamados → fix mínimo a la
+causa raíz → test que prueba el fix" produjo un merge limpio y rápido (mismo día) en un repo de 7.5k★.
+🔎 **Causa del éxito:** (1) elección — descarté 4 issues trampa antes de invertir; (2) el fix reusó el estilo
+del repo (pretty-printer lossy → check ASCII conservador sin dep nueva, coherente con el código); (3) test262
+delta 0.00% le dio confianza al maintainer. 🛠️ **Regla:** en repos hiperactivos, la disciplina de repro +
+veto ANTES de codear es lo que separa un merge de un dead-end.
