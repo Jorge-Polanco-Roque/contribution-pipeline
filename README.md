@@ -126,6 +126,7 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 <!-- PRS:START -->
 | PR | Repo | Cambio | Estado |
 |---|---|---|---|
+| [microlinkhq/unavatar #660](https://github.com/microlinkhq/unavatar/pull/660) | `microlinkhq/unavatar` | feat(providers): add Kick avatar provider | 🟡 abierto |
 | [moeru-ai/airi #2412](https://github.com/moeru-ai/airi/pull/2412) | `moeru-ai/airi` | fix(stage-tamagotchi): keep expanded controls island reachable on small windows | 🟡 abierto |
 | [openai/openai-agents-python #4774](https://github.com/openai/openai-agents-python/pull/4774) | `openai/openai-agents-python` | fix(sandbox): don't corrupt a UTF-8 char split across PTY windows | 🟡 abierto |
 | [uutils/coreutils #14264](https://github.com/uutils/coreutils/pull/14264) | `uutils/coreutils` | ls: honor LC_NUMERIC for the -h decimal separator | 🟡 abierto |
