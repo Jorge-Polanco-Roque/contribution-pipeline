@@ -126,6 +126,7 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 <!-- PRS:START -->
 | PR | Repo | Cambio | Estado |
 |---|---|---|---|
+| [nannou-org/nannou #1096](https://github.com/nannou-org/nannou/pull/1096) | `nannou-org/nannou` | fix(draw): close the ellipse outline path so strokes don't leave a gap | 🟡 abierto |
 | [image-rs/image #3107](https://github.com/image-rs/image/pull/3107) | `image-rs/image` | fix(imageops): premultiply alpha in blur to prevent color bleed | 🟡 abierto |
 | [boa-dev/boa #5500](https://github.com/boa-dev/boa/pull/5500) | `boa-dev/boa` | fix(ast): quote non-identifier object property keys in interned output | 🟡 abierto |
 | [microlinkhq/unavatar #660](https://github.com/microlinkhq/unavatar/pull/660) | `microlinkhq/unavatar` | feat(providers): add Kick avatar provider | 🟡 abierto |
