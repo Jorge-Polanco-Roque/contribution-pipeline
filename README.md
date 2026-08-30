@@ -126,10 +126,11 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 <!-- PRS:START -->
 | PR | Repo | Cambio | Estado |
 |---|---|---|---|
+| [sktime/sktime #10967](https://github.com/sktime/sktime/pull/10967) | `sktime/sktime` | [BUG] Fix get_slice handling of zero and omitted bounds | 🟡 abierto |
 | [sonos/tract #2749](https://github.com/sonos/tract/pull/2749) | `sonos/tract` | onnx: lower SimplifiedLayerNormalization to RMS norm, not LayerNorm | 🟡 abierto |
 | [nannou-org/nannou #1096](https://github.com/nannou-org/nannou/pull/1096) | `nannou-org/nannou` | fix(draw): close the ellipse outline path so strokes don't leave a gap | 🟡 abierto |
 | [image-rs/image #3107](https://github.com/image-rs/image/pull/3107) | `image-rs/image` | fix(imageops): premultiply alpha in blur to prevent color bleed | 🟡 abierto |
-| [boa-dev/boa #5500](https://github.com/boa-dev/boa/pull/5500) | `boa-dev/boa` | fix(ast): quote non-identifier object property keys in interned output | 🟡 abierto |
+| [boa-dev/boa #5500](https://github.com/boa-dev/boa/pull/5500) | `boa-dev/boa` | fix(ast): quote non-identifier object property keys in interned output | 🟢 mergeado |
 | [microlinkhq/unavatar #660](https://github.com/microlinkhq/unavatar/pull/660) | `microlinkhq/unavatar` | feat(providers): add Kick avatar provider | 🟡 abierto |
 | [moeru-ai/airi #2412](https://github.com/moeru-ai/airi/pull/2412) | `moeru-ai/airi` | fix(stage-tamagotchi): keep expanded controls island reachable on small windows | 🟡 abierto |
 | [openai/openai-agents-python #4774](https://github.com/openai/openai-agents-python/pull/4774) | `openai/openai-agents-python` | fix(sandbox): don't corrupt a UTF-8 char split across PTY windows | 🟡 abierto |
