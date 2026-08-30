@@ -11,8 +11,8 @@ _Última actualización: 2026-08-29_
 | Métrica | Valor |
 |---|---|
 | ✅ PRs mergeados | **3** — [smallvec#496](https://github.com/servo/rust-smallvec/pull/496) 🟢 · [airi#2408](https://github.com/moeru-ai/airi/pull/2408) 🟢 · [boa#5500](https://github.com/boa-dev/boa/pull/5500) 🟢 |
-| 📤 PRs enviados (reales) | **17** en repos distintos (3 🟢 · 13 🟡 en review · 1 🔴 cerrado) |
-| 🎯 Tasa de aceptación (North Star) | **75%** (3/4 resueltos; 13 aún en review) (meta ≥ 50%) |
+| 📤 PRs enviados (reales) | **17** en repos distintos (3 🟢 · 12 🟡 en review · 2 🔴 cerrados) |
+| 🎯 Tasa de aceptación (North Star) | **60%** (3/5 resueltos; 12 aún en review) (meta ≥ 50%) |
 | 📦 Repos distintos con merge | **3** (servo/rust-smallvec, moeru-ai/airi, boa-dev/boa) |
 | ⭐ Estrellas / seguidores ganados | **0** |
 | 🔥 Racha de actividad (semanas seguidas con ≥1 aporte) | **0** |
@@ -24,7 +24,7 @@ _Última actualización: 2026-08-29_
 |---|---|---|
 | PRs enviados | **17** | — |
 | Merges ganados | **3** ✅ | ≥1 en 2 semanas (gate F0) |
-| **Tasa de aceptación** (North Star) | **75%** (3/4 resueltos) | ≥ 50% |
+| **Tasa de aceptación** (North Star) | **60%** (3/5 resueltos) | ≥ 50% |
 | Repos distintos con merge | **3** | crecer sostenido |
 | Contribuciones en `active/` | **~13** (incl. sesión 2026-08-30: tract, nannou, image, sktime, aeon, statsforecast, unavatar) | en review |
 | Higiene (secretos/deps vulnerables introducidas) | 0 | **0 siempre** (lo fuerza el gate) |

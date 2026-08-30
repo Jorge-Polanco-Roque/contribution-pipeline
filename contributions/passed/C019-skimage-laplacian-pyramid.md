@@ -2,7 +2,7 @@
 
 | Campo | Valor |
 |---|---|
-| Estado | **PR abierto** ([#8306](https://github.com/scikit-image/scikit-image/pull/8306)) — esperando review |
+| Estado | 🔴 **CERRADO** ([#8306](https://github.com/scikit-image/scikit-image/pull/8306)) — replegado: stefanv lo trabaja él con @elena-pascal (política IA) |
 | Nicho | CV / procesamiento de imágenes (Python) |
 | Salud del repo | GO — 6.6k★, activo, mergea externos diversos, acredita en CONTRIBUTORS |
 | Stack | Python (numpy/scipy) |
@@ -38,5 +38,22 @@ commit + cuerpo del PR. (Recomiendan consultar antes para uso significativo de L
 ## Bitácora
 - 2026-08-30: seleccionado (CV, maintainer-wanted); fix Burt-Adelson + test; reconstrucción verificada. **PR #8306 abierto.**
 
-## Lección (al cerrar)
-<pendiente del review/merge>
+## Lección (al cerrar) — 🔴 CERRADO por señal social/política, no por calidad
+El fix era **correcto** (reconstrucción a 1e-16, validado). Pero @stefanv (maintainer core) lo cerró: dijo
+que el issue es "close to my heart", lo estudia con @elena-pascal, tienen su propia solución en curso, y ya
+había **cerrado un PR previo idéntico (#8274, 2026-08-12) por su política de IA** (quiere entendimiento
+profundo, no PR asistido por IA en su área personal). Repliegue cortés + cierre (goodwill > este merge).
+
+🔎 **Causa raíz — selección (2 fallos míos):**
+1. **No chequeé PRs CERRADOS del issue** — #8274 (cerrado hace semanas, mismo enfoque, misma razón de IA)
+   era la señal exacta de la postura del maintainer. Solo miré PRs abiertos.
+2. **Malinterpreté "fix ASAP"** de stefanv como "quiere una contribución" cuando significaba "yo estoy en esto".
+
+🛠️ **Reglas nuevas (→ SOUL/filtro de selección):**
+- **Antes de codear, revisar PRs CERRADOS del issue** (`gh pr list --search "#N" --state closed`): un cierre
+  reciente con el mismo enfoque = la decisión del maintainer, no una oportunidad.
+- **Señal "maintainer lo trabaja él":** frases como "close to my heart", "studying with X", "we know how the
+  solution should look" = área personal → NO tomar (como copper-rs #1255). "ASAP" de un maintainer puede
+  significar "yo lo hago pronto", no "contribuye tú".
+- En repos con política de IA de "entendimiento profundo" (scikit-image), preferir issues **mecánicos/objetivos**
+  sobre los "de investigación" del maintainer.

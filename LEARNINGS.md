@@ -604,3 +604,26 @@ riesgo de flag/ban → **resta reputación**. Trabajo verificado y correcto, per
   ni se clona. yt-dlp añadido a la lista de veto en SOUL §5 (junto a servo).
 - 🧭 **Señal de selección:** las vetas grandes y atractivas (yt-dlp `patch-available`) pueden estar **envenenadas
   por política**. Un repo puede ser welcoming a humanos y hostil a IA a la vez. Estrellas ≠ compatibilidad con el pipeline.
+
+---
+
+### 2026-08-30 · scikit-image #7921 (pyramid_laplacian) — 🔴 CERRADO por señal social/política (no calidad)
+
+Implementé el fix Burt-Adelson **correcto** (reconstrucción a 1e-16, validado en gris/color/rectangular,
+ruff verde). PR #8306 abierto con divulgación de IA. @stefanv (maintainer core) lo **cerró**: el issue es
+"close to my heart", lo estudia con @elena-pascal, tienen su propia solución, y ya había **cerrado un PR
+previo idéntico (#8274) por su política de IA** (exige entendimiento profundo, no PR asistido por IA en su
+área personal). Repliegue cortés + cierre (goodwill con maintainer core > este merge).
+
+- 🔎 **Causa raíz — selección (2 fallos):** (1) **no revisé PRs CERRADOS del issue** — #8274 (cerrado semanas
+  antes, mismo enfoque, misma razón) era la señal exacta; solo miré PRs abiertos. (2) Leí "fix ASAP" de
+  stefanv como "quiere contribución" cuando significaba "yo estoy en esto".
+- 🛠️ **Reglas (→ SOUL §5 / filtro de selección):**
+  - **Antes de codear: `gh pr list --repo R --search "#N" --state closed`** — un cierre reciente con el mismo
+    enfoque = decisión del maintainer, no oportunidad.
+  - **Señal "maintainer lo trabaja él":** "close to my heart", "studying with X", "we know how it should look"
+    = área personal → NO tomar (como copper-rs #1255). "ASAP" de un maintainer ≠ "contribuye tú".
+  - En repos con política de IA de "deep understanding" (scikit-image), preferir issues **mecánicos/objetivos**
+    sobre los "de investigación" del maintainer.
+- ✅ **Bien:** el repliegue fue inmediato y cortés (ofrecí el test de reconstrucción, reconocí el traslape) →
+  preserva la relación para futuras contribuciones. La calidad del fix no estaba en duda; fue puramente social.
