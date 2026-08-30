@@ -2,7 +2,7 @@
 
 | Campo | Valor |
 |---|---|
-| Estado | **PR abierto** ([#8610](https://github.com/RustPython/RustPython/pull/8610)) — esperando review |
+| Estado | **PR abierto** ([#8610](https://github.com/RustPython/RustPython/pull/8610)) — **review de luantaraschi atendida con rediseño**; esperando su reacción |
 | Nicho | infra/lenguajes (Rust, intérprete de Python) |
 | Salud del repo | GO — 22.3k★, 171 merges/30d, 22/30 externos, CONTRIBUTING claro, activo hoy |
 | Stack | Rust |
@@ -64,6 +64,18 @@ PR publicado bajo tu cuenta. Siguiente: responder al review cuando llegue (yo re
 - 2026-08-29: review de CodeRabbit (over-wrapping de errores de comparación). 1er fix (doble-hash) rompió
   invariantes hash-once → detectado con las suites; 2º fix (re-hash-on-error) correcto + test de regresión.
   Pusheado al branch + réplica publicada. PR con 2 commits, más fuerte que el original.
+- 2026-08-30: **review experta de @luantaraschi** (comparó vs CPython 3.14.7, 4 puntos). **Rediseño completo**
+  (commit `fc64738`): (1) cobertura de constructor/update/`|=` (van por merge_object_with_override/merge_from_seq2,
+  antes sin cubrir); (2) hashear **una vez** + threading `*_known_hash` (añadí `get_known_hash` a dict_inner) →
+  arregla el escape de `__hash__` flaky del re-hash-on-error; (3) nombre **cualificado** (`fully_qualified_name`);
+  (4) chequeo de tipo **exacto** (subclase de TypeError propaga). Verificado empíricamente los 4 + la regresión de
+  comparación; 5 tests nuevos en el snippet; fmt/clippy limpios. Réplica técnica honesta publicada (incluí la
+  limitación de pop/setdefault + oferta de follow-up en set.rs).
 
-## Lección (al cerrar)
-<pendiente del review/merge>
+## Lección (parcial — reviews expertas)
+✅ **Bien:** ante una review de altísima calidad (CPython side-by-side), la respuesta correcta es **rediseñar de
+raíz + verificar empíricamente cada punto**, no parchear. Compilar el binario y correr los casos exactos del
+reviewer (flaky hash, subclase, nested qualname) demostró la corrección objetivamente. 🔎 **Causa de que hubiera
+que rediseñar:** mi 2º fix (re-hash-on-error) resolvía CodeRabbit pero tenía un bug sutil (escape de hash flaky)
+que solo una comparación contra CPython cazaba. 🛠️ **Regla:** para paridad de intérprete, **hashear/computar una
+vez y threadear** > re-computar para desambiguar; y cubrir **todos** los call paths (no solo `__setitem__`).
