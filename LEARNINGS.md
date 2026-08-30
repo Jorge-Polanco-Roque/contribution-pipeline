@@ -581,3 +581,26 @@ atención rápida y limpia de los 3 nits del review.
 - 🎯 El pivote a **uutils/sed** (C003) resultó ser el objetivo correcto: política pro-IA verificada, y la
   implementación se escribió desde el código propio (MIT) de uutils + comportamiento *documentado* de GNU,
   no de la fuente GPL → cumple la condición anti-GPL.
+
+---
+
+### 2026-08-30 · yt-dlp (patch-available #16865) — ❌ VETADO por NO AI/LLM policy (reincidencia del filtro 0)
+
+Elegí el issue **#16865 (abcotvs: bajar hqMp4 720p si existe)** de la veta `patch-available` de yt-dlp
+(187k★): patch limpio, uncontested, y **verificable en vivo** (6abc.com accesible). Lo implementé bien
+(idiom `HEADRequest` de cbc.py en vez del probe GET del reporter) y lo **verifiqué en ambos casos**:
+hqMp4 vivo (200) → ofrece 720p y descarga MP4 válido; hqMp4 muerto (403) → lo descarta, cae a 360p. ruff ✓.
+
+**❌ Por qué NO se envía:** al armar el PR descubrí que **yt-dlp tiene "NO AI / NO LLM POLICY" estricta**
+(CONTRIBUTING.md) y el template de PR **obliga a atestiguar** cumplimiento. Es el **caso servo otra vez**:
+enviar trabajo asistido por IA marcando esa casilla = **atestación falsa** bajo la cuenta del accionista →
+riesgo de flag/ban → **resta reputación**. Trabajo verificado y correcto, pero **inenviable por nuestro pipeline**.
+
+- 🔎 **Causa raíz — proceso (no técnica):** verifiqué la política de IA **al armar el PR**, no **al seleccionar**.
+  Perdí ~1 ciclo implementando algo invendible. El `recon profile` surfacea `🤖 política IA` pero **no lo corrí
+  antes de clonar** — salté directo del issue al código por ser "quick win".
+- 🛠️ **Regla dura reforzada:** para CUALQUIER repo nuevo, el **primer** paso — antes de clonar/leer código — es
+  `grep -riE "\bAI\b|LLM|generated" CONTRIBUTING.md .github/` (o `recon profile`). Si prohíbe IA → **STOP inmediato**,
+  ni se clona. yt-dlp añadido a la lista de veto en SOUL §5 (junto a servo).
+- 🧭 **Señal de selección:** las vetas grandes y atractivas (yt-dlp `patch-available`) pueden estar **envenenadas
+  por política**. Un repo puede ser welcoming a humanos y hostil a IA a la vez. Estrellas ≠ compatibilidad con el pipeline.

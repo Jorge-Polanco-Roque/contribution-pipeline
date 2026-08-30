@@ -51,7 +51,8 @@ maintainer**:
 ## 5. Reglas de decisión (a qué contribuyo y qué ignoro)
 
 0. **Política de IA del repo/org — FILTRO CERO (regla dura).** Antes que nada: ¿el repo/org
-   **permite contribuciones asistidas por IA**? Si las **prohíbe** (p.ej. **servo**: veto explícito),
+   **permite contribuciones asistidas por IA**? Si las **prohíbe** (p.ej. **servo** y **yt-dlp**:
+   veto explícito — yt-dlp tiene "NO AI / NO LLM POLICY" y el PR obliga a atestiguar cumplimiento),
    **NO se contribuye** — hacerlo resta reputación, no suma. Preferir repos con política **explícitamente
    permisiva** (p.ej. **uutils**: permitido con mismos estándares + no derivar de código GPL). `recon profile`
    lo surfacea (`🤖 política IA`); si vive en un book/URL externa, verificarlo a mano. *(Lección: PR #500, LEARNINGS.)*
