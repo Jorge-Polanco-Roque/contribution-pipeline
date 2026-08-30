@@ -64,6 +64,11 @@ PR publicado bajo tu cuenta. Siguiente: responder al review cuando llegue (yo re
 - 2026-08-29: review de CodeRabbit (over-wrapping de errores de comparación). 1er fix (doble-hash) rompió
   invariantes hash-once → detectado con las suites; 2º fix (re-hash-on-error) correcto + test de regresión.
   Pusheado al branch + réplica publicada. PR con 2 commits, más fuerte que el original.
+- 2026-08-30: **CodeRabbit (post-rediseño)** marcó la limitación de `pop`/`setdefault` (re-hasheaban → un
+  `__hash__` con estado que falla en la 2ª llamada saltaría el mensaje). **Completé el threading** (commit
+  `1b18a86`): añadí `setdefault_known_hash`/`pop_known_hash` a dict_inner → **los 7 ops hashean 1 sola vez**
+  (verificado `n=1`); test de regresión que asevera `__hash__` una vez; wrappers planos sin-uso con
+  `#[allow(dead_code)]` (patrón del archivo) → clippy limpio. Respuesta al bot publicada. PR con 4 commits.
 - 2026-08-30: **review experta de @luantaraschi** (comparó vs CPython 3.14.7, 4 puntos). **Rediseño completo**
   (commit `fc64738`): (1) cobertura de constructor/update/`|=` (van por merge_object_with_override/merge_from_seq2,
   antes sin cubrir); (2) hashear **una vez** + threading `*_known_hash` (añadí `get_known_hash` a dict_inner) →
