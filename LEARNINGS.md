@@ -627,3 +627,26 @@ previo idéntico (#8274) por su política de IA** (exige entendimiento profundo,
     sobre los "de investigación" del maintainer.
 - ✅ **Bien:** el repliegue fue inmediato y cortés (ofrecí el test de reconstrucción, reconocí el traslape) →
   preserva la relación para futuras contribuciones. La calidad del fix no estaba en duda; fue puramente social.
+
+---
+
+### 2026-08-30 · airi #2366 (TTS multi-byte) — 🟡 fix en ARCHIVO MUERTO, cazado por review de Codex
+
+Arreglé el bug de corrupción de TTS (descarte de grapheme clusters `value.length > 1`) en
+`packages/stage-ui/src/utils/tts.ts` con test que fallaba sin el fix (gate verde) y abrí PR #2414.
+La review automática de **Codex (bot)** marcó P1: ese archivo **no lo importa nadie** — el chunker vivo
+(el que usa `createSpeechPipeline` en Stage.vue) es `packages/pipelines-audio/src/processors/tts-chunker.ts`,
+una **copia duplicada** con el mismo bug intacto. Mi PR no arreglaba nada del path real.
+
+- 🔎 **Causa raíz — código/comprensión:** verifiqué la causa raíz y reproduje el bug (bien), pero **asumí que
+  el archivo que edité era el activo** sin comprobar sus importadores. Había DOS chunkers casi idénticos
+  (`chunkTTSInput` muerto vs `chunkTtsInput` vivo — hasta el nombre cambia por una letra).
+- 🛠️ **Regla dura (→ ponytail / quality-gate):** antes de dar por bueno un fix, **`grep -rn "<símbolo>|from '<ruta>'"`
+    de los importadores** para confirmar que el archivo tocado está en el **path vivo**. Un test que pasa sobre
+    código muerto es un falso verde. "El test falla sin el fix" NO basta si el fix vive en código no ejecutado.
+- 🛠️ **Señal:** monorepos con paquetes que se refactorizaron (aquí `stage-ui/utils` → `pipelines-audio`) dejan
+    **duplicados legacy**. Nombre casi-idéntico = trampa. Buscar la copia viva por el consumidor real (Stage.vue),
+    no por el nombre del símbolo.
+- ✅ **Bien:** respuesta inmediata al review — moví el fix al chunker activo, revertí el muerto, test en su suite
+    (17/17, falla sin fix), y agradecí el catch. El **review adversarial del bot agregó valor real** (como
+    CodeRabbit en RustPython): no defenderse, verificar y corregir.
