@@ -11,8 +11,8 @@ _Última actualización: 2026-08-29_
 | Métrica | Valor |
 |---|---|
 | ✅ PRs mergeados | **3** — [smallvec#496](https://github.com/servo/rust-smallvec/pull/496) 🟢 · [airi#2408](https://github.com/moeru-ai/airi/pull/2408) 🟢 · [boa#5500](https://github.com/boa-dev/boa/pull/5500) 🟢 |
-| 📤 PRs enviados (reales) | **21** (3 🟢 · 15 🟡 en review · 3 🔴 cerrados) |
-| 🎯 Tasa de aceptación (North Star) | **50%** (3/6 resueltos; 15 aún en review) (meta ≥ 50%) |
+| 📤 PRs enviados (reales) | **22** (3 🟢 · 16 🟡 en review · 3 🔴 cerrados) |
+| 🎯 Tasa de aceptación (North Star) | **50%** (3/6 resueltos; 16 aún en review) (meta ≥ 50%) |
 | 📦 Repos distintos con merge | **3** (servo/rust-smallvec, moeru-ai/airi, boa-dev/boa) |
 | ⭐ Estrellas / seguidores ganados | **0** |
 | 🔥 Racha de actividad (semanas seguidas con ≥1 aporte) | **0** |
@@ -22,11 +22,11 @@ _Última actualización: 2026-08-29_
 
 | KPI | Valor | Meta |
 |---|---|---|
-| PRs enviados | **21** | — |
+| PRs enviados | **22** | — |
 | Merges ganados | **3** ✅ | ≥1 en 2 semanas (gate F0) |
 | **Tasa de aceptación** (North Star) | **50%** (3/6 resueltos) | ≥ 50% |
 | Repos distintos con merge | **3** | crecer sostenido |
-| Contribuciones en `active/` | **~15** (incl. 3 PRs en airi 2026-08-30: ruby #2413, TTS multi-byte #2414, preparing-send #2415; C008 openai → `passed/`) | en review |
+| Contribuciones en `active/` | **~16** (airi ronda 2026-08-30/31: ruby #2413, TTS multi-byte #2414, preparing-send #2415, ventana off-screen #2422; C008 openai → `passed/`) | en review |
 | Higiene (secretos/deps vulnerables introducidas) | 0 | **0 siempre** (lo fuerza el gate) |
 
 ## Contribuciones (registro)
@@ -52,13 +52,16 @@ _Última actualización: 2026-08-29_
 | C020 | moeru-ai/airi #2255 → [#2413](https://github.com/moeru-ai/airi/pull/2413) | TS/AI-companion | 🟡 review (feature ruby; Codex P2 = deferral, `needs-more-info`) | — | — |
 | C021 | moeru-ai/airi #2366 → [#2414](https://github.com/moeru-ai/airi/pull/2414) | TS/AI-companion | 🟡 review (Codex P1 atendido: fix movido a chunker activo) | — | — |
 | C022 | moeru-ai/airi #2305 → [#2415](https://github.com/moeru-ai/airi/pull/2415) | TS/AI-companion | 🟡 review (Codex P2 atendido: bloque ROOT CAUSE) | — | — |
+| C023 | moeru-ai/airi #2181 → [#2422](https://github.com/moeru-ai/airi/pull/2422) | TS/Electron-desktop | 🟡 review (ventana off-screen: clamp de bounds; helper puro 6/6) | — | — |
 
 > ✅ **Nota de reputación:** **3 merges reales en 3 repos distintos** — servo #496 (servo **veta IA**, vetado),
 > **airi #2408** (48.5k★) y **boa #5500** (7.5k★, motor JS en Rust). **21 PRs**, todos con
 > política de IA verificada (filtro 0), y **cada review de maintainer/bot atendido**. La sesión 2026-08-30
-> añadió una **ronda profunda en airi** (3 PRs: feature ruby #2413, bug TTS multi-byte #2414, bug
-> preparing-send #2415), todos con causa raíz verificada y test que falla sin el fix; las reviews de Codex se
-> atendieron (incl. **P1**: #2414 arreglaba un archivo muerto → movido al chunker activo). El método —first-wins
+> añadió una **ronda profunda en airi** (4 issues distintos: feature ruby #2413, bug TTS multi-byte #2414, bug
+> preparing-send #2415, bug ventana off-screen #2422), todos con causa raíz verificada y test que falla sin el
+> fix; las reviews de Codex se atendieron (incl. **P1**: #2414 arreglaba un archivo muerto → movido al chunker
+> activo; **P2** CRLF). #2181 se eligió aplicando la regla nueva de SOUL §5 (descartar subsistemas que el core ya
+> tría, como #2161). El método —first-wins
 > de alto impacto + reproducir en main + vetar issues trampa + gate verde + divulgación honesta + respuesta
 > técnica a reviews— funciona.
 >
