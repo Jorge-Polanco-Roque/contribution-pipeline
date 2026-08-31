@@ -126,7 +126,10 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 <!-- PRS:START -->
 | PR | Repo | Cambio | Estado |
 |---|---|---|---|
-| [scikit-image/scikit-image #8306](https://github.com/scikit-image/scikit-image/pull/8306) | `scikit-image/scikit-image` | Fix pyramid_laplacian to build a reconstructable Laplacian pyramid | 🟡 abierto |
+| [moeru-ai/airi #2415](https://github.com/moeru-ai/airi/pull/2415) | `moeru-ai/airi` | fix(stage-ui): deliver sends issued during the transport prepare phase | 🟡 abierto |
+| [moeru-ai/airi #2414](https://github.com/moeru-ai/airi/pull/2414) | `moeru-ai/airi` | fix(pipelines-audio): preserve multi-code-unit grapheme clusters in TTS chunking | 🟡 abierto |
+| [moeru-ai/airi #2413](https://github.com/moeru-ai/airi/pull/2413) | `moeru-ai/airi` | feat(stage-ui): support separate display text and TTS pronunciation via ruby annotations | 🟡 abierto |
+| [scikit-image/scikit-image #8306](https://github.com/scikit-image/scikit-image/pull/8306) | `scikit-image/scikit-image` | Fix pyramid_laplacian to build a reconstructable Laplacian pyramid | 🔴 cerrado |
 | [Nixtla/statsforecast #1225](https://github.com/Nixtla/statsforecast/pull/1225) | `Nixtla/statsforecast` | docs: document both ConformalSeasonalPool interval thresholds and validate n_samples | 🟡 abierto |
 | [aeon-toolkit/aeon #3773](https://github.com/aeon-toolkit/aeon/pull/3773) | `aeon-toolkit/aeon` | [BUG] Preserve input dtype in shift_scale_invariant zero-padding | 🟡 abierto |
 | [sktime/sktime #10967](https://github.com/sktime/sktime/pull/10967) | `sktime/sktime` | [BUG] Fix get_slice handling of zero and omitted bounds | 🟡 abierto |
@@ -136,7 +139,7 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 | [boa-dev/boa #5500](https://github.com/boa-dev/boa/pull/5500) | `boa-dev/boa` | fix(ast): quote non-identifier object property keys in interned output | 🟢 mergeado |
 | [microlinkhq/unavatar #660](https://github.com/microlinkhq/unavatar/pull/660) | `microlinkhq/unavatar` | feat(providers): add Kick avatar provider | 🟡 abierto |
 | [moeru-ai/airi #2412](https://github.com/moeru-ai/airi/pull/2412) | `moeru-ai/airi` | fix(stage-tamagotchi): keep expanded controls island reachable on small windows | 🟡 abierto |
-| [openai/openai-agents-python #4774](https://github.com/openai/openai-agents-python/pull/4774) | `openai/openai-agents-python` | fix(sandbox): don't corrupt a UTF-8 char split across PTY windows | 🟡 abierto |
+| [openai/openai-agents-python #4774](https://github.com/openai/openai-agents-python/pull/4774) | `openai/openai-agents-python` | fix(sandbox): don't corrupt a UTF-8 char split across PTY windows | 🔴 cerrado |
 | [uutils/coreutils #14264](https://github.com/uutils/coreutils/pull/14264) | `uutils/coreutils` | ls: honor LC_NUMERIC for the -h decimal separator | 🟡 abierto |
 | [moeru-ai/airi #2408](https://github.com/moeru-ai/airi/pull/2408) | `moeru-ai/airi` | fix(better-ws): publish the package so server-sdk installs | 🟢 mergeado |
 | [Automattic/harper #4253](https://github.com/Automattic/harper/pull/4253) | `Automattic/harper` | Add a linter for confusing `wary` and `weary` | 🟡 abierto |

@@ -11,8 +11,8 @@ _Última actualización: 2026-08-29_
 | Métrica | Valor |
 |---|---|
 | ✅ PRs mergeados | **3** — [smallvec#496](https://github.com/servo/rust-smallvec/pull/496) 🟢 · [airi#2408](https://github.com/moeru-ai/airi/pull/2408) 🟢 · [boa#5500](https://github.com/boa-dev/boa/pull/5500) 🟢 |
-| 📤 PRs enviados (reales) | **17** en repos distintos (3 🟢 · 12 🟡 en review · 2 🔴 cerrados) |
-| 🎯 Tasa de aceptación (North Star) | **60%** (3/5 resueltos; 12 aún en review) (meta ≥ 50%) |
+| 📤 PRs enviados (reales) | **21** (3 🟢 · 15 🟡 en review · 3 🔴 cerrados) |
+| 🎯 Tasa de aceptación (North Star) | **50%** (3/6 resueltos; 15 aún en review) (meta ≥ 50%) |
 | 📦 Repos distintos con merge | **3** (servo/rust-smallvec, moeru-ai/airi, boa-dev/boa) |
 | ⭐ Estrellas / seguidores ganados | **0** |
 | 🔥 Racha de actividad (semanas seguidas con ≥1 aporte) | **0** |
@@ -22,11 +22,11 @@ _Última actualización: 2026-08-29_
 
 | KPI | Valor | Meta |
 |---|---|---|
-| PRs enviados | **17** | — |
+| PRs enviados | **21** | — |
 | Merges ganados | **3** ✅ | ≥1 en 2 semanas (gate F0) |
-| **Tasa de aceptación** (North Star) | **60%** (3/5 resueltos) | ≥ 50% |
+| **Tasa de aceptación** (North Star) | **50%** (3/6 resueltos) | ≥ 50% |
 | Repos distintos con merge | **3** | crecer sostenido |
-| Contribuciones en `active/` | **~13** (incl. sesión 2026-08-30: tract, nannou, image, sktime, aeon, statsforecast, unavatar) | en review |
+| Contribuciones en `active/` | **~16** (incl. 3 PRs en airi 2026-08-30: ruby #2413, TTS multi-byte #2414, preparing-send #2415) | en review |
 | Higiene (secretos/deps vulnerables introducidas) | 0 | **0 siempre** (lo fuerza el gate) |
 
 ## Contribuciones (registro)
@@ -40,7 +40,7 @@ _Última actualización: 2026-08-29_
 | C005 | Automattic/harper #4253 (regla wary/weary) | Rust/devtools | 🟡 review (hippietrail atendido) | — | — |
 | C006 | moeru-ai/airi #2359 → [#2408](https://github.com/moeru-ai/airi/pull/2408) | TS/AI-companion | 🟢 **MERGEADO** | ✅ | — |
 | C007 | uutils/coreutils #14232 → [#14264](https://github.com/uutils/coreutils/pull/14264) | Rust/devtools | 🟡 review (CI rojos flaky/infra, ajenos) | — | — |
-| C008 | openai/openai-agents-python #4744 → [#4774](https://github.com/openai/openai-agents-python/pull/4774) | Python/agentes | 🟡 review (Codex ×3 atendidos) | — | — |
+| C008 | openai/openai-agents-python #4744 → [#4774](https://github.com/openai/openai-agents-python/pull/4774) | Python/agentes | 🔴 cerrado sin merge (revisar motivo → retrospectiva) | — | — |
 | C010 | microlinkhq/unavatar → [#660](https://github.com/microlinkhq/unavatar/pull/660) | JS/avatars | 🟡 review | — | — |
 | C012 | boa-dev/boa #3975 → [#5500](https://github.com/boa-dev/boa/pull/5500) | Rust/lenguajes | 🟢 **MERGEADO** (jedel1043) | ✅ | — |
 | C013 | image-rs/image #2324 → [#3107](https://github.com/image-rs/image/pull/3107) | Rust/CV | 🟡 review (cargo-deny ajeno) | — | — |
@@ -49,13 +49,21 @@ _Última actualización: 2026-08-29_
 | C016 | sktime #10966 → [#10967](https://github.com/sktime/sktime/pull/10967) | Python/ML | 🟡 review (Evilander atendido; all-contributors) | — | — |
 | C017 | aeon #3722 → [#3773](https://github.com/aeon-toolkit/aeon/pull/3773) | Python/ML | 🟡 review (all-contributors) | — | — |
 | C018 | Nixtla/statsforecast #1202 → [#1225](https://github.com/Nixtla/statsforecast/pull/1225) | Python/forecasting | 🟡 review (CLA firmado; all-contributors) | — | — |
+| C020 | moeru-ai/airi #2255 → [#2413](https://github.com/moeru-ai/airi/pull/2413) | TS/AI-companion | 🟡 review (feature ruby; Codex P2 = deferral, `needs-more-info`) | — | — |
+| C021 | moeru-ai/airi #2366 → [#2414](https://github.com/moeru-ai/airi/pull/2414) | TS/AI-companion | 🟡 review (Codex P1 atendido: fix movido a chunker activo) | — | — |
+| C022 | moeru-ai/airi #2305 → [#2415](https://github.com/moeru-ai/airi/pull/2415) | TS/AI-companion | 🟡 review (Codex P2 atendido: bloque ROOT CAUSE) | — | — |
 
 > ✅ **Nota de reputación:** **3 merges reales en 3 repos distintos** — servo #496 (servo **veta IA**, vetado),
-> **airi #2408** (48.5k★) y **boa #5500** (7.5k★, motor JS en Rust). **17 PRs** en repos distintos, todos con
+> **airi #2408** (48.5k★) y **boa #5500** (7.5k★, motor JS en Rust). **21 PRs**, todos con
 > política de IA verificada (filtro 0), y **cada review de maintainer/bot atendido**. La sesión 2026-08-30
-> añadió 7 PRs en nichos ML/CV/gráficos/inferencia; 3 apuntan a **muros de all-contributors** (sktime, aeon,
-> statsforecast). El método —first-wins de alto impacto + reproducir en main + vetar issues trampa + gate
-> verde + divulgación honesta + respuesta técnica a reviews— funciona.
+> añadió una **ronda profunda en airi** (3 PRs: feature ruby #2413, bug TTS multi-byte #2414, bug
+> preparing-send #2415), todos con causa raíz verificada y test que falla sin el fix; las reviews de Codex se
+> atendieron (incl. **P1**: #2414 arreglaba un archivo muerto → movido al chunker activo). El método —first-wins
+> de alto impacto + reproducir en main + vetar issues trampa + gate verde + divulgación honesta + respuesta
+> técnica a reviews— funciona.
+>
+> 🔴 **Pendiente de retrospectiva:** openai #4774 (C008) **cerrado sin merge** — revisar motivo con
+> `pr_retrospective.sh` y registrar lección en LEARNINGS + mover a `passed/`.
 >
 > ⚠️ *Ledger parcialmente sincronizado: faltan C009/C011 (passed/) en esta tabla; KPIs de cabecera sí exactos.*
 
