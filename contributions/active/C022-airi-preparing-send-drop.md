@@ -53,3 +53,8 @@ PR #2415 bajo tu cuenta. Siguiente: responder review cuando llegue.
 - 2026-08-30: review de **Codex (P2)** — el repo exige bloque `// ROOT CAUSE:` en tests de regresión
   (usé comentario libre). Reformateé el comentario del test al bloque requerido (falla-antes/fix-después).
   Force-push + respuesta al review. 14/14 verdes.
+- 2026-08-31: **Codex P2** (post force-push) — drain de backpressure en connector `ready`. **Respondido
+  acotando scope** (sin código): en better-ws `send()` solo devuelve `false` en no-`ready`, así que el
+  overtaking no es alcanzable por este path; y el fix ya es estrictamente mejor (retiene vs perder). Un
+  drain/orden general sería follow-up separado. 🛠️ Regla: no expandir scope de un fix root-cause por un
+  edge teórico del bot; acotar + ofrecer follow-up.

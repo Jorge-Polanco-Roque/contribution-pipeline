@@ -56,3 +56,8 @@ PR #2414 bajo tu cuenta. Siguiente: responder review cuando llegue.
   descarté la hipótesis del reporter (espacios/bytes) leyendo `clustr` (stream-decode OK) y hallé el
   descarte de clusters en `tts.ts`. Reproducción unitaria (falla sin fix) → fix de 1 línea + tests de
   regresión (Thai/Devanagari/ASCII). Gate verde, PR #2414. Segundo PR en airi esta ronda (tras #2413).
+- 2026-08-30: **Codex P1** — el fix estaba en archivo muerto (`stage-ui/utils/tts.ts`); movido al chunker
+  activo `pipelines-audio/tts-chunker.ts` (ver «Corrección post-review»). Force-push + respuesta.
+- 2026-08-31: **Codex P2** — `\r\n` es un solo grapheme cluster (UAX #29 GB3) → mi rama multi-unit lo
+  bufferizaba y perdía el hard-break que un `\n` dispara. Fix: normalizar `\r\n`→`\n` y caer al manejo de
+  puntuación; test `treats a CRLF grapheme cluster as a hard boundary`. **18/18**, force-push + respuesta.

@@ -2,7 +2,7 @@
 
 | Campo | Valor |
 |---|---|
-| Estado | **PR abierto** ([#8610](https://github.com/RustPython/RustPython/pull/8610)) — **review de luantaraschi atendida con rediseño**; esperando su reacción |
+| Estado | **PR abierto** ([#8610](https://github.com/RustPython/RustPython/pull/8610)) — ✅ **@luantaraschi aprobó el rediseño** (2026-08-31); CodeRabbit stale respondido. Cerca del merge |
 | Nicho | infra/lenguajes (Rust, intérprete de Python) |
 | Salud del repo | GO — 22.3k★, 171 merges/30d, 22/30 externos, CONTRIBUTING claro, activo hoy |
 | Stack | Rust |
@@ -76,6 +76,11 @@ PR publicado bajo tu cuenta. Siguiente: responder al review cuando llegue (yo re
   (4) chequeo de tipo **exacto** (subclase de TypeError propaga). Verificado empíricamente los 4 + la regresión de
   comparación; 5 tests nuevos en el snippet; fmt/clippy limpios. Réplica técnica honesta publicada (incluí la
   limitación de pop/setdefault + oferta de follow-up en set.rs).
+- 2026-08-31: **@luantaraschi (reviewer experto) aprobó el rediseño** — *"Hashing once up front and threading
+  it through the `*_known_hash` calls is exactly it... constructor, `update` and `|=` are covered."* El review
+  de más peso queda satisfecho → **cerca del merge**. **CodeRabbit** dejó un inline (setdefault/pop descartan
+  hash) pero era **STALE** (revisó `fc64738`); ya resuelto en `1b18a86` (dict.rs L504-512/L550-557). Respondí
+  en el hilo citando las líneas exactas. Sin cambio de código.
 
 ## Lección (parcial — reviews expertas)
 ✅ **Bien:** ante una review de altísima calidad (CPython side-by-side), la respuesta correcta es **rediseñar de
