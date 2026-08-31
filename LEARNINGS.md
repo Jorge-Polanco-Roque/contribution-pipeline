@@ -650,3 +650,31 @@ una **copia duplicada** con el mismo bug intacto. Mi PR no arreglaba nada del pa
 - ✅ **Bien:** respuesta inmediata al review — moví el fix al chunker activo, revertí el muerto, test en su suite
     (17/17, falla sin fix), y agradecí el catch. El **review adversarial del bot agregó valor real** (como
     CodeRabbit en RustPython): no defenderse, verificar y corregir.
+
+---
+
+### 2026-08-30 · openai/openai-agents-python #4774 (UTF-8 en PTY) — 🔴 CERRADO por rediseño en curso del maintainer
+
+Bug real (corrupción UTF-8 al partir un carácter multibyte entre ventanas de colección de PTY). Fix + test,
+pero Codex marcó **P1 sucesivos**: decoder incremental → path de Modal sin cubrir → tail durable en
+cancelación. Iteré **4 commits** persiguiendo cada uno. @seratch (maintainer) lo **cerró**: el fix aún perdía
+el prefijo en cancelación y **la carrera de ownership completion/finalizer seguía**; y sobre todo, *"we are
+consolidating this lifecycle work in **#4738**"* (su propio PR abierto). Cierre por **duplicación + arquitectura**.
+
+- 🔎 **Causa raíz — selección/timing (2 señales que ignoré):**
+  1. **"Maintainer lo trabaja él"** (como copper-rs #1255, scikit-image #8306): había un PR abierto (#4738,
+     de @seratch) consolidando el **mismo subsistema**. No busqué PRs abiertos que lo tocaran antes de invertir.
+  2. **Fix que exige rediseño de ownership, no diff localizable.** El bug no era el boundary UTF-8 sino el
+     ciclo de vida (decoder state + completion + cancelación + remoción de entry) bajo un solo dueño. El
+     **whack-a-mole con Codex** (P1 nuevo tras cada commit en la misma zona) *era* la señal de que la causa
+     es arquitectónica y el patch no pertenece a esa capa.
+- 🛠️ **Reglas (→ SOUL §5):**
+  - Antes de codear un bug de subsistema: **`gh pr list --state open --search "<subsistema>"`** — un PR
+    abierto del maintainer consolidando el área = **cerrarán tu duplicado**.
+  - **Veto:** bug cuyo fix correcto reorganiza ownership/ciclo de vida de varios componentes. Si el bot sigue
+    hallando P1 en la misma zona tras cada fix → **step back**, no seguir parcheando.
+  - Reforzar señal de repo ya conocida (el propio C008 la marcó): **core-driven + swarmed** (5/30 externos,
+    bugs tomados en horas) sube el riesgo de que el core ya lo esté resolviendo internamente.
+- ✅ **Bien:** respuestas técnicas, honestas y rápidas a cada P1; el cierre fue por arquitectura/duplicación,
+    **no** por calidad de comunicación ni de código superficial. Relación con OpenAI preservada. El costo fue
+    de *selección* (~4 commits en algo invendible), exactamente lo que el North Star penaliza.

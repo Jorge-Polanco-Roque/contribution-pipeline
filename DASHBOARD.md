@@ -26,7 +26,7 @@ _Última actualización: 2026-08-29_
 | Merges ganados | **3** ✅ | ≥1 en 2 semanas (gate F0) |
 | **Tasa de aceptación** (North Star) | **50%** (3/6 resueltos) | ≥ 50% |
 | Repos distintos con merge | **3** | crecer sostenido |
-| Contribuciones en `active/` | **~16** (incl. 3 PRs en airi 2026-08-30: ruby #2413, TTS multi-byte #2414, preparing-send #2415) | en review |
+| Contribuciones en `active/` | **~15** (incl. 3 PRs en airi 2026-08-30: ruby #2413, TTS multi-byte #2414, preparing-send #2415; C008 openai → `passed/`) | en review |
 | Higiene (secretos/deps vulnerables introducidas) | 0 | **0 siempre** (lo fuerza el gate) |
 
 ## Contribuciones (registro)
@@ -40,7 +40,7 @@ _Última actualización: 2026-08-29_
 | C005 | Automattic/harper #4253 (regla wary/weary) | Rust/devtools | 🟡 review (hippietrail atendido) | — | — |
 | C006 | moeru-ai/airi #2359 → [#2408](https://github.com/moeru-ai/airi/pull/2408) | TS/AI-companion | 🟢 **MERGEADO** | ✅ | — |
 | C007 | uutils/coreutils #14232 → [#14264](https://github.com/uutils/coreutils/pull/14264) | Rust/devtools | 🟡 review (CI rojos flaky/infra, ajenos) | — | — |
-| C008 | openai/openai-agents-python #4744 → [#4774](https://github.com/openai/openai-agents-python/pull/4774) | Python/agentes | 🔴 cerrado sin merge (revisar motivo → retrospectiva) | — | — |
+| C008 | openai/openai-agents-python #4744 → [#4774](https://github.com/openai/openai-agents-python/pull/4774) | Python/agentes | 🔴 **cerrado sin merge** (@seratch: duplicaba su rediseño #4738 + carrera de ownership) → `passed/` | — | — |
 | C010 | microlinkhq/unavatar → [#660](https://github.com/microlinkhq/unavatar/pull/660) | JS/avatars | 🟡 review | — | — |
 | C012 | boa-dev/boa #3975 → [#5500](https://github.com/boa-dev/boa/pull/5500) | Rust/lenguajes | 🟢 **MERGEADO** (jedel1043) | ✅ | — |
 | C013 | image-rs/image #2324 → [#3107](https://github.com/image-rs/image/pull/3107) | Rust/CV | 🟡 review (cargo-deny ajeno) | — | — |
@@ -62,8 +62,10 @@ _Última actualización: 2026-08-29_
 > de alto impacto + reproducir en main + vetar issues trampa + gate verde + divulgación honesta + respuesta
 > técnica a reviews— funciona.
 >
-> 🔴 **Pendiente de retrospectiva:** openai #4774 (C008) **cerrado sin merge** — revisar motivo con
-> `pr_retrospective.sh` y registrar lección en LEARNINGS + mover a `passed/`.
+> 🔴 **Retrospectiva cerrada (openai #4774, C008):** @seratch lo cerró — duplicaba su PR abierto #4738
+> (rediseño del ciclo de vida del PTY) y la carrera de ownership seguía. Lección → LEARNINGS + SOUL §5
+> (buscar PRs abiertos del subsistema antes de codear; vetar bugs que exigen rediseño de ownership).
+> C008 movido a `passed/`.
 >
 > ⚠️ *Ledger parcialmente sincronizado: faltan C009/C011 (passed/) en esta tabla; KPIs de cabecera sí exactos.*
 

@@ -2,7 +2,7 @@
 
 | Campo | Valor |
 |---|---|
-| Estado | **PR abierto** ([#4774](https://github.com/openai/openai-agents-python/pull/4774)) — esperando review |
+| Estado | 🔴 **CERRADO sin merge** ([#4774](https://github.com/openai/openai-agents-python/pull/4774)) por @seratch (2026-08-30) — ver «Lección (al cerrar)» |
 | Nicho | agentes (Python, SDK oficial de OpenAI) |
 | Salud del repo | 29k★, muy activo · ⚠️ core-driven (5/30 externos) · **swarmed** (bugs tomados en horas) |
 | Stack | Python (uv) |
@@ -42,6 +42,21 @@ PR publicado bajo tu cuenta. Siguiente: responder al review cuando llegue (yo re
 
 ## Bitácora
 - 2026-08-29: seleccionado (único bug uncontested tras descartar 6 repos saturados/gatekept), fix verificado, PR #4774 abierto.
+- 2026-08-30: 3 rondas de Codex con P1 sucesivos (decoder incremental → path de Modal → tail durable en cancelación),
+  atendidos en 4 commits. @seratch **cerró** el PR.
 
-## Lección (al cerrar)
-<pendiente del review/merge>
+## Lección (al cerrar) — 🔴 rechazo por duplicación + arquitectura
+**Motivo (palabras de @seratch):** *"the split UTF-8 bug is real, but this implementation still loses the carried
+prefix when the next collection is cancelled... The completion/finalizer ownership race also remains. We are
+consolidating this lifecycle work in **#4738**... Closing this duplicate implementation."* (#4738 = PR abierto del
+propio maintainer sobre el mismo subsistema).
+
+- 🔎 **Causa raíz — selección/timing (2 señales ignoradas):**
+  1. **"Maintainer lo trabaja él"** — un PR abierto (#4738) consolidaba el mismo ciclo de vida. No busqué PRs
+     abiertos del subsistema antes de invertir.
+  2. **Fix que exige rediseño de ownership, no diff localizable.** El whack-a-mole con Codex (P1 nuevo tras
+     cada commit) era la señal de que la causa es arquitectónica.
+- 🛠️ **Reglas → SOUL §5** (añadidas): `gh pr list --state open --search "<subsistema>"` antes de codear; vetar
+  bugs que exigen reorganizar ownership; core-driven+swarmed sube el riesgo de resolución interna.
+- ✅ **Bien:** respuestas técnicas/honestas a cada P1; cierre por arquitectura/duplicación, no por calidad. Relación
+  preservada. Costo = *selección* (~4 commits en algo invendible). Detalle en LEARNINGS (2026-08-30).

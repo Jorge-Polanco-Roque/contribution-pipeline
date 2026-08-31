@@ -61,6 +61,14 @@ maintainer**:
    Si no, paso.
 2. **Issue con causa raíz clara.** Prefiero bugs reproducibles y features acotadas
    sobre specs ambiguas. Una spec vaga = PR que nunca mergea.
+   - **Antes de codear un bug de subsistema: `gh pr list --repo R --state open --search "<subsistema>"`.**
+     Si el maintainer (u otro) ya tiene un PR abierto consolidando esa área, mi fix es un
+     **duplicado que cerrarán**. *(Lección: openai #4774 cerrado por @seratch — "consolidating this
+     lifecycle work in #4738". Ver LEARNINGS.)*
+   - **Veto: bug que exige rediseño de *ownership*, no un diff localizable.** Si un fix correcto
+     requiere reorganizar el ciclo de vida/propiedad de varios componentes (no un parche acotado),
+     paso. **Señal en vivo:** si el bot de review sigue encontrando P1 nuevos en la misma zona tras
+     cada commit (whack-a-mole), la causa es arquitectónica → step back, no seguir parcheando.
 3. **Filtro de nicho.** Fuera de nuestro nicho fuerte, paso por defecto.
 4. **Una contribución a la vez en profundidad.** Mejor 1 PR excelente que 5 mediocres.
 5. **Mata rápido.** Si tras leer el repo huele a trampa (maintainer fantasma, CI
