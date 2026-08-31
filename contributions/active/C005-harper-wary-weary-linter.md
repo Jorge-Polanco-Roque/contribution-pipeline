@@ -43,6 +43,11 @@ PR publicado bajo tu cuenta. Siguiente: responder al review cuando llegue (yo re
 
 ## Bitácora
 - 2026-08-29: seleccionado (recon GO, uncontested, sin ban IA), implementado, gate verde, PR #4253 abierto.
+- 2026-08-31: **CHANGES_REQUESTED** por @hippietrail (maintainer): el `description` incluía ejemplos
+  (*"such as weary eye…"*) — *"a thing AIs like to do"*; dejar solo intención + glosas. Recorté el string a
+  `"Handles common confusions between \`wary\` (cautious) and \`weary\` (tired)."`. 8/8 tests del módulo
+  verdes; descriptions no snapshoteadas. Push + respuesta. 🛠️ Regla: en `description`/docstrings, **intención +
+  glosas, sin ejemplos** (la IA tiende a inflarlos).
 
 ## Lección (al cerrar)
 <pendiente del review/merge>

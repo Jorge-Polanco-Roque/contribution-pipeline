@@ -41,6 +41,11 @@ PR publicado bajo tu cuenta. Siguiente: responder al review cuando llegue (yo re
 
 ## Bitácora
 - 2026-08-30: seleccionado (quick win en repo que ya nos mergeó), fix CSS del drawer, PR #2412 abierto con nota de transparencia + alternativas.
-
-## Lección (al cerrar)
+- 2026-08-30: 3 rondas de **Codex** — sizing desde el espacio flex real (no reserva mágica) + encoger la
+  columna de controles al mínimo (200px). Atendidas.
+- 2026-08-31: **@nayounsang (reporter)** confirmó que reproduce reduciendo el tamaño del avatar y **pidió una
+  demostración** (ofreció ayudar a revisar). Respondí: recap del mecanismo (cap del drawer a viewport + scroll
+  interno + columnas que encogen) + **lo invité a probar la rama** (tiene el repro), ofreciendo grabar una
+  captura si prefiere. 🛠️ Nota: fix de UI desktop = no reproducible/demostrable sin correr la app (limitación
+  de entorno); apalancar al reporter que sí puede reproducir.
 <pendiente del review/merge>

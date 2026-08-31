@@ -49,3 +49,8 @@ PR #2422 bajo tu cuenta. Siguiente: responder review cuando llegue.
   collaborator) y #2161 (`builtIn_emitSparkCommand` leak: subsistema agent/tool-routing + @nekomeowww core
   triando → perfil trampa openai #4774). #2181 tiene causa localizada, `env/os-all`, 0 comentarios, helper puro
   testeable. Fix + 6 tests + wiring, gate verde, PR #2422. **Cuarto issue distinto de airi** esta racha.
+- 2026-08-31: review de **@nekomeowww (MEMBER)** — *"clamp should use es-toolkit"* — y **Codex P2** —
+  determinar ownership del display por `bounds` completos (no `workArea`), para no mover al monitor equivocado
+  una ventana sobre la taskbar. Ambas atendidas: `clampWithin` usa `clamp` de es-toolkit; firma cambiada a
+  `displays: {bounds, workArea}[]` (ownership por bounds → clamp en workArea); test nuevo del caso
+  bounds-vs-workArea (falla con la lógica vieja). 7/7 + ESLint 0. Push + respuesta.
