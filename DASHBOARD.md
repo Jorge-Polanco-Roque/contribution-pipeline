@@ -11,8 +11,8 @@ _Última actualización: 2026-09-01_
 | Métrica | Valor |
 |---|---|
 | ✅ PRs mergeados | **3** — [smallvec#496](https://github.com/servo/rust-smallvec/pull/496) 🟢 · [airi#2408](https://github.com/moeru-ai/airi/pull/2408) 🟢 · [boa#5500](https://github.com/boa-dev/boa/pull/5500) 🟢 |
-| 📤 PRs enviados (reales) | **23** (3 🟢 · 14 🟡 en review · 6 🔴 cerrados) + unavatar código mergeado vía #661 (sin crédito) |
-| 🎯 Tasa de aceptación (North Star) | **33%** (3/9 resueltos; 14 en review) — *ver nota* (meta ≥ 50%) |
+| 📤 PRs enviados (reales) | **29** (3 🟢 · 20 🟡 en review · 6 🔴 cerrados) + unavatar código mergeado vía #661 (sin crédito) |
+| 🎯 Tasa de aceptación (North Star) | **33%** (3/9 resueltos; 20 en review) — *ver nota* (meta ≥ 50%) |
 | 📦 Repos distintos con merge | **3** (servo/rust-smallvec, moeru-ai/airi, boa-dev/boa) |
 | ⭐ Estrellas / seguidores ganados | **0** |
 | 🔥 Racha de actividad (semanas seguidas con ≥1 aporte) | **0** |
@@ -22,7 +22,7 @@ _Última actualización: 2026-09-01_
 
 | KPI | Valor | Meta |
 |---|---|---|
-| PRs enviados | **23** | — |
+| PRs enviados | **29** | — |
 | Merges ganados | **3** ✅ (+ unavatar código vía #661, sin crédito) | ≥1 en 2 semanas (gate F0) |
 | **Tasa de aceptación** (North Star) | **33%** (3/9 resueltos) — cierres por *duplicado/política/declinado*, no calidad | ≥ 50% |
 | Repos distintos con merge | **3** | crecer sostenido |
@@ -54,12 +54,13 @@ _Última actualización: 2026-09-01_
 | C022 | moeru-ai/airi #2305 → [#2415](https://github.com/moeru-ai/airi/pull/2415) | TS/AI-companion | 🟡 review (Codex P2 atendido: bloque ROOT CAUSE) | — | — |
 | C023 | moeru-ai/airi #2181 → [#2422](https://github.com/moeru-ai/airi/pull/2422) | TS/Electron-desktop | 🔴 **cerrado** ("Duplicated" por @nekomeowww) | — | — |
 | C025 | uutils/findutils #778 → [#857](https://github.com/uutils/findutils/pull/857) | Rust/devtools | 🟡 review (mindepth>maxdepth→vacío, compat GNU; test falla sin fix) | — | — |
+| C026 | Batch «10 quick wins / 10 repos» → [numbat #888](https://github.com/sharkdp/numbat/pull/888) · [onefetch #1853](https://github.com/o2sh/onefetch/pull/1853) · [jq #3623](https://github.com/jqlang/jq/pull/3623) · [yq #2849](https://github.com/mikefarah/yq/pull/2849) · [gum #1141](https://github.com/charmbracelet/gum/pull/1141) · [git-cliff #1627](https://github.com/orhun/git-cliff/pull/1627) | multi | 🟡 **6 PRs abiertos** (4 limpios + gum/git-cliff con nota de dirección) · 4 descartados en filtro-0 | — | — |
 
 > ✅ **Nota de reputación:** **3 merges reales en 3 repos distintos** — servo #496 (servo **veta IA**, vetado),
 > **airi #2408** (48.5k★) y **boa #5500** (7.5k★, motor JS en Rust) — **+ unavatar código mergeado vía #661**
-> (Kikobeats lo re-creó; sin crédito). **23 PRs**, todos con política de IA verificada (filtro 0) y cada review
-> atendido. RustPython #8610 aprobado por el experto (CI fix pusheado). Diversificación a **uutils/findutils**
-> (#857, filón de quick wins GNU-compat).
+> (Kikobeats lo re-creó; sin crédito). **29 PRs**, todos con política de IA verificada (filtro 0) y cada review
+> atendido. RustPython #8610 aprobado por el experto (CI fix pusheado). **Ronda de 10 quick wins → 6 PRs
+> nuevos** en 6 repos distintos (numbat, onefetch, jq, yq, gum, git-cliff; 4 descartados en filtro-0).
 >
 > ⚠️ **Aceptación bajó a 33%** (3/9): los cierres NO fueron por calidad — airi #2413 (feature `needs-more-info`
 > declinada), airi #2422 (**"Duplicated"**), openai #4774 (rediseño del maintainer), scikit-image/servo (política IA).

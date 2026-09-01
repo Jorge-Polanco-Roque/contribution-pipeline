@@ -678,3 +678,37 @@ consolidating this lifecycle work in **#4738**"* (su propio PR abierto). Cierre 
 - ✅ **Bien:** respuestas técnicas, honestas y rápidas a cada P1; el cierre fue por arquitectura/duplicación,
     **no** por calidad de comunicación ni de código superficial. Relación con OpenAI preservada. El costo fue
     de *selección* (~4 commits en algo invendible), exactamente lo que el North Star penaliza.
+
+---
+
+### 2026-09-01 · Ronda «10 quick wins / 10 repos» (batch C026) — 6 verdes, 4 descartados en filtro-0
+
+Fan-out de 10 sub-agentes (uno por repo nuevo) con el mismo contrato: filtro-0 IA → reproducir →
+fix mínimo + test que falla-sin-fix → gate → commit local (sin push). Resultado: **6 READY**
+(numbat, onefetch, jq, yq limpios; git-cliff, gum con caveat social), **4 descartados**.
+
+- ✅ **Bien — el filtro-0 pagó antes de clonar:** 2 de los 4 descartes se cazaron **leyendo CONTRIBUTING**
+  antes de escribir una línea: **lazygit** (*"does not accept pull requests"* + veta IA) y **ripgrep**
+  (prohíbe **agentes autónomos**, aunque permite IA como herramienta). El costo de descartarlos fue ~0.
+- ✅ **Bien — «maintainer ya triió» como señal de descarte temprano:** **ripgrep #3070** (BurntSushi:
+  *"working as intended... the fix is a massive refactoring"*) y **textual #4968** (diseño **sin decidir**,
+  el owner defiende el comportamiento actual). Ambos: leer **el hilo completo del issue** reveló un
+  veredicto del maintainer que hace P(merge)≈0. Un sub-agente que **no adivina** y reporta BLOCKED
+  vale más que uno que produce un fix invendible.
+- ✅ **Bien — endorsement previo del maintainer como señal verde:** los 2 fixes más fuertes (**numbat**,
+  **onefetch**) tenían al maintainer/collaborator **ya proponiendo exactamente ese enfoque** en el hilo.
+  Buscar "¿el maintainer ya dijo cómo lo quiere?" ordena la cola de P(merge) *antes* de codear.
+- ❌ **Riesgo — caveat social no es caveat de código:** git-cliff y gum tienen fix correcto pero
+  el maintainer tiene **dirección/dueño preferido** (refactor holístico + voluntario; label `blocked` +
+  ruta upstream). Enviarlos sin reconocer eso quema reputación aunque el diff sea impecable.
+- 🔎 **Causa raíz (de los 4 descartes):** todos evitables leyendo **CONTRIBUTING + hilo completo del issue**
+  antes de seleccionar — que es justo el filtro-0 / SOUL §5. La ronda validó el filtro, no lo contradijo.
+- 🛠️ **Reglas (→ SOUL §5 / plantilla de selección):**
+  1. **Antes de clonar:** grep en CONTRIBUTING/README de `pull request` + `AI`/`autonomous`/`agent`.
+     Distinguir **veta-IA total** vs **veta-agentes-autónomos** vs **exige-disclosure** (3 políticas distintas).
+  2. **Antes de codear:** leer el **hilo entero** del issue → si el maintainer dijo "working as intended",
+     "consolidando en #X", o "diseño sin decidir" → BLOCKED, no fix.
+  3. **Ordenar la cola por endorsement:** issues donde el maintainer **ya propuso el enfoque** primero.
+  4. **Caveat social explícito** en el PR cuando el maintainer tiene dirección/dueño preferido; o esperar.
+- ✅ **Bien — disciplina de no-push:** los 6 fixes quedaron en local (rama+commit por repo), **0 PRs**
+  hasta orden explícita por operación. El registro (C026) es **un** artefacto, no 10 dossiers (ponytail).
