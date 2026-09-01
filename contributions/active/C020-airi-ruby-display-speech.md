@@ -56,3 +56,7 @@ PR #2413 bajo tu cuenta. Siguiente: responder al review cuando llegue (yo redact
   existe parser ruby en el repo (ponytail: `《》` ya eran soft-punct en el chunker, sin extracción).
   Localicé el boundary real (`Stage.vue:onTokenLiteral`→`appendText`). Parser + tests + wiring speech,
   gate verde, PR #2413 abierto como propuesta (respeta `needs-more-info`).
+
+## Update 2026-09-01 — CERRADO
+Cerrado sin merge (feature ruby `needs-more-info` declinada). 🎓 Lección: features `needs-more-info` tienen baja
+P(merge) aunque el código/tests sean buenos — priorizar bugs con causa raíz clara sobre features especulativas.

@@ -39,3 +39,8 @@ PR publicado bajo tu cuenta. Siguiente: responder al review cuando llegue (yo re
 
 ## Lección (al cerrar)
 <pendiente del review/merge>
+
+## Update 2026-09-01 — código mergeado vía #661 (sin crédito)
+@Kikobeats (MEMBER) cerró #660 y **mergeó el código vía #661** (lo re-creó porque no pudo editar la rama del fork).
+🎓 Lección: activar *"allow edits by maintainers"* en los PRs para que el maintainer pushee a tu rama en vez de
+re-autorar → si no, pierdes el crédito de GitHub aunque el código entre. (Aplicado en findutils #857.)

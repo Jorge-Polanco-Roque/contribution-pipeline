@@ -54,3 +54,7 @@ PR #2422 bajo tu cuenta. Siguiente: responder review cuando llegue.
   una ventana sobre la taskbar. Ambas atendidas: `clampWithin` usa `clamp` de es-toolkit; firma cambiada a
   `displays: {bounds, workArea}[]` (ownership por bounds → clamp en workArea); test nuevo del caso
   bounds-vs-workArea (falla con la lógica vieja). 7/7 + ESLint 0. Push + respuesta.
+
+## Update 2026-09-01 — CERRADO
+Cerrado por @nekomeowww como **"Duplicated"** (alguien ya arreglaba el mismo bug). No fue por calidad.
+🎓 Lección: en bugs de subsistemas activos, buscar PRs/efforts abiertos antes de invertir (como openai #4774).

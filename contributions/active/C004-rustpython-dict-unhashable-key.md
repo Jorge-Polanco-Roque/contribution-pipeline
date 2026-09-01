@@ -89,3 +89,8 @@ reviewer (flaky hash, subclase, nested qualname) demostró la corrección objeti
 que rediseñar:** mi 2º fix (re-hash-on-error) resolvía CodeRabbit pero tenía un bug sutil (escape de hash flaky)
 que solo una comparación contra CPython cazaba. 🛠️ **Regla:** para paridad de intérprete, **hashear/computar una
 vez y threadear** > re-computar para desambiguar; y cubrir **todos** los call paths (no solo `__setitem__`).
+
+## Update 2026-09-01 — CI fix (aprobado, esperando verde)
+@luantaraschi aprobó el rediseño. El CI se puso rojo (tests 3 plataformas + lint): el test corría bajo
+**CPython 3.14** que **no hashea al hacer `pop` en dict vacío** (short-circuit) → `CountingHash.calls == 1` era 0.
+Fix pusheado (`a488acd`): `pop` en dict no-vacío + `ruff format`. Verificado `python3.14` EXIT 0 + `ruff check` limpio.
