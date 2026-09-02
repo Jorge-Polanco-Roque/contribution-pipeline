@@ -37,7 +37,7 @@ _Última actualización: 2026-09-01_
 | C002 | servo/rust-smallvec #416 → [#500](https://github.com/servo/rust-smallvec/pull/500) | Rust/data-structures | 🔴 cerrado (servo prohíbe IA) | — | — |
 | C003 | uutils/sed #394 → [#544](https://github.com/uutils/sed/pull/544) | Rust/devtools | 🟡 review (tests añadidos p/ sylvestre) | — | — |
 | C004 | RustPython #8610 (dict unhashable msg) | Rust/lenguajes | 🟡 review (✅ aprobado por luantaraschi; **CI fix pusheado** — pop CPython 3.14 + ruff) | — | — |
-| C005 | Automattic/harper #4253 (regla wary/weary) | Rust/devtools | 🟡 review (hippietrail atendido; **rebase sobre master → conflicto resuelto, MERGEABLE**; 6354 tests + fmt/clippy verdes) | — | — |
+| C005 | Automattic/harper #4253 (regla wary/weary) | Rust/devtools | 🟡 review (rebase→MERGEABLE; **testing con datos reales (GH code search) → afinado ToWary a `weary eye` singular, elimina falso positivo de "weary eyes"=tired**; test regresión; hippietrail atendido con transparencia) | — | — |
 | C006 | moeru-ai/airi #2359 → [#2408](https://github.com/moeru-ai/airi/pull/2408) | TS/AI-companion | 🟢 **MERGEADO** | ✅ | — |
 | C007 | uutils/coreutils #14232 → [#14264](https://github.com/uutils/coreutils/pull/14264) | Rust/devtools | 🟡 review (CI rojos flaky/infra, ajenos) | — | — |
 | C008 | openai/openai-agents-python #4744 → [#4774](https://github.com/openai/openai-agents-python/pull/4774) | Python/agentes | 🔴 **cerrado sin merge** (@seratch: duplicaba su rediseño #4738 + carrera de ownership) → `passed/` | — | — |
@@ -103,6 +103,8 @@ _Última actualización: 2026-09-01_
 | 2026-08-30 | **Ronda de reviews atendida:** sed·sylvestre (tests), RustPython·youknowone (plantilla+IA), harper·hippietrail (plantilla+IA+datos), openai-agents·Codex ×3 (Modal+cancellation, push-back a race pre-existente) | 2 |
 | 2026-09-01 | 🏅 **Achievements de GitHub:** PR interno [contribution-pipeline #1](https://github.com/Jorge-Polanco-Roque/contribution-pipeline/pull/1) (gitignore, co-authored con JorgePolancoMX, merge sin review) → dispara **YOLO** + **Pair Extraordinaire**. Quickdraw ya en perfil; Pull Shark elegible (3 merges OSS) pendiente de sync/toggle. *No cuenta como contribución OSS ni afecta el North Star.* | 3 |
 | 2026-09-02 | 🔧 **harper #4253 desbloqueado:** rebase sobre `master` (conflicto en registro de linters resuelto), review de hippietrail ya atendido → **CONFLICTING → MERGEABLE**; 6354 tests + fmt/clippy verdes, force-push al fork. Queda a review del maintainer. | 3 |
+| 2026-09-02 | 🔬 **harper #4253 — testing con datos reales** (hippietrail pidió validar utilidad): GH code search + web → error real raro y `weary eyes`=tired es correcto (falso positivo). **Afinado ToWary a `weary eye` singular** + test de regresión; comentario transparente al maintainer. Convierte objeción en mejora. | 3 |
+| 2026-09-02 | 🤝 **onefetch #1853 APROBADO** por @spenserblack; preguntó por uso de IA → **disclosure honesta publicada** (persona real supervisa, IA para calidad/seguridad + replies por idioma). Política de transparencia añadida a SOUL §7 / CLAUDE. | 3 |
 
 ## Notas
 
