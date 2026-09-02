@@ -3,3 +3,6 @@
 .playwright-mcp/
 .claude/settings.local.json
 pipeline-lab/results/
+
+.DS_Store
+real-*.png
