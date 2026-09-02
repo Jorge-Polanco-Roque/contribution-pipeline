@@ -36,7 +36,7 @@ _Última actualización: 2026-09-01_
 | C001 | servo/rust-smallvec #494 → [#496](https://github.com/servo/rust-smallvec/pull/496) | Rust/data-structures | 🟢 **MERGEADO** | ✅ | — |
 | C002 | servo/rust-smallvec #416 → [#500](https://github.com/servo/rust-smallvec/pull/500) | Rust/data-structures | 🔴 cerrado (servo prohíbe IA) | — | — |
 | C003 | uutils/sed #394 → [#544](https://github.com/uutils/sed/pull/544) | Rust/devtools | 🟡 review (tests añadidos p/ sylvestre) | — | — |
-| C004 | RustPython #8610 (dict unhashable msg) | Rust/lenguajes | 🟡 review (✅ aprobado por luantaraschi; **CI fix pusheado** — pop CPython 3.14 + ruff) | — | — |
+| C004 | RustPython #8610 (dict unhashable msg) | Rust/lenguajes | 🟡 review (**REVIEW_REQUIRED** — luantaraschi comentó (no aprobó formalmente); CI fix pusheado; único rojo CodSpeed ajeno; nudge a maintainer 2026-09-02) | — | — |
 | C005 | Automattic/harper #4253 (regla wary/weary) | Rust/devtools | 🟡 review (rebase→MERGEABLE; **testing con datos reales (GH code search) → afinado ToWary a `weary eye` singular, elimina falso positivo de "weary eyes"=tired**; test regresión; hippietrail atendido con transparencia) | — | — |
 | C006 | moeru-ai/airi #2359 → [#2408](https://github.com/moeru-ai/airi/pull/2408) | TS/AI-companion | 🟢 **MERGEADO** | ✅ | — |
 | C007 | uutils/coreutils #14232 → [#14264](https://github.com/uutils/coreutils/pull/14264) | Rust/devtools | 🟡 review (CI rojos flaky/infra, ajenos) | — | — |
@@ -64,7 +64,7 @@ _Última actualización: 2026-09-01_
 > ✅ **Nota de reputación:** **3 merges reales en 3 repos distintos** — servo #496 (servo **veta IA**, vetado),
 > **airi #2408** (48.5k★) y **boa #5500** (7.5k★, motor JS en Rust) — **+ unavatar código mergeado vía #661**
 > (Kikobeats lo re-creó; sin crédito). **29 PRs**, todos con política de IA verificada (filtro 0) y cada review
-> atendido. RustPython #8610 aprobado por el experto (CI fix pusheado). **Ronda de 10 quick wins → 6 PRs
+> atendido. RustPython #8610 en review (REVIEW_REQUIRED; luantaraschi comentó, no aprobó; CI fix pusheado). **Ronda de 10 quick wins → 6 PRs
 > nuevos** en 6 repos distintos (numbat, onefetch, jq, yq, gum, git-cliff; 4 descartados en filtro-0).
 >
 > ⚠️ **Aceptación bajó a 33%** (3/9): los cierres NO fueron por calidad — airi #2413 (feature `needs-more-info`
