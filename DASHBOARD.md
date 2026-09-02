@@ -55,6 +55,9 @@ _Última actualización: 2026-09-01_
 | C023 | moeru-ai/airi #2181 → [#2422](https://github.com/moeru-ai/airi/pull/2422) | TS/Electron-desktop | 🔴 **cerrado** ("Duplicated" por @nekomeowww) | — | — |
 | C025 | uutils/findutils #778 → [#857](https://github.com/uutils/findutils/pull/857) | Rust/devtools | 🟡 review (mindepth>maxdepth→vacío, compat GNU; test falla sin fix) | — | — |
 | C026 | Batch «10 quick wins / 10 repos» → [numbat #888](https://github.com/sharkdp/numbat/pull/888) · [onefetch #1853](https://github.com/o2sh/onefetch/pull/1853) · [jq #3623](https://github.com/jqlang/jq/pull/3623) · [yq #2849](https://github.com/mikefarah/yq/pull/2849) · [gum #1141](https://github.com/charmbracelet/gum/pull/1141) · [git-cliff #1627](https://github.com/orhun/git-cliff/pull/1627) | multi | 🟡 **6 PRs abiertos** (4 limpios + gum/git-cliff con nota de dirección) · 4 descartados en filtro-0 | — | — |
+| C027 | delta-io/delta-kernel-rs #2749 → [#3250](https://github.com/delta-io/delta-kernel-rs/pull/3250) | Rust/Delta-Lake (358★) | 🟡 review (**bug de correctitud**: decimales negativos zero-extended → row-group skipping poda filas; fix sign-extensión + test que falla sin fix; clippy/tests verdes; repo pro-IA) | — | — |
+| C028 | rust-diplomat/diplomat #1126 → [#1269](https://github.com/rust-diplomat/diplomat/pull/1269) | Rust/FFI (901★) | 🟡 review (**crash**: `None`→`char32_t` aceptaba basura → abort SIGABRT; fix guard `is_none()` en template+generado; test verificado end-to-end (crashea sin fix, TypeError con fix; 37 tests verdes)) | — | — |
+| C029 | AMICI-dev/AMICI #918 → [#3235](https://github.com/AMICI-dev/AMICI/pull/3235) | Python/ML-científico (144★) | 🟡 review (good-first-issue: warning si observable del observation_model no está en el modelo pysb, antes ignorado en silencio; fix+test Python; verificación vía CI del repo, build C++ local desproporcionado) | — | — |
 
 > ✅ **Nota de reputación:** **3 merges reales en 3 repos distintos** — servo #496 (servo **veta IA**, vetado),
 > **airi #2408** (48.5k★) y **boa #5500** (7.5k★, motor JS en Rust) — **+ unavatar código mergeado vía #661**
@@ -105,6 +108,9 @@ _Última actualización: 2026-09-01_
 | 2026-09-02 | 🔧 **harper #4253 desbloqueado:** rebase sobre `master` (conflicto en registro de linters resuelto), review de hippietrail ya atendido → **CONFLICTING → MERGEABLE**; 6354 tests + fmt/clippy verdes, force-push al fork. Queda a review del maintainer. | 3 |
 | 2026-09-02 | 🔬 **harper #4253 — testing con datos reales** (hippietrail pidió validar utilidad): GH code search + web → error real raro y `weary eyes`=tired es correcto (falso positivo). **Afinado ToWary a `weary eye` singular** + test de regresión; comentario transparente al maintainer. Convierte objeción en mejora. | 3 |
 | 2026-09-02 | 🤝 **onefetch #1853 APROBADO** por @spenserblack; preguntó por uso de IA → **disclosure honesta publicada** (persona real supervisa, IA para calidad/seguridad + replies por idioma). Política de transparencia añadida a SOUL §7 / CLAUDE. | 3 |
+| 2026-09-02 | 🎯 **Caza de quick wins (100-1000★):** 6 repos evaluados en paralelo → 1er PR nuevo: **delta-kernel-rs [#3250](https://github.com/delta-io/delta-kernel-rs/pull/3250)** (C027, bug de correctitud decimal, repo pro-IA). Pipeline: diplomat #1126 en curso. Objetivo: llegar a 6 merges. | 3 |
+| 2026-09-02 | 🎯 **2º quick win:** diplomat [#1269](https://github.com/rust-diplomat/diplomat/pull/1269) (C028, 901★) — bug resultó ser **crash SIGABRT** (`None`→char32_t); fix verificado end-to-end montando build nanobind (3 etapas). Siguiente: AMICI #918. | 3 |
+| 2026-09-02 | 🎯 **3er quick win:** AMICI [#3235](https://github.com/AMICI-dev/AMICI/pull/3235) (C029, good-first-issue) — warning para observables inexistentes en pysb import. **3 PRs nuevos hoy** en 3 repos (delta-kernel, diplomat, AMICI) → tiros a puerta hacia 6 merges. | 3 |
 
 ## Notas
 
