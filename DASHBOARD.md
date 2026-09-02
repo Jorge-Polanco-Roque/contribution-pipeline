@@ -58,6 +58,7 @@ _Última actualización: 2026-09-01_
 | C027 | delta-io/delta-kernel-rs #2749 → [#3250](https://github.com/delta-io/delta-kernel-rs/pull/3250) | Rust/Delta-Lake (358★) | 🟡 review (**bug de correctitud**: decimales negativos zero-extended → row-group skipping poda filas; fix sign-extensión + test que falla sin fix; clippy/tests verdes; repo pro-IA) | — | — |
 | C028 | rust-diplomat/diplomat #1126 → [#1269](https://github.com/rust-diplomat/diplomat/pull/1269) | Rust/FFI (901★) | 🟡 review (**crash**: `None`→`char32_t` aceptaba basura → abort SIGABRT; fix guard `is_none()` en template+generado; test verificado end-to-end (crashea sin fix, TypeError con fix; 37 tests verdes)) | — | — |
 | C029 | AMICI-dev/AMICI #918 → [#3235](https://github.com/AMICI-dev/AMICI/pull/3235) | Python/ML-científico (144★) | 🟡 review (good-first-issue: warning si observable del observation_model no está en el modelo pysb, antes ignorado en silencio; fix+test Python; verificación vía CI del repo, build C++ local desproporcionado) | — | — |
+| C030 | jupyter-book/mystmd #2984 → [#3047](https://github.com/jupyter-book/mystmd/pull/3047) | TS/Jupyter-MyST (519★) | 🟡 review (Typst export rompía con glossary refs multi-palabra `<term-x y>` inválido; fix root-cause `label()` (empareja target), no slugify; test que falla sin fix; **verificado end-to-end** (tsc+71 tests+prettier+eslint, bun/turbo); changeset + disclosure IA) | — | — |
 
 > ✅ **Nota de reputación:** **3 merges reales en 3 repos distintos** — servo #496 (servo **veta IA**, vetado),
 > **airi #2408** (48.5k★) y **boa #5500** (7.5k★, motor JS en Rust) — **+ unavatar código mergeado vía #661**
@@ -111,6 +112,7 @@ _Última actualización: 2026-09-01_
 | 2026-09-02 | 🎯 **Caza de quick wins (100-1000★):** 6 repos evaluados en paralelo → 1er PR nuevo: **delta-kernel-rs [#3250](https://github.com/delta-io/delta-kernel-rs/pull/3250)** (C027, bug de correctitud decimal, repo pro-IA). Pipeline: diplomat #1126 en curso. Objetivo: llegar a 6 merges. | 3 |
 | 2026-09-02 | 🎯 **2º quick win:** diplomat [#1269](https://github.com/rust-diplomat/diplomat/pull/1269) (C028, 901★) — bug resultó ser **crash SIGABRT** (`None`→char32_t); fix verificado end-to-end montando build nanobind (3 etapas). Siguiente: AMICI #918. | 3 |
 | 2026-09-02 | 🎯 **3er quick win:** AMICI [#3235](https://github.com/AMICI-dev/AMICI/pull/3235) (C029, good-first-issue) — warning para observables inexistentes en pysb import. **3 PRs nuevos hoy** en 3 repos (delta-kernel, diplomat, AMICI) → tiros a puerta hacia 6 merges. | 3 |
+| 2026-09-02 | 🎯 **2ª ronda de scouting** (6 repos, 2 SKIP: rover/calcite cerrados a externos) + **4º quick win:** mystmd [#3047](https://github.com/jupyter-book/mystmd/pull/3047) (C030, Jupyter 519★) — fix Typst glossary refs, verificado end-to-end (bun/turbo). **4 PRs nuevos hoy.** Pipeline: lockbook #3901. | 3 |
 
 ## Notas
 
