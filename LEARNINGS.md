@@ -712,3 +712,37 @@ fix mínimo + test que falla-sin-fix → gate → commit local (sin push). Resul
   4. **Caveat social explícito** en el PR cuando el maintainer tiene dirección/dueño preferido; o esperar.
 - ✅ **Bien — disciplina de no-push:** los 6 fixes quedaron en local (rama+commit por repo), **0 PRs**
   hasta orden explícita por operación. El registro (C026) es **un** artefacto, no 10 dossiers (ponytail).
+
+---
+
+## 2026-09-03 — Saneamiento de cartera: rebase limpia CI-infra, y un demo débil hunde un fix bueno
+
+**El rebase sobre upstream es la palanca barata para CI roja NO causada por nuestro diff**
+- Contexto: varias ramas con CI roja por CodSpeed (falso positivo cross-environment), apt-403 en
+  wasm, flakes de `tail`, Nix 403 — todas ajenas al diff, pero "se ven" rojas ante el maintainer.
+- ✅ Bien: medí el atraso vs `origin/main` (coreutils +64, rustpython +28, git-cliff +4), rebasé,
+  **verifiqué que compila** antes de force-push, y la CI fresca quedó verde (CodSpeed re-midió base+HEAD
+  en el mismo entorno → mató el falso positivo; heredé fixes de infra upstream).
+- 🔎 Causa raíz: una rama vieja hace que la CI compare contra una base obsoleta y arrastre fallos
+  transitorios ya resueltos aguas arriba.
+- 🛠️ Regla: antes de declarar "CI ajena/no arreglable", **rebasar sobre upstream y re-verificar**;
+  distinguir infra-real-no-nuestra (Nix 403, npm sin publicar, cargo-deny upstream) de stale-limpiable-con-rebase. (→ proceso CLAUDE)
+
+**Un demo para el maintainer debe ser una grabación FIEL de la app real, no un montaje**
+- Contexto: airi #2412 (fix correcto: cap+scroll del drawer en ventana pequeña). nayounsang pidió
+  "video o GIF". El reporter había documentado el bug con un **video de la app Electron real**.
+- ❌ Mal: produje un GIF de harness aislado con stubs, y peor, simulé el "antes" **borrando 2 de las 4
+  clases del fix a mano** → subrepresentó el bug (dejó medio fix puesto). Segundo intento fiel (origin/main
+  real + flujo de click) seguía sin mostrar **el scroll** (el corazón del fix) ni ser la app real. El
+  accionista se hartó y **cerró el PR** — un fix correcto perdido por un demo débil.
+- 🔎 Causa raíz: (1) tratar "mostrar el fix" como "mostrar que el layout cambia" en vez de "demostrar la
+  reachability" (scroll → alcanzar el control antes perdido); (2) el "antes" debe ser el código real de
+  `origin/main` (`git show`), nunca una reversión parcial a mano; (3) si el reporter grabó la app real,
+  la vara es la app real.
+- 🛠️ Reglas (→ CLAUDE / SOUL §7):
+  1. Demo = **flujo real** (interacción del usuario) en la **app real**; si es inviable, decirlo antes de invertir.
+  2. "Antes" = `git show origin/main:<archivo>` exacto; jamás editar el fix a medias para fingir el bug.
+  3. Mostrar **el mecanismo del fix en acción** (aquí: el scroll alcanzando el control), no solo el estado final.
+  4. Verificar el artefacto **con ojo crítico** antes de entregar; un demo malo puede costar el merge.
+- ✅ Bien: honestidad al reconocer que el GIF no mostraba la solución cuando el accionista lo cuestionó,
+  en vez de defenderlo. Y disciplina: nada se publicó al PR sin su OK; el cierre fue orden explícita.

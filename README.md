@@ -126,6 +126,17 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 <!-- PRS:START -->
 | PR | Repo | Cambio | Estado |
 |---|---|---|---|
+| [mario-eth/soldeer #406](https://github.com/mario-eth/soldeer/pull/406) | `mario-eth/soldeer` | feat(remappings): infer source directory suffix like forge | 🟡 abierto |
+| [jupyter-book/mystmd #3047](https://github.com/jupyter-book/mystmd/pull/3047) | `jupyter-book/mystmd` | fix(myst-to-typst): use label() for cross-references whose identifier has spaces | 🟡 abierto |
+| [AMICI-dev/AMICI #3235](https://github.com/AMICI-dev/AMICI/pull/3235) | `AMICI-dev/AMICI` | Warn about observation-model observables absent from the PySB model | 🟡 abierto |
+| [rust-diplomat/diplomat #1269](https://github.com/rust-diplomat/diplomat/pull/1269) | `rust-diplomat/diplomat` | fix: reject None in the nanobind char32_t caster instead of crashing | 🟡 abierto |
+| [delta-io/delta-kernel-rs #3250](https://github.com/delta-io/delta-kernel-rs/pull/3250) | `delta-io/delta-kernel-rs` | fix: sign-extend negative decimal statistics in row-group skipping | 🟡 abierto |
+| [orhun/git-cliff #1627](https://github.com/orhun/git-cliff/pull/1627) | `orhun/git-cliff` | fix(args): resolve --workdir to a repo-relative include path | 🟡 abierto |
+| [charmbracelet/gum #1141](https://github.com/charmbracelet/gum/pull/1141) | `charmbracelet/gum` | fix(format): wrap markdown tables to terminal width | 🟡 abierto |
+| [mikefarah/yq #2849](https://github.com/mikefarah/yq/pull/2849) | `mikefarah/yq` | Preserve file permissions on in-place edits | 🟡 abierto |
+| [jqlang/jq #3623](https://github.com/jqlang/jq/pull/3623) | `jqlang/jq` | Fix inconsistent `delpaths` behavior with mixed negative indices | 🟡 abierto |
+| [o2sh/onefetch #1853](https://github.com/o2sh/onefetch/pull/1853) | `o2sh/onefetch` | Suggest reftable migration when HEAD can't be read | 🟡 abierto |
+| [sharkdp/numbat #888](https://github.com/sharkdp/numbat/pull/888) | `sharkdp/numbat` | Load currency units on demand for `info` and `list` commands | 🟡 abierto |
 | [uutils/findutils #857](https://github.com/uutils/findutils/pull/857) | `uutils/findutils` | fix(find): output nothing when -mindepth exceeds -maxdepth | 🟡 abierto |
 | [moeru-ai/airi #2422](https://github.com/moeru-ai/airi/pull/2422) | `moeru-ai/airi` | fix(stage-tamagotchi): clamp restored main-window bounds onto an available display | 🔴 cerrado |
 | [moeru-ai/airi #2415](https://github.com/moeru-ai/airi/pull/2415) | `moeru-ai/airi` | fix(stage-ui): deliver sends issued during the transport prepare phase | 🟡 abierto |
@@ -140,7 +151,7 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 | [image-rs/image #3107](https://github.com/image-rs/image/pull/3107) | `image-rs/image` | fix(imageops): premultiply alpha in blur to prevent color bleed | 🟡 abierto |
 | [boa-dev/boa #5500](https://github.com/boa-dev/boa/pull/5500) | `boa-dev/boa` | fix(ast): quote non-identifier object property keys in interned output | 🟢 mergeado |
 | [microlinkhq/unavatar #660](https://github.com/microlinkhq/unavatar/pull/660) | `microlinkhq/unavatar` | feat(providers): add Kick avatar provider | 🔴 cerrado |
-| [moeru-ai/airi #2412](https://github.com/moeru-ai/airi/pull/2412) | `moeru-ai/airi` | fix(stage-tamagotchi): keep expanded controls island reachable on small windows | 🟡 abierto |
+| [moeru-ai/airi #2412](https://github.com/moeru-ai/airi/pull/2412) | `moeru-ai/airi` | fix(stage-tamagotchi): keep expanded controls island reachable on small windows | 🔴 cerrado |
 | [openai/openai-agents-python #4774](https://github.com/openai/openai-agents-python/pull/4774) | `openai/openai-agents-python` | fix(sandbox): don't corrupt a UTF-8 char split across PTY windows | 🔴 cerrado |
 | [uutils/coreutils #14264](https://github.com/uutils/coreutils/pull/14264) | `uutils/coreutils` | ls: honor LC_NUMERIC for the -h decimal separator | 🟡 abierto |
 | [moeru-ai/airi #2408](https://github.com/moeru-ai/airi/pull/2408) | `moeru-ai/airi` | fix(better-ws): publish the package so server-sdk installs | 🟢 mergeado |
@@ -150,7 +161,7 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 | [servo/rust-smallvec #500](https://github.com/servo/rust-smallvec/pull/500) | `servo/rust-smallvec` | Add try_with_capacity fallible constructor | 🔴 cerrado |
 | [servo/rust-smallvec #496](https://github.com/servo/rust-smallvec/pull/496) | `servo/rust-smallvec` | Implement arbitrary::Arbitrary for SmallVec | 🟢 mergeado |
 
-<sub>Actualizado automáticamente: 2026-08-31 (workflow semanal).</sub>
+<sub>Actualizado automáticamente: 2026-09-04 (workflow semanal).</sub>
 <!-- PRS:END -->
 
 > Detalle por contribución en [`contributions/`](contributions/). Selección + pre-lanzamiento en [`LAUNCH-PLAN.md`](LAUNCH-PLAN.md).
