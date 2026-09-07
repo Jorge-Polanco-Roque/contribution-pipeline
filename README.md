@@ -161,7 +161,7 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 | [servo/rust-smallvec #500](https://github.com/servo/rust-smallvec/pull/500) | `servo/rust-smallvec` | Add try_with_capacity fallible constructor | 🔴 cerrado |
 | [servo/rust-smallvec #496](https://github.com/servo/rust-smallvec/pull/496) | `servo/rust-smallvec` | Implement arbitrary::Arbitrary for SmallVec | 🟢 mergeado |
 
-<sub>Actualizado automáticamente: 2026-09-04 (workflow semanal).</sub>
+<sub>Actualizado automáticamente: 2026-09-07 (workflow semanal).</sub>
 <!-- PRS:END -->
 
 > Detalle por contribución en [`contributions/`](contributions/). Selección + pre-lanzamiento en [`LAUNCH-PLAN.md`](LAUNCH-PLAN.md).
