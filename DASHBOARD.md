@@ -4,18 +4,19 @@
 > evento. El objetivo es **reputación pública en el GitHub del accionista**, no
 > dinero. North Star = tasa de aceptación de PRs.
 
-_Última actualización: 2026-09-03_
+_Última actualización: 2026-09-09_
 
 ## Consolidado
 
 | Métrica | Valor |
 |---|---|
-| ✅ PRs mergeados | **3** — [smallvec#496](https://github.com/servo/rust-smallvec/pull/496) 🟢 · [airi#2408](https://github.com/moeru-ai/airi/pull/2408) 🟢 · [boa#5500](https://github.com/boa-dev/boa/pull/5500) 🟢 |
-| 📤 PRs enviados (reales) | **34** (3 🟢 · 24 🟡 en review · 7 🔴 cerrados) + unavatar código mergeado vía #661 (sin crédito) |
-| 🎯 Tasa de aceptación (North Star) | **30%** (3/10 resueltos; 24 en review) — *ver nota* (meta ≥ 50%) |
-| 📦 Repos distintos con merge | **3** (servo/rust-smallvec, moeru-ai/airi, boa-dev/boa) |
+| ✅ PRs mergeados | **7** — [smallvec#496](https://github.com/servo/rust-smallvec/pull/496) 🟢 · [airi#2408](https://github.com/moeru-ai/airi/pull/2408) 🟢 · [boa#5500](https://github.com/boa-dev/boa/pull/5500) 🟢 · [onefetch#1853](https://github.com/o2sh/onefetch/pull/1853) 🟢 · [tract#2749](https://github.com/sonos/tract/pull/2749) 🟢 · [findutils#857](https://github.com/uutils/findutils/pull/857) 🟢 · [diplomat#1269](https://github.com/rust-diplomat/diplomat/pull/1269) 🟢 |
+| 📤 PRs enviados (reales) | **34** (7 🟢 · 20 🟡 en review · 7 🔴 cerrados) + unavatar código mergeado vía #661 (sin crédito) |
+| 🎯 Tasa de aceptación (North Star) | **50%** (7/14 resueltos; 20 en review) — **meta ≥ 50% alcanzada** |
+| 📦 Repos distintos con merge | **7** (servo/rust-smallvec, moeru-ai/airi, boa-dev/boa, o2sh/onefetch, sonos/tract, uutils/findutils, rust-diplomat/diplomat) |
+| 🏅 GitHub Pull Shark | **7/16 para Bronze** (solo cuentan repos ajenos; faltan 9) |
 | ⭐ Estrellas / seguidores ganados | **0** |
-| 🔥 Racha de actividad (semanas seguidas con ≥1 aporte) | **0** |
+| 🔥 Racha de actividad (semanas seguidas con ≥1 aporte) | **2** |
 | ⏱️ Horas del accionista usadas | **0** |
 
 ## KPIs de operación
@@ -23,10 +24,10 @@ _Última actualización: 2026-09-03_
 | KPI | Valor | Meta |
 |---|---|---|
 | PRs enviados | **34** | — |
-| Merges ganados | **3** ✅ (+ unavatar código vía #661, sin crédito) | ≥1 en 2 semanas (gate F0) |
-| **Tasa de aceptación** (North Star) | **30%** (3/10 resueltos) — cierres por *duplicado/política/declinado/demo*, no calidad | ≥ 50% |
-| Repos distintos con merge | **3** | crecer sostenido |
-| Contribuciones en `active/` | **24 en review** (airi #2414/#2415 + delta/diplomat/AMICI/mystmd/soldeer + batch quick-wins); airi #2412/#2413/#2422 cerrados | en review |
+| Merges ganados | **7** ✅ (+ unavatar código vía #661, sin crédito) | ≥1 en 2 semanas (gate F0) |
+| **Tasa de aceptación** (North Star) | **50%** (7/14 resueltos) — cierres por *duplicado/política/declinado/demo*, no calidad | ≥ 50% ✅ |
+| Repos distintos con merge | **7** | crecer sostenido |
+| Contribuciones en `active/` | **20 en review** (airi #2414/#2415 + delta/AMICI/mystmd/soldeer/harper/RustPython/sktime/aeon/image/statsforecast/coreutils/git-cliff/sed/numbat/jq/yq/gum/nannou); onefetch/tract/findutils/diplomat mergeados | en review |
 | Higiene (secretos/deps vulnerables introducidas) | 0 | **0 siempre** (lo fuerza el gate) |
 
 ## Contribuciones (registro)
@@ -45,7 +46,7 @@ _Última actualización: 2026-09-03_
 | C012 | boa-dev/boa #3975 → [#5500](https://github.com/boa-dev/boa/pull/5500) | Rust/lenguajes | 🟢 **MERGEADO** (jedel1043) | ✅ | — |
 | C013 | image-rs/image #2324 → [#3107](https://github.com/image-rs/image/pull/3107) | Rust/CV | 🟡 review (cargo-deny resuelto 2026-09-03: skip de `miniz_oxide` en `deny.toml` — dup transitivo png/exr(0.8) vs flate2(0.9), mismo patrón que ya usan para `syn`) | — | — |
 | C014 | nannou-org/nannou #1095 → [#1096](https://github.com/nannou-org/nannou/pull/1096) | Rust/gráficos | 🟡 review | — | — |
-| C015 | sonos/tract #2646 → [#2749](https://github.com/sonos/tract/pull/2749) | Rust/ML-inferencia | 🟡 review | — | — |
+| C015 | sonos/tract #2646 → [#2749](https://github.com/sonos/tract/pull/2749) | Rust/ML-inferencia | 🟢 **MERGEADO** (kali) 2026-09-08 — SimplifiedLayerNormalization→RMS norm (silent correctness bug); pulido de review: scale no unitario + corrección del bias | ✅ | — |
 | C016 | sktime #10966 → [#10967](https://github.com/sktime/sktime/pull/10967) | Python/ML | 🟡 review (**bug real de Evilander corregido** 2026-09-03: instance-loss en `nested_univ` por round-trip lossy vía `pd-multiindex`; fix reconstruye preservando instancias vacías + test de regresión (11 pass); pusheado) | — | — |
 | C017 | aeon #3722 → [#3773](https://github.com/aeon-toolkit/aeon/pull/3773) | Python/ML | 🟡 review (all-contributors) | — | — |
 | C018 | Nixtla/statsforecast #1202 → [#1225](https://github.com/Nixtla/statsforecast/pull/1225) | Python/forecasting | 🟡 review (CLA firmado; all-contributors) | — | — |
@@ -54,24 +55,25 @@ _Última actualización: 2026-09-03_
 | C022 | moeru-ai/airi #2305 → [#2415](https://github.com/moeru-ai/airi/pull/2415) | TS/AI-companion | 🟡 review (Codex P2 atendido: bloque ROOT CAUSE) | — | — |
 | C023 | moeru-ai/airi #2181 → [#2422](https://github.com/moeru-ai/airi/pull/2422) | TS/Electron-desktop | 🔴 **cerrado** ("Duplicated" por @nekomeowww) | — | — |
 | C024 | moeru-ai/airi #2400 → [#2412](https://github.com/moeru-ai/airi/pull/2412) | TS/Electron-desktop | 🔴 **cerrado por autor** (2026-09-03): el fix era correcto (cap+scroll del drawer en ventana pequeña), pero nayounsang pidió video/GIF y el demo no logró mostrarlo fielmente en la app Electron real → cerrado por decisión del accionista | — | — |
-| C025 | uutils/findutils #778 → [#857](https://github.com/uutils/findutils/pull/857) | Rust/devtools | 🟡 review (mindepth>maxdepth→vacío, compat GNU; test falla sin fix) | — | — |
-| C026 | Batch «10 quick wins / 10 repos» → [numbat #888](https://github.com/sharkdp/numbat/pull/888) · [onefetch #1853](https://github.com/o2sh/onefetch/pull/1853) · [jq #3623](https://github.com/jqlang/jq/pull/3623) · [yq #2849](https://github.com/mikefarah/yq/pull/2849) · [gum #1141](https://github.com/charmbracelet/gum/pull/1141) · [git-cliff #1627](https://github.com/orhun/git-cliff/pull/1627) | multi | 🟡 **6 PRs abiertos** (4 limpios + gum/git-cliff con nota de dirección) · 4 descartados en filtro-0 | — | — |
+| C025 | uutils/findutils #778 → [#857](https://github.com/uutils/findutils/pull/857) | Rust/devtools | 🟢 **MERGEADO** (cakebaker) 2026-09-09 — mindepth>maxdepth→vacío, compat GNU; test de integración pedido por sylvestre añadido | ✅ | — |
+| C026 | Batch «10 quick wins / 10 repos» → [onefetch #1853](https://github.com/o2sh/onefetch/pull/1853) 🟢 · [numbat #888](https://github.com/sharkdp/numbat/pull/888) · [jq #3623](https://github.com/jqlang/jq/pull/3623) · [yq #2849](https://github.com/mikefarah/yq/pull/2849) · [gum #1141](https://github.com/charmbracelet/gum/pull/1141) · [git-cliff #1627](https://github.com/orhun/git-cliff/pull/1627) | multi | 🟢 **onefetch MERGEADO** (o2sh) 2026-09-08 — reftable bail early tras rework de review; mensaje alineado con gitoxide destrabó el CI. Resto 🟡 abiertos (5); git-cliff rehecho a 1 commit + fixture #1369 por orhun | ✅ (1/6) | — |
 | C027 | delta-io/delta-kernel-rs #2749 → [#3250](https://github.com/delta-io/delta-kernel-rs/pull/3250) | Rust/Delta-Lake (358★) | 🟡 review (**bug de correctitud**: decimales negativos zero-extended → row-group skipping poda filas; fix sign-extensión + test que falla sin fix; clippy/tests verdes; repo pro-IA) | — | — |
-| C028 | rust-diplomat/diplomat #1126 → [#1269](https://github.com/rust-diplomat/diplomat/pull/1269) | Rust/FFI (901★) | 🟡 review (**crash**: `None`→`char32_t` aceptaba basura → abort SIGABRT; fix guard `is_none()`. **CHANGES_REQUESTED de tyler-zeromatter atendido** 2026-09-03: test para struct con `char32_t` sin constructor (vía `PrimitiveStruct`, sin regen cross-backend); 8/8 tests verdes; pusheado) | — | — |
+| C028 | rust-diplomat/diplomat #1126 → [#1269](https://github.com/rust-diplomat/diplomat/pull/1269) | Rust/FFI (901★) | 🟢 **MERGEADO** (tyler-zeromatter) 2026-09-09 — 2ª ronda de review: en vez de rechazar `None`, `char32_t` ahora default-init a `U'\0'` (como C struct); test `PrimitiveStruct(...,None,...)` pasa sin excepción. **Un ping oportuno tras atender el review lo destrabó.** | ✅ | — |
 | C029 | AMICI-dev/AMICI #918 → [#3235](https://github.com/AMICI-dev/AMICI/pull/3235) | Python/ML-científico (144★) | 🟡 review (good-first-issue: warning si observable del observation_model no está en observables **ni expressions** del modelo pysb; fix ajustado + test. **Validado localmente** 2026-09-03 (build C++ AMICI + BNG en venv; 3 tests pysb pasan). CI bajó de 7 rojas a 1 (solo `codecov/project` advisory); tuvo approval de FFroehlich (dismissed por push)) | — | — |
 | C030 | jupyter-book/mystmd #2984 → [#3047](https://github.com/jupyter-book/mystmd/pull/3047) | TS/Jupyter-MyST (519★) | 🟡 review (Typst export rompía con glossary refs multi-palabra `<term-x y>` inválido; fix root-cause `label()` (empareja target), no slugify; test que falla sin fix; **verificado end-to-end** (tsc+71 tests+prettier+eslint, bun/turbo); changeset + disclosure IA; **+fix seguridad** escape de comillas tras review) | — | — |
 | C031 | mario-eth/soldeer #236 → [#406](https://github.com/mario-eth/soldeer/pull/406) | Rust/Foundry-devtools (393★) | 🟡 review (maintainers lo pidieron: inferir subdir de fuentes `src`/`contracts` en remappings como forge; **restricción de beeb "no permanente" respetada** (el test que añadí cazó un defecto en la preservación → corregido); 161 tests + 2 nuevos verdes) | — | — |
 
-> ✅ **Nota de reputación:** **3 merges reales en 3 repos distintos** — servo #496 (servo **veta IA**, vetado),
-> **airi #2408** (48.5k★) y **boa #5500** (7.5k★, motor JS en Rust) — **+ unavatar código mergeado vía #661**
-> (Kikobeats lo re-creó; sin crédito). **34 PRs**, todos con política de IA verificada (filtro 0) y cada review
-> atendido. onefetch #1853 **APROBADO**; RustPython #8610 **puesto en cumplimiento con la AI policy** del repo
-> (template + `Assisted-by` + disclosure) con feedback técnico positivo. **Ronda de 10 quick wins → 6 PRs
-> nuevos** en 6 repos distintos (numbat, onefetch, jq, yq, gum, git-cliff; 4 descartados en filtro-0).
+> ✅ **Nota de reputación:** **7 merges reales en 7 repos distintos** (~73k★ combinadas) — servo #496 (servo
+> **veta IA**, vetado), **airi #2408** (48.5k★), **boa #5500** (7.5k★, motor JS en Rust), **onefetch #1853**
+> (12k★), **tract #2749** (3k★, motor de inferencia ML de Sonos), **findutils #857** y **diplomat #1269**
+> (901★, FFI). **34 PRs**, todos con política de IA verificada (filtro 0) y cada review atendido. Los 4 merges
+> nuevos (07→09 sep) cerraron tras atender review a fondo: tract/onefetch por rework de review, findutils por el
+> test pedido, **diplomat por un ping oportuno**.
 >
-> ⚠️ **Aceptación 30%** (3/10): los cierres NO fueron por calidad — airi #2413 (feature `needs-more-info`
-> declinada), airi #2422 (**"Duplicated"**), airi #2412 (fix correcto pero **cerrado por autor** al no lograr un
-> demo/GIF fiel para nayounsang), openai #4774 (rediseño del maintainer), scikit-image/servo (política IA).
+> ✅ **Aceptación 50%** (7/14 resueltos) — **meta alcanzada**. Los 7 cierres NO fueron por calidad — airi #2413
+> (feature `needs-more-info` declinada), airi #2422 (**"Duplicated"**), airi #2412 (fix correcto pero **cerrado
+> por autor** al no lograr un demo/GIF fiel para nayounsang), openai #4774 (rediseño del maintainer),
+> scikit-image/servo (política IA).
 > 🎓 **Lecciones nuevas:** (1) activar *"allow edits by maintainers"* en PRs → si el maintainer no puede editar tu
 > rama, re-crea el PR a su nombre y pierdes el crédito (unavatar). (2) Features `needs-more-info` tienen baja
 > P(merge) aunque el código sea bueno — priorizar bugs con causa clara. El método —first-wins de alto impacto +
@@ -120,6 +122,9 @@ _Última actualización: 2026-09-03_
 | 2026-09-02 | 🛡️ **Filtro en acción:** otel-arrow #1278 SKIP (issue tomado por PR activo #3698) · lockbook #3901 SKIP (issue vago, sin causa raíz clara, requiere cuenta). Review de seguridad cazó inyección en mystmd #3047 → **escape añadido**. | 3 |
 | 2026-09-02 | 🎯 **5º quick win:** soldeer [#406](https://github.com/mario-eth/soldeer/pull/406) (C031, Foundry 393★) — inferencia de source dir en remappings; restricción "no permanente" de beeb respetada (test cazó defecto propio → corregido). **5 PRs nuevos hoy en 5 repos** (delta-kernel, diplomat, AMICI, mystmd, soldeer). | 3 |
 | 2026-09-03 | 🧹 **Día de saneamiento de la cartera** (sin PRs nuevos): rebase de coreutils(+64)/rustpython(+28)/git-cliff → **CI verde** (limpia flaky/infra/CodSpeed); **AMICI #3235 validado localmente** (build C++ + BNG, 3 tests pysb ✓); **sktime #10967** bug real de Evilander corregido; **image #3107** cargo-deny resuelto (skip `deny.toml`); **RustPython #8610 en cumplimiento AI policy**; **diplomat #1269** test pedido añadido. 🔴 **airi #2412 cerrado por autor** (demo/GIF no fiel). | 3 |
+| 2026-09-05→07 | 🔧 **Ronda profunda de reviews atendidos:** soldeer·beeb (el fix superficial de expected values no bastó → **fix de lógica real**: inferir sufijo `src/` solo en install, no en update; los tests de regresión del maintainer lo destaparon); RustPython·youknowone (respuesta **en primera persona**, no IA, + drop de fn muerta); **git-cliff·orhun rehecho a 1 commit** (rebase, drop de lint no relacionado, **2º fixture para el caso relativo de #1369**); tract·czoli (scale no unitario + corrección del bias); AMICI/sktime/findutils con pings/comentarios. **delta #3250 rebasado** (BEHIND→0). | 3 |
+| 2026-09-08 | 🟢🟢 **4º y 5º MERGE:** [onefetch #1853](https://github.com/o2sh/onefetch/pull/1853) (o2sh — reftable bail; **el fix del CI fue alinear el mensaje del test con el de gitoxide**, `--force-with-lease` evitó pisar un commit de spenserblack) + [tract #2749](https://github.com/sonos/tract/pull/2749) (kali — RMS norm). **Ping a tyler (diplomat)**, **8 nudges** a PRs con ≥7 días sin review. | **5** |
+| 2026-09-09 | 🟢🟢 **6º y 7º MERGE:** [findutils #857](https://github.com/uutils/findutils/pull/857) (cakebaker) + [diplomat #1269](https://github.com/rust-diplomat/diplomat/pull/1269) (tyler — **el ping oportuno lo cerró**). **Tasa de aceptación 50%** (meta alcanzada). **sed #544:** test unitario in-process para recuperar `codecov/project` (codecov no cuenta cobertura de subprocesos/integración). | **7** |
 
 ## Notas
 

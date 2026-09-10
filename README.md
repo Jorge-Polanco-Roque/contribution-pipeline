@@ -129,15 +129,15 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 | [mario-eth/soldeer #406](https://github.com/mario-eth/soldeer/pull/406) | `mario-eth/soldeer` | feat(remappings): infer source directory suffix like forge | 🟡 abierto · 👀 en revisión |
 | [jupyter-book/mystmd #3047](https://github.com/jupyter-book/mystmd/pull/3047) | `jupyter-book/mystmd` | fix(myst-to-typst): use label() for cross-references whose identifier has spaces | 🟡 abierto |
 | [AMICI-dev/AMICI #3235](https://github.com/AMICI-dev/AMICI/pull/3235) | `AMICI-dev/AMICI` | Warn about observation-model observables absent from the PySB model | 🟡 abierto · 👀 en revisión |
-| [rust-diplomat/diplomat #1269](https://github.com/rust-diplomat/diplomat/pull/1269) | `rust-diplomat/diplomat` | fix: reject None in the nanobind char32_t caster instead of crashing | 🟡 abierto · 👀 en revisión |
+| [rust-diplomat/diplomat #1269](https://github.com/rust-diplomat/diplomat/pull/1269) | `rust-diplomat/diplomat` | fix: reject None in the nanobind char32_t caster instead of crashing | 🟢 mergeado |
 | [delta-io/delta-kernel-rs #3250](https://github.com/delta-io/delta-kernel-rs/pull/3250) | `delta-io/delta-kernel-rs` | fix: sign-extend negative decimal statistics in row-group skipping | 🟡 abierto · 👀 en revisión |
 | [orhun/git-cliff #1627](https://github.com/orhun/git-cliff/pull/1627) | `orhun/git-cliff` | fix(args): resolve --workdir to a repo-relative include path | 🟡 abierto |
 | [charmbracelet/gum #1141](https://github.com/charmbracelet/gum/pull/1141) | `charmbracelet/gum` | fix(format): wrap markdown tables to terminal width | 🟡 abierto |
 | [mikefarah/yq #2849](https://github.com/mikefarah/yq/pull/2849) | `mikefarah/yq` | Preserve file permissions on in-place edits | 🟡 abierto |
 | [jqlang/jq #3623](https://github.com/jqlang/jq/pull/3623) | `jqlang/jq` | Fix inconsistent `delpaths` behavior with mixed negative indices | 🟡 abierto |
-| [o2sh/onefetch #1853](https://github.com/o2sh/onefetch/pull/1853) | `o2sh/onefetch` | Suggest reftable migration when HEAD can't be read | 🟡 abierto · ✅ aprobado |
+| [o2sh/onefetch #1853](https://github.com/o2sh/onefetch/pull/1853) | `o2sh/onefetch` | Suggest reftable migration when HEAD can't be read | 🟢 mergeado |
 | [sharkdp/numbat #888](https://github.com/sharkdp/numbat/pull/888) | `sharkdp/numbat` | Load currency units on demand for `info` and `list` commands | 🟡 abierto |
-| [uutils/findutils #857](https://github.com/uutils/findutils/pull/857) | `uutils/findutils` | fix(find): output nothing when -mindepth exceeds -maxdepth | 🟡 abierto |
+| [uutils/findutils #857](https://github.com/uutils/findutils/pull/857) | `uutils/findutils` | fix(find): output nothing when -mindepth exceeds -maxdepth | 🟢 mergeado |
 | [moeru-ai/airi #2422](https://github.com/moeru-ai/airi/pull/2422) | `moeru-ai/airi` | fix(stage-tamagotchi): clamp restored main-window bounds onto an available display | 🔴 cerrado |
 | [moeru-ai/airi #2415](https://github.com/moeru-ai/airi/pull/2415) | `moeru-ai/airi` | fix(stage-ui): deliver sends issued during the transport prepare phase | 🟡 abierto |
 | [moeru-ai/airi #2414](https://github.com/moeru-ai/airi/pull/2414) | `moeru-ai/airi` | fix(pipelines-audio): preserve multi-code-unit grapheme clusters in TTS chunking | 🟡 abierto |
@@ -146,7 +146,7 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 | [Nixtla/statsforecast #1225](https://github.com/Nixtla/statsforecast/pull/1225) | `Nixtla/statsforecast` | docs: document both ConformalSeasonalPool interval thresholds and validate n_samples | 🟡 abierto · 👀 en revisión |
 | [aeon-toolkit/aeon #3773](https://github.com/aeon-toolkit/aeon/pull/3773) | `aeon-toolkit/aeon` | [BUG] Preserve input dtype in shift_scale_invariant zero-padding | 🟡 abierto · 👀 en revisión |
 | [sktime/sktime #10967](https://github.com/sktime/sktime/pull/10967) | `sktime/sktime` | [BUG] Fix get_slice handling of zero and omitted bounds | 🟡 abierto · 👀 en revisión |
-| [sonos/tract #2749](https://github.com/sonos/tract/pull/2749) | `sonos/tract` | onnx: lower SimplifiedLayerNormalization to RMS norm, not LayerNorm | 🟡 abierto · 👀 en revisión |
+| [sonos/tract #2749](https://github.com/sonos/tract/pull/2749) | `sonos/tract` | onnx: lower SimplifiedLayerNormalization to RMS norm, not LayerNorm | 🟢 mergeado |
 | [nannou-org/nannou #1096](https://github.com/nannou-org/nannou/pull/1096) | `nannou-org/nannou` | fix(draw): close the ellipse outline path so strokes don't leave a gap | 🟡 abierto |
 | [image-rs/image #3107](https://github.com/image-rs/image/pull/3107) | `image-rs/image` | fix(imageops): premultiply alpha in blur to prevent color bleed | 🟡 abierto · 👀 en revisión |
 | [boa-dev/boa #5500](https://github.com/boa-dev/boa/pull/5500) | `boa-dev/boa` | fix(ast): quote non-identifier object property keys in interned output | 🟢 mergeado |
@@ -161,7 +161,7 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 | [servo/rust-smallvec #500](https://github.com/servo/rust-smallvec/pull/500) | `servo/rust-smallvec` | Add try_with_capacity fallible constructor | 🔴 cerrado |
 | [servo/rust-smallvec #496](https://github.com/servo/rust-smallvec/pull/496) | `servo/rust-smallvec` | Implement arbitrary::Arbitrary for SmallVec | 🟢 mergeado |
 
-<sub>Actualizado: 2026-09-07 · 24 abiertos (1 aprobado, 11 en revisión) · 3 mergeados · 7 cerrados · (workflow semanal).</sub>
+<sub>Actualizado: 2026-09-09 · 20 abiertos · 7 mergeados · 7 cerrados · tasa de aceptación 50% · (workflow semanal).</sub>
 <!-- PRS:END -->
 
 > Detalle por contribución en [`contributions/`](contributions/). Selección + pre-lanzamiento en [`LAUNCH-PLAN.md`](LAUNCH-PLAN.md).
