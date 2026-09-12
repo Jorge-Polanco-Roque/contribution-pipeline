@@ -825,3 +825,25 @@ no fue código nuevo sino **atender el review a fondo** — y en un caso, un pin
      subsistema antes de invertir.
 - 📊 Efecto: tasa de aceptación 50%→47% (7/15), pero el North Star sigue sano — los 8 cierres son de selección/
   política/scope, **cero por calidad de código**. El ajuste va en el filtro, no en el método.
+
+---
+
+## 2026-09-12 — Poda de cartera: cerrar por salud del repo, no por el PR
+
+**Un PR sin review que no avanza puede ser señal del repo, no del código — medir la salud antes de esperar más**
+- Contexto: 3 PRs llevaban >7 días sin ningún review (nannou #1096, airi #2415/#2414). En vez de nudgear a ciegas,
+  medí salud de repo: **último push** + **PRs de externos mergeados desde que abrí el mío**.
+- 🔎 Hallazgo — no todos los "sin review" son iguales:
+  - **nannou**: último push hace ~2 meses, **0 merges** en el periodo → maintainer **efectivamente ausente**. Cerrado.
+  - **yq (#2849)**: repo con push reciente pero **0 merges de externos** — mikefarah es conocido por acumular PRs
+    externos sin mergear → **baja P(merge) estructural**. Cerrado por foco.
+  - **airi**: push **hoy** + **40 merges** en el periodo (incluidos externos) → repo vivo; NO cerrar, solo no ha
+    llegado a mi PR en la cola. Mantener.
+- 🛠️ Reglas (→ SOUL §5 / proceso CLAUDE):
+  1. Antes de decidir cerrar un PR frío, medir: `repo.pushed_at` + nº de PRs mergeados (y si son de externos) desde
+     que se abrió. **Repo dormido o que no mergea externos = candidato a cierre**; repo activo que mergea externos = esperar.
+  2. Cerrar es una decisión de **foco**, no un fracaso: libera atención y mantiene la cartera legible. Hazlo con un
+     comentario cortés que **deje la puerta abierta** (reabrible), y **documenta la razón exacta** en el DASHBOARD.
+  3. La tasa de aceptación baja por estos cierres NO es señal de mala calidad — separar en el ledger los cierres de
+     *selección/política/scope* de los de *calidad* (estos siguen en 0).
+- ✅ Bien: cada cierre outward-facing se hizo **con orden explícita del accionista** y comentario de retiro cortés.
