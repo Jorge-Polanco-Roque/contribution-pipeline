@@ -12,7 +12,7 @@ _Última actualización: 2026-09-13_
 |---|---|
 | ✅ PRs mergeados | **7** — [smallvec#496](https://github.com/servo/rust-smallvec/pull/496) 🟢 · [airi#2408](https://github.com/moeru-ai/airi/pull/2408) 🟢 · [boa#5500](https://github.com/boa-dev/boa/pull/5500) 🟢 · [onefetch#1853](https://github.com/o2sh/onefetch/pull/1853) 🟢 · [tract#2749](https://github.com/sonos/tract/pull/2749) 🟢 · [findutils#857](https://github.com/uutils/findutils/pull/857) 🟢 · [diplomat#1269](https://github.com/rust-diplomat/diplomat/pull/1269) 🟢 |
 | 📤 PRs enviados (reales) | **38** (7 🟢 · 21 🟡 en review · 10 🔴 cerrados) + unavatar código mergeado vía #661 (sin crédito) |
-| 🎯 Tasa de aceptación (North Star) | **41%** (7/17 resueltos; 19 en review) — 3 cierres de foco propio (nannou/yq repos inactivos, AMICI scope del maintainer), ninguno por calidad |
+| 🎯 Tasa de aceptación (North Star) | **41%** (7/17 resueltos; 21 en review) — 3 cierres de foco propio (nannou/yq repos inactivos, AMICI scope del maintainer), ninguno por calidad |
 | 📦 Repos distintos con merge | **7** (servo/rust-smallvec, moeru-ai/airi, boa-dev/boa, o2sh/onefetch, sonos/tract, uutils/findutils, rust-diplomat/diplomat) |
 | 🏅 GitHub Pull Shark | **7/16 para Bronze** (solo cuentan repos ajenos; faltan 9) |
 | ⭐ Estrellas / seguidores ganados | **0** |
@@ -23,7 +23,7 @@ _Última actualización: 2026-09-13_
 
 | KPI | Valor | Meta |
 |---|---|---|
-| PRs enviados | **34** | — |
+| PRs enviados | **38** | — |
 | Merges ganados | **7** ✅ (+ unavatar código vía #661, sin crédito) | ≥1 en 2 semanas (gate F0) |
 | **Tasa de aceptación** (North Star) | **41%** (7/17 resueltos) — cierres por *duplicado/política/declinado/demo/scope-maintainer/repo-inactivo*, no calidad | ≥ 50% |
 | Repos distintos con merge | **7** | crecer sostenido |
