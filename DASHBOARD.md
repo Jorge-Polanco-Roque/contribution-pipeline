@@ -10,11 +10,11 @@ _Última actualización: 2026-09-13_
 
 | Métrica | Valor |
 |---|---|
-| ✅ PRs mergeados | **7** — [smallvec#496](https://github.com/servo/rust-smallvec/pull/496) 🟢 · [airi#2408](https://github.com/moeru-ai/airi/pull/2408) 🟢 · [boa#5500](https://github.com/boa-dev/boa/pull/5500) 🟢 · [onefetch#1853](https://github.com/o2sh/onefetch/pull/1853) 🟢 · [tract#2749](https://github.com/sonos/tract/pull/2749) 🟢 · [findutils#857](https://github.com/uutils/findutils/pull/857) 🟢 · [diplomat#1269](https://github.com/rust-diplomat/diplomat/pull/1269) 🟢 |
-| 📤 PRs enviados (reales) | **38** (7 🟢 · 21 🟡 en review · 10 🔴 cerrados) + unavatar código mergeado vía #661 (sin crédito) |
-| 🎯 Tasa de aceptación (North Star) | **41%** (7/17 resueltos; 21 en review) — 3 cierres de foco propio (nannou/yq repos inactivos, AMICI scope del maintainer), ninguno por calidad |
-| 📦 Repos distintos con merge | **7** (servo/rust-smallvec, moeru-ai/airi, boa-dev/boa, o2sh/onefetch, sonos/tract, uutils/findutils, rust-diplomat/diplomat) |
-| 🏅 GitHub Pull Shark | **7/16 para Bronze** (solo cuentan repos ajenos; faltan 9) |
+| ✅ PRs mergeados | **8** — [smallvec#496](https://github.com/servo/rust-smallvec/pull/496) 🟢 · [airi#2408](https://github.com/moeru-ai/airi/pull/2408) 🟢 · [boa#5500](https://github.com/boa-dev/boa/pull/5500) 🟢 · [onefetch#1853](https://github.com/o2sh/onefetch/pull/1853) 🟢 · [tract#2749](https://github.com/sonos/tract/pull/2749) 🟢 · [findutils#857](https://github.com/uutils/findutils/pull/857) 🟢 · [diplomat#1269](https://github.com/rust-diplomat/diplomat/pull/1269) 🟢 · [git-cliff#1627](https://github.com/orhun/git-cliff/pull/1627) 🟢 |
+| 📤 PRs enviados (reales) | **38** (8 🟢 · 20 🟡 en review · 10 🔴 cerrados) + unavatar código mergeado vía #661 (sin crédito) |
+| 🎯 Tasa de aceptación (North Star) | **44%** (8/18 resueltos; 20 en review) — 3 cierres de foco propio (nannou/yq repos inactivos, AMICI scope del maintainer), ninguno por calidad |
+| 📦 Repos distintos con merge | **8** (servo/rust-smallvec, moeru-ai/airi, boa-dev/boa, o2sh/onefetch, sonos/tract, uutils/findutils, rust-diplomat/diplomat, orhun/git-cliff) |
+| 🏅 GitHub Pull Shark | **8/16 para Bronze** (solo cuentan repos ajenos; faltan 8) |
 | ⭐ Estrellas / seguidores ganados | **0** |
 | 🔥 Racha de actividad (semanas seguidas con ≥1 aporte) | **2** |
 | ⏱️ Horas del accionista usadas | **0** |
@@ -24,10 +24,10 @@ _Última actualización: 2026-09-13_
 | KPI | Valor | Meta |
 |---|---|---|
 | PRs enviados | **38** | — |
-| Merges ganados | **7** ✅ (+ unavatar código vía #661, sin crédito) | ≥1 en 2 semanas (gate F0) |
-| **Tasa de aceptación** (North Star) | **41%** (7/17 resueltos) — cierres por *duplicado/política/declinado/demo/scope-maintainer/repo-inactivo*, no calidad | ≥ 50% |
-| Repos distintos con merge | **7** | crecer sostenido |
-| Contribuciones en `active/` | **21 en review** (airi #2414/#2415 + delta/mystmd/soldeer/harper/RustPython/sktime/aeon/image/statsforecast/coreutils/git-cliff/sed/numbat/jq/gum + **Daft #7508/sail #2580/nushell #19021/foundry #16841 nuevos**); onefetch/tract/findutils/diplomat mergeados; AMICI/nannou/yq cerrados; OZ #6620 en espera (gated) | en review |
+| Merges ganados | **8** ✅ (+ unavatar código vía #661, sin crédito) | ≥1 en 2 semanas (gate F0) |
+| **Tasa de aceptación** (North Star) | **44%** (8/18 resueltos) — cierres por *duplicado/política/declinado/demo/scope-maintainer/repo-inactivo*, no calidad | ≥ 50% |
+| Repos distintos con merge | **8** | crecer sostenido |
+| Contribuciones en `active/` | **20 en review** (airi #2414/#2415 + delta/mystmd/soldeer/harper/RustPython/sktime/aeon/image/statsforecast/coreutils/git-cliff/sed/numbat/jq/gum + **Daft #7508/sail #2580/nushell #19021/foundry #16841 nuevos**); onefetch/tract/findutils/diplomat mergeados; AMICI/nannou/yq cerrados; OZ #6620 en espera (gated) | en review |
 | Higiene (secretos/deps vulnerables introducidas) | 0 | **0 siempre** (lo fuerza el gate) |
 
 ## Contribuciones (registro)
@@ -56,7 +56,7 @@ _Última actualización: 2026-09-13_
 | C023 | moeru-ai/airi #2181 → [#2422](https://github.com/moeru-ai/airi/pull/2422) | TS/Electron-desktop | 🔴 **cerrado** ("Duplicated" por @nekomeowww) | — | — |
 | C024 | moeru-ai/airi #2400 → [#2412](https://github.com/moeru-ai/airi/pull/2412) | TS/Electron-desktop | 🔴 **cerrado por autor** (2026-09-03): el fix era correcto (cap+scroll del drawer en ventana pequeña), pero nayounsang pidió video/GIF y el demo no logró mostrarlo fielmente en la app Electron real → cerrado por decisión del accionista | — | — |
 | C025 | uutils/findutils #778 → [#857](https://github.com/uutils/findutils/pull/857) | Rust/devtools | 🟢 **MERGEADO** (cakebaker) 2026-09-09 — mindepth>maxdepth→vacío, compat GNU; test de integración pedido por sylvestre añadido | ✅ | — |
-| C026 | Batch «10 quick wins / 10 repos» → [onefetch #1853](https://github.com/o2sh/onefetch/pull/1853) 🟢 · [numbat #888](https://github.com/sharkdp/numbat/pull/888) · [jq #3623](https://github.com/jqlang/jq/pull/3623) · [yq #2849](https://github.com/mikefarah/yq/pull/2849) 🔴 · [gum #1141](https://github.com/charmbracelet/gum/pull/1141) · [git-cliff #1627](https://github.com/orhun/git-cliff/pull/1627) | multi | 🟢 **onefetch MERGEADO** (o2sh) 2026-09-08. 🔴 **yq #2849 cerrado por foco** 2026-09-12 — mikefarah acumula PRs de externos sin merge (0 merges en el periodo, sin review en 12d); baja P(merge) estructural. Resto 🟡 abiertos: numbat/jq/gum/git-cliff | ✅ (1/6, 1🔴) | — |
+| C026 | Batch «10 quick wins / 10 repos» → [onefetch #1853](https://github.com/o2sh/onefetch/pull/1853) 🟢 · [numbat #888](https://github.com/sharkdp/numbat/pull/888) · [jq #3623](https://github.com/jqlang/jq/pull/3623) · [yq #2849](https://github.com/mikefarah/yq/pull/2849) 🔴 · [gum #1141](https://github.com/charmbracelet/gum/pull/1141) · [git-cliff #1627](https://github.com/orhun/git-cliff/pull/1627) 🟢 | multi | 🟢 **onefetch MERGEADO** (o2sh) 2026-09-08 · 🟢 **git-cliff #1627 MERGEADO** (orhun) 2026-09-13 — rehecho a 1 commit + 2º fixture #1369 tras su review. 🔴 **yq #2849 cerrado por foco** 2026-09-12 (mikefarah no mergea externos). Resto 🟡 abiertos: numbat/jq/gum | ✅ (2/6, 1🔴) | — |
 | C027 | delta-io/delta-kernel-rs #2749 → [#3250](https://github.com/delta-io/delta-kernel-rs/pull/3250) | Rust/Delta-Lake (358★) | 🟡 review (**bug de correctitud**: decimales negativos zero-extended → row-group skipping poda filas; fix sign-extensión + test que falla sin fix; clippy/tests verdes; repo pro-IA) | — | — |
 | C028 | rust-diplomat/diplomat #1126 → [#1269](https://github.com/rust-diplomat/diplomat/pull/1269) | Rust/FFI (901★) | 🟢 **MERGEADO** (tyler-zeromatter) 2026-09-09 — 2ª ronda de review: en vez de rechazar `None`, `char32_t` ahora default-init a `U'\0'` (como C struct); test `PrimitiveStruct(...,None,...)` pasa sin excepción. **Un ping oportuno tras atender el review lo destrabó.** | ✅ | — |
 | C029 | AMICI-dev/AMICI #918 → [#3235](https://github.com/AMICI-dev/AMICI/pull/3235) | Python/ML-científico (144★) | 🔴 **cerrado sin merge** (dweindl) 2026-09-10 — no por calidad: *"easier for me to pick up directly than to review and iterate on"*, el subsistema MeasurementChannel (con/sin PEtab) tiene mucho contexto tácito difícil de transmitir en review. Lo había telegrafiado ("not that simple, requires more thought"). Código validado localmente estaba correcto. | — | — |
@@ -142,6 +142,7 @@ _Última actualización: 2026-09-13_
 | 2026-09-12 | 🔧 **2 rounds de review profundos atendidos:** RustPython·youknowone (aplicar patrón de `pop` a `setdefault` + quitar `setdefault_entry` muerta) y **soldeer·beeb (review de 5 puntos)** — mi enfoque previo (sufijo solo en `Add`) era el bug; movida la inferencia al path compartido + heurístico endurecido (`.sol` real + case del dir). 🧹 **Poda de cartera:** cerrados **nannou #1096** (repo dormido ~2m) y **yq #2849** (mikefarah no mergea externos) por foco. Tasa **41%** (7/17). | **7** |
 | 2026-09-13 | ✅ **delta #3250 APROBADO** por chiinlquah (el nudge lo destrabó) — 2 nits atendidos (tests de borde + PR body). 🎯 **Scouting + 3 issues en paralelo en repos nuevos** (>2k★, mergean externos, feedback rápido): 2 PRs abiertos — **Daft [#7508](https://github.com/Eventual-Inc/Daft/pull/7508)** (validación de firma `@daft.func`) y **sail [#2580](https://github.com/lakehq/sail/pull/2580)** (nombres duplicados nested); **marimo #6250 declinado** (tz es de Postgres, no de marimo) con comentario-diagnóstico. 2ª ronda de scouting → **nushell [#19021](https://github.com/nushell/nushell/pull/19021)** (flag `--fail-if-exists`, sancionado por el maintainer). **polars descartado (Filtro Cero): cierra PRs de agentes** ("Agents aren't allowed to make PRs") — verificar veto anti-agente *de facto*, no solo el CONTRIBUTING. Enviados 34→37; en review 20. | **7** |
 | 2026-09-13 | 🎯 **3ª ronda de scouting (foco Solidity/EVM):** PR **foundry [#16841](https://github.com/foundry-rs/foundry/pull/16841)** (`forge lint --report-unused-suppressions`, spec del maintainer, con disclosure IA). **OZ #6620 en espera**: fix listo pero el maintainer lo tiene *gated* hasta un 2º consumidor del helper. **viem descartado** (cierra fixes de externos sin merge; CONTRIBUTING "humans, not bots"). Enviados 37→38; en review 21. | **7** |
+| 2026-09-13 | 🟢 **8º MERGE: git-cliff [#1627](https://github.com/orhun/git-cliff/pull/1627)** (orhun) — cerró el ciclo tras el review (1 commit limpio + fixture del caso relativo #1369). 🔧 **Daft #7508**: CI `style`/mypy en rojo → arreglado (los `@overload` de `__call__` debían quedar pegados a la impl; el helper nuevo se había colado en medio); mypy del repo verde local. Pull Shark **8/16**. | **8** |
 
 ## Notas
 
