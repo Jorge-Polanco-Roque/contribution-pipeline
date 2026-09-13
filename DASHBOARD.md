@@ -4,15 +4,15 @@
 > evento. El objetivo es **reputación pública en el GitHub del accionista**, no
 > dinero. North Star = tasa de aceptación de PRs.
 
-_Última actualización: 2026-09-12_
+_Última actualización: 2026-09-13_
 
 ## Consolidado
 
 | Métrica | Valor |
 |---|---|
 | ✅ PRs mergeados | **7** — [smallvec#496](https://github.com/servo/rust-smallvec/pull/496) 🟢 · [airi#2408](https://github.com/moeru-ai/airi/pull/2408) 🟢 · [boa#5500](https://github.com/boa-dev/boa/pull/5500) 🟢 · [onefetch#1853](https://github.com/o2sh/onefetch/pull/1853) 🟢 · [tract#2749](https://github.com/sonos/tract/pull/2749) 🟢 · [findutils#857](https://github.com/uutils/findutils/pull/857) 🟢 · [diplomat#1269](https://github.com/rust-diplomat/diplomat/pull/1269) 🟢 |
-| 📤 PRs enviados (reales) | **34** (7 🟢 · 17 🟡 en review · 10 🔴 cerrados) + unavatar código mergeado vía #661 (sin crédito) |
-| 🎯 Tasa de aceptación (North Star) | **41%** (7/17 resueltos; 17 en review) — 3 cierres de foco propio (nannou/yq repos inactivos, AMICI scope del maintainer), ninguno por calidad |
+| 📤 PRs enviados (reales) | **36** (7 🟢 · 19 🟡 en review · 10 🔴 cerrados) + unavatar código mergeado vía #661 (sin crédito) |
+| 🎯 Tasa de aceptación (North Star) | **41%** (7/17 resueltos; 19 en review) — 3 cierres de foco propio (nannou/yq repos inactivos, AMICI scope del maintainer), ninguno por calidad |
 | 📦 Repos distintos con merge | **7** (servo/rust-smallvec, moeru-ai/airi, boa-dev/boa, o2sh/onefetch, sonos/tract, uutils/findutils, rust-diplomat/diplomat) |
 | 🏅 GitHub Pull Shark | **7/16 para Bronze** (solo cuentan repos ajenos; faltan 9) |
 | ⭐ Estrellas / seguidores ganados | **0** |
@@ -27,7 +27,7 @@ _Última actualización: 2026-09-12_
 | Merges ganados | **7** ✅ (+ unavatar código vía #661, sin crédito) | ≥1 en 2 semanas (gate F0) |
 | **Tasa de aceptación** (North Star) | **41%** (7/17 resueltos) — cierres por *duplicado/política/declinado/demo/scope-maintainer/repo-inactivo*, no calidad | ≥ 50% |
 | Repos distintos con merge | **7** | crecer sostenido |
-| Contribuciones en `active/` | **17 en review** (airi #2414/#2415 + delta/mystmd/soldeer/harper/RustPython/sktime/aeon/image/statsforecast/coreutils/git-cliff/sed/numbat/jq/gum); onefetch/tract/findutils/diplomat mergeados; AMICI/nannou/yq cerrados | en review |
+| Contribuciones en `active/` | **19 en review** (airi #2414/#2415 + delta/mystmd/soldeer/harper/RustPython/sktime/aeon/image/statsforecast/coreutils/git-cliff/sed/numbat/jq/gum + **Daft #7508/sail #2580 nuevos**); onefetch/tract/findutils/diplomat mergeados; AMICI/nannou/yq cerrados | en review |
 | Higiene (secretos/deps vulnerables introducidas) | 0 | **0 siempre** (lo fuerza el gate) |
 
 ## Contribuciones (registro)
@@ -62,6 +62,9 @@ _Última actualización: 2026-09-12_
 | C029 | AMICI-dev/AMICI #918 → [#3235](https://github.com/AMICI-dev/AMICI/pull/3235) | Python/ML-científico (144★) | 🔴 **cerrado sin merge** (dweindl) 2026-09-10 — no por calidad: *"easier for me to pick up directly than to review and iterate on"*, el subsistema MeasurementChannel (con/sin PEtab) tiene mucho contexto tácito difícil de transmitir en review. Lo había telegrafiado ("not that simple, requires more thought"). Código validado localmente estaba correcto. | — | — |
 | C030 | jupyter-book/mystmd #2984 → [#3047](https://github.com/jupyter-book/mystmd/pull/3047) | TS/Jupyter-MyST (519★) | 🟡 review (Typst export rompía con glossary refs multi-palabra `<term-x y>` inválido; fix root-cause `label()` (empareja target), no slugify; test que falla sin fix; **verificado end-to-end** (tsc+71 tests+prettier+eslint, bun/turbo); changeset + disclosure IA; **+fix seguridad** escape de comillas tras review) | — | — |
 | C031 | mario-eth/soldeer #236 → [#406](https://github.com/mario-eth/soldeer/pull/406) | Rust/Foundry-devtools (393★) | 🟡 review (maintainers lo pidieron: inferir subdir de fuentes `src`/`contracts` en remappings como forge; **restricción de beeb "no permanente" respetada** (el test que añadí cazó un defecto en la preservación → corregido); 161 tests + 2 nuevos verdes) | — | — |
+| C032 | Eventual-Inc/Daft #5462 → [#7508](https://github.com/Eventual-Inc/Daft/pull/7508) | Rust+Python/ML-data (5.7k★) | 🟡 review (scouting 2026-09-13: repo que mergea externos en días, IA permitida) — bug: `@daft.func` ignoraba su firma de tipos → error opaco en runtime; fix valida en planning time como las exprs nativas; test que falla sin fix; 224 tests+clippy+ruff verdes. Aprovechó el PR abandonado #5470 (evitó el reorder del optimizer que lo hundió) | — | — |
+| C033 | lakehq/sail #325 → [#2580](https://github.com/lakehq/sail/pull/2580) | Rust+Python/Spark-engine (3.4k★) | 🟡 review (scouting 2026-09-13: 31/31 últimos merges de externos) — good-first-issue: nombres de campo duplicados en structs nested; replica `deduplicateFieldNames` de Spark + **restore de nombres originales** vía metadata Arrow (schema físico único, cliente ve originales); tests Rust verdes (los de compat PySpark requieren Spark+servidor vivo → pedí CI) | — | — |
+| C034 | marimo-team/marimo #6250 | Python+TS/notebooks (22.7k★) | ⚪ **evaluado → declinado** 2026-09-13 (NO cuenta como enviado): investigado a fondo, la pérdida de timezone es de **Postgres** (descarta el offset al almacenar en UTC), no de marimo; lo pedido es un feature request (config de tz), no un bug. Comentario con el diagnóstico dejado en el issue (aporta sin gastar un PR falso) | — | — |
 
 > ✅ **Nota de reputación:** **7 merges reales en 7 repos distintos** (~73k★ combinadas) — servo #496 (servo
 > **veta IA**, vetado), **airi #2408** (48.5k★), **boa #5500** (7.5k★, motor JS en Rust), **onefetch #1853**
@@ -134,6 +137,7 @@ _Última actualización: 2026-09-12_
 | 2026-09-09 | 🟢🟢 **6º y 7º MERGE:** [findutils #857](https://github.com/uutils/findutils/pull/857) (cakebaker) + [diplomat #1269](https://github.com/rust-diplomat/diplomat/pull/1269) (tyler — **el ping oportuno lo cerró**). **Tasa de aceptación 50%** (meta alcanzada). **sed #544:** test unitario in-process para recuperar `codecov/project` (codecov no cuenta cobertura de subprocesos/integración). | **7** |
 | 2026-09-10 | ✅ **sed #544 codecov → verde** (el unit test in-process funcionó). 🔴 **AMICI #3235 cerrado** por dweindl — no por calidad: prefiere tomarlo él por el contexto tácito de MeasurementChannel (con/sin PEtab). Tasa 50%→**47%** (7/15). Lección de selección → SOUL §5 (issues en subsistemas *entangled* con "requires more thought" = baja P(merge) para externos). | **7** |
 | 2026-09-12 | 🔧 **2 rounds de review profundos atendidos:** RustPython·youknowone (aplicar patrón de `pop` a `setdefault` + quitar `setdefault_entry` muerta) y **soldeer·beeb (review de 5 puntos)** — mi enfoque previo (sufijo solo en `Add`) era el bug; movida la inferencia al path compartido + heurístico endurecido (`.sol` real + case del dir). 🧹 **Poda de cartera:** cerrados **nannou #1096** (repo dormido ~2m) y **yq #2849** (mikefarah no mergea externos) por foco. Tasa **41%** (7/17). | **7** |
+| 2026-09-13 | ✅ **delta #3250 APROBADO** por chiinlquah (el nudge lo destrabó) — 2 nits atendidos (tests de borde + PR body). 🎯 **Scouting + 3 issues en paralelo en repos nuevos** (>2k★, mergean externos, feedback rápido): 2 PRs abiertos — **Daft [#7508](https://github.com/Eventual-Inc/Daft/pull/7508)** (validación de firma `@daft.func`) y **sail [#2580](https://github.com/lakehq/sail/pull/2580)** (nombres duplicados nested); **marimo #6250 declinado** (tz es de Postgres, no de marimo) con comentario-diagnóstico. Enviados 34→36; en review 19. | **7** |
 
 ## Notas
 
