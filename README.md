@@ -126,14 +126,25 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 <!-- PRS:START -->
 | PR | Repo | Cambio | Estado |
 |---|---|---|---|
-| [mario-eth/soldeer #406](https://github.com/mario-eth/soldeer/pull/406) | `mario-eth/soldeer` | feat(remappings): infer source directory suffix like forge | 🟡 abierto · 👀 en revisión |
+| [topgrade-rs/topgrade #2338](https://github.com/topgrade-rs/topgrade/pull/2338) | `topgrade-rs/topgrade` | fix(toolbx): don't mistake openSUSE's toolbox for containers toolbx | 🟡 abierto |
+| [sharkdp/bat #4011](https://github.com/sharkdp/bat/pull/4011) | `sharkdp/bat` | docs: clarify supported custom theme format in the man page | 🟡 abierto |
+| [topgrade-rs/topgrade #2337](https://github.com/topgrade-rs/topgrade/pull/2337) | `topgrade-rs/topgrade` | fix(toolbx): don't mistake openSUSE's toolbox for containers toolbx | 🔴 cerrado |
+| [woodpecker-ci/woodpecker #7141](https://github.com/woodpecker-ci/woodpecker/pull/7141) | `woodpecker-ci/woodpecker` | fix(server): accept host:port registry addresses so credentials can match | 🟡 abierto |
+| [goauthentik/authentik #26111](https://github.com/goauthentik/authentik/pull/26111) | `goauthentik/authentik` | flows: strip login_hint from next on cancel to prevent loop | 🟡 abierto |
+| [open-policy-agent/conftest #1425](https://github.com/open-policy-agent/conftest/pull/1425) | `open-policy-agent/conftest` | fix(sarif): use specific rule names in SARIF ruleId | 🟡 abierto |
+| [apache/iggy #4173](https://github.com/apache/iggy/pull/4173) | `apache/iggy` | feat(python): expose update_user options | 🟢 mergeado |
+| [foundry-rs/foundry #16841](https://github.com/foundry-rs/foundry/pull/16841) | `foundry-rs/foundry` | feat(lint): report unused inline suppressions | 🟢 mergeado |
+| [nushell/nushell #19021](https://github.com/nushell/nushell/pull/19021) | `nushell/nushell` | feat(mkdir): add --fail-if-exists flag to error on existing directory | 🟡 abierto |
+| [lakehq/sail #2580](https://github.com/lakehq/sail/pull/2580) | `lakehq/sail` | feat: support duplicated field names in nested Spark struct schemas | 🟡 abierto |
+| [Eventual-Inc/Daft #7508](https://github.com/Eventual-Inc/Daft/pull/7508) | `Eventual-Inc/Daft` | fix: validate @daft.func input types at planning time | 🟡 abierto |
+| [mario-eth/soldeer #406](https://github.com/mario-eth/soldeer/pull/406) | `mario-eth/soldeer` | feat(remappings): infer source directory suffix like forge | 🟡 abierto |
 | [jupyter-book/mystmd #3047](https://github.com/jupyter-book/mystmd/pull/3047) | `jupyter-book/mystmd` | fix(myst-to-typst): use label() for cross-references whose identifier has spaces | 🟡 abierto |
-| [AMICI-dev/AMICI #3235](https://github.com/AMICI-dev/AMICI/pull/3235) | `AMICI-dev/AMICI` | Warn about observation-model observables absent from the PySB model | 🟡 abierto · 👀 en revisión |
+| [AMICI-dev/AMICI #3235](https://github.com/AMICI-dev/AMICI/pull/3235) | `AMICI-dev/AMICI` | Warn about observation-model observables absent from the PySB model | 🔴 cerrado |
 | [rust-diplomat/diplomat #1269](https://github.com/rust-diplomat/diplomat/pull/1269) | `rust-diplomat/diplomat` | fix: reject None in the nanobind char32_t caster instead of crashing | 🟢 mergeado |
-| [delta-io/delta-kernel-rs #3250](https://github.com/delta-io/delta-kernel-rs/pull/3250) | `delta-io/delta-kernel-rs` | fix: sign-extend negative decimal statistics in row-group skipping | 🟡 abierto · 👀 en revisión |
-| [orhun/git-cliff #1627](https://github.com/orhun/git-cliff/pull/1627) | `orhun/git-cliff` | fix(args): resolve --workdir to a repo-relative include path | 🟡 abierto |
+| [delta-io/delta-kernel-rs #3250](https://github.com/delta-io/delta-kernel-rs/pull/3250) | `delta-io/delta-kernel-rs` | fix: sign-extend negative decimal statistics in row-group skipping | 🟡 abierto |
+| [orhun/git-cliff #1627](https://github.com/orhun/git-cliff/pull/1627) | `orhun/git-cliff` | fix(args): resolve --workdir to a repo-relative include path | 🟢 mergeado |
 | [charmbracelet/gum #1141](https://github.com/charmbracelet/gum/pull/1141) | `charmbracelet/gum` | fix(format): wrap markdown tables to terminal width | 🟡 abierto |
-| [mikefarah/yq #2849](https://github.com/mikefarah/yq/pull/2849) | `mikefarah/yq` | Preserve file permissions on in-place edits | 🔴 cerrado (foco: maintainer no mergea externos) |
+| [mikefarah/yq #2849](https://github.com/mikefarah/yq/pull/2849) | `mikefarah/yq` | Preserve file permissions on in-place edits | 🔴 cerrado |
 | [jqlang/jq #3623](https://github.com/jqlang/jq/pull/3623) | `jqlang/jq` | Fix inconsistent `delpaths` behavior with mixed negative indices | 🟡 abierto |
 | [o2sh/onefetch #1853](https://github.com/o2sh/onefetch/pull/1853) | `o2sh/onefetch` | Suggest reftable migration when HEAD can't be read | 🟢 mergeado |
 | [sharkdp/numbat #888](https://github.com/sharkdp/numbat/pull/888) | `sharkdp/numbat` | Load currency units on demand for `info` and `list` commands | 🟡 abierto |
@@ -143,25 +154,25 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 | [moeru-ai/airi #2414](https://github.com/moeru-ai/airi/pull/2414) | `moeru-ai/airi` | fix(pipelines-audio): preserve multi-code-unit grapheme clusters in TTS chunking | 🟡 abierto |
 | [moeru-ai/airi #2413](https://github.com/moeru-ai/airi/pull/2413) | `moeru-ai/airi` | feat(stage-ui): support separate display text and TTS pronunciation via ruby annotations | 🔴 cerrado |
 | [scikit-image/scikit-image #8306](https://github.com/scikit-image/scikit-image/pull/8306) | `scikit-image/scikit-image` | Fix pyramid_laplacian to build a reconstructable Laplacian pyramid | 🔴 cerrado |
-| [Nixtla/statsforecast #1225](https://github.com/Nixtla/statsforecast/pull/1225) | `Nixtla/statsforecast` | docs: document both ConformalSeasonalPool interval thresholds and validate n_samples | 🟡 abierto · 👀 en revisión |
-| [aeon-toolkit/aeon #3773](https://github.com/aeon-toolkit/aeon/pull/3773) | `aeon-toolkit/aeon` | [BUG] Preserve input dtype in shift_scale_invariant zero-padding | 🟡 abierto · 👀 en revisión |
-| [sktime/sktime #10967](https://github.com/sktime/sktime/pull/10967) | `sktime/sktime` | [BUG] Fix get_slice handling of zero and omitted bounds | 🟡 abierto · 👀 en revisión |
+| [Nixtla/statsforecast #1225](https://github.com/Nixtla/statsforecast/pull/1225) | `Nixtla/statsforecast` | docs: document both ConformalSeasonalPool interval thresholds and validate n_samples | 🟡 abierto |
+| [aeon-toolkit/aeon #3773](https://github.com/aeon-toolkit/aeon/pull/3773) | `aeon-toolkit/aeon` | [BUG] Preserve input dtype in shift_scale_invariant zero-padding | 🟡 abierto |
+| [sktime/sktime #10967](https://github.com/sktime/sktime/pull/10967) | `sktime/sktime` | [BUG] Fix get_slice handling of zero and omitted bounds | 🟡 abierto |
 | [sonos/tract #2749](https://github.com/sonos/tract/pull/2749) | `sonos/tract` | onnx: lower SimplifiedLayerNormalization to RMS norm, not LayerNorm | 🟢 mergeado |
-| [nannou-org/nannou #1096](https://github.com/nannou-org/nannou/pull/1096) | `nannou-org/nannou` | fix(draw): close the ellipse outline path so strokes don't leave a gap | 🔴 cerrado (foco: repo inactivo ~2 meses) |
-| [image-rs/image #3107](https://github.com/image-rs/image/pull/3107) | `image-rs/image` | fix(imageops): premultiply alpha in blur to prevent color bleed | 🟡 abierto · 👀 en revisión |
+| [nannou-org/nannou #1096](https://github.com/nannou-org/nannou/pull/1096) | `nannou-org/nannou` | fix(draw): close the ellipse outline path so strokes don't leave a gap | 🔴 cerrado |
+| [image-rs/image #3107](https://github.com/image-rs/image/pull/3107) | `image-rs/image` | fix(imageops): premultiply alpha in blur to prevent color bleed | 🟡 abierto |
 | [boa-dev/boa #5500](https://github.com/boa-dev/boa/pull/5500) | `boa-dev/boa` | fix(ast): quote non-identifier object property keys in interned output | 🟢 mergeado |
 | [microlinkhq/unavatar #660](https://github.com/microlinkhq/unavatar/pull/660) | `microlinkhq/unavatar` | feat(providers): add Kick avatar provider | 🔴 cerrado |
 | [moeru-ai/airi #2412](https://github.com/moeru-ai/airi/pull/2412) | `moeru-ai/airi` | fix(stage-tamagotchi): keep expanded controls island reachable on small windows | 🔴 cerrado |
 | [openai/openai-agents-python #4774](https://github.com/openai/openai-agents-python/pull/4774) | `openai/openai-agents-python` | fix(sandbox): don't corrupt a UTF-8 char split across PTY windows | 🔴 cerrado |
 | [uutils/coreutils #14264](https://github.com/uutils/coreutils/pull/14264) | `uutils/coreutils` | ls: honor LC_NUMERIC for the -h decimal separator | 🟡 abierto |
 | [moeru-ai/airi #2408](https://github.com/moeru-ai/airi/pull/2408) | `moeru-ai/airi` | fix(better-ws): publish the package so server-sdk installs | 🟢 mergeado |
-| [Automattic/harper #4253](https://github.com/Automattic/harper/pull/4253) | `Automattic/harper` | Add a linter for confusing `wary` and `weary` | 🟡 abierto · 👀 en revisión |
-| [RustPython/RustPython #8610](https://github.com/RustPython/RustPython/pull/8610) | `RustPython/RustPython` | Give dict a CPython-style message for unhashable keys | 🟡 abierto · 👀 en revisión |
+| [Automattic/harper #4253](https://github.com/Automattic/harper/pull/4253) | `Automattic/harper` | Add a linter for confusing `wary` and `weary` | 🟡 abierto |
+| [RustPython/RustPython #8610](https://github.com/RustPython/RustPython/pull/8610) | `RustPython/RustPython` | Give dict a CPython-style message for unhashable keys | 🟡 abierto |
 | [uutils/sed #544](https://github.com/uutils/sed/pull/544) | `uutils/sed` | Implement GNU R (read one line from file) command | 🟡 abierto |
 | [servo/rust-smallvec #500](https://github.com/servo/rust-smallvec/pull/500) | `servo/rust-smallvec` | Add try_with_capacity fallible constructor | 🔴 cerrado |
 | [servo/rust-smallvec #496](https://github.com/servo/rust-smallvec/pull/496) | `servo/rust-smallvec` | Implement arbitrary::Arbitrary for SmallVec | 🟢 mergeado |
 
-<sub>Actualizado: 2026-09-12 · 17 abiertos · 7 mergeados · 10 cerrados · tasa de aceptación 41% (0 cierres por calidad) · (workflow semanal).</sub>
+<sub>Actualizado automáticamente: 2026-09-14 (workflow semanal).</sub>
 <!-- PRS:END -->
 
 > Detalle por contribución en [`contributions/`](contributions/). Selección + pre-lanzamiento en [`LAUNCH-PLAN.md`](LAUNCH-PLAN.md).
