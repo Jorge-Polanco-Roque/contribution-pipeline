@@ -11,8 +11,8 @@ _Última actualización: 2026-09-13_
 | Métrica | Valor |
 |---|---|
 | ✅ PRs mergeados | **8** — [smallvec#496](https://github.com/servo/rust-smallvec/pull/496) 🟢 · [airi#2408](https://github.com/moeru-ai/airi/pull/2408) 🟢 · [boa#5500](https://github.com/boa-dev/boa/pull/5500) 🟢 · [onefetch#1853](https://github.com/o2sh/onefetch/pull/1853) 🟢 · [tract#2749](https://github.com/sonos/tract/pull/2749) 🟢 · [findutils#857](https://github.com/uutils/findutils/pull/857) 🟢 · [diplomat#1269](https://github.com/rust-diplomat/diplomat/pull/1269) 🟢 · [git-cliff#1627](https://github.com/orhun/git-cliff/pull/1627) 🟢 |
-| 📤 PRs enviados (reales) | **40** (8 🟢 · 22 🟡 en review · 10 🔴 cerrados) + unavatar código mergeado vía #661 (sin crédito) |
-| 🎯 Tasa de aceptación (North Star) | **44%** (8/18 resueltos; 22 en review) — 3 cierres de foco propio (nannou/yq repos inactivos, AMICI scope del maintainer), ninguno por calidad |
+| 📤 PRs enviados (reales) | **41** (8 🟢 · 23 🟡 en review · 10 🔴 cerrados) + unavatar código mergeado vía #661 (sin crédito) |
+| 🎯 Tasa de aceptación (North Star) | **44%** (8/18 resueltos; 23 en review) — 3 cierres de foco propio (nannou/yq repos inactivos, AMICI scope del maintainer), ninguno por calidad |
 | 📦 Repos distintos con merge | **8** (servo/rust-smallvec, moeru-ai/airi, boa-dev/boa, o2sh/onefetch, sonos/tract, uutils/findutils, rust-diplomat/diplomat, orhun/git-cliff) |
 | 🏅 GitHub Pull Shark | **8/16 para Bronze** (solo cuentan repos ajenos; faltan 8) |
 | ⭐ Estrellas / seguidores ganados | **0** |
@@ -27,7 +27,7 @@ _Última actualización: 2026-09-13_
 | Merges ganados | **8** ✅ (+ unavatar código vía #661, sin crédito) | ≥1 en 2 semanas (gate F0) |
 | **Tasa de aceptación** (North Star) | **44%** (8/18 resueltos) — cierres por *duplicado/política/declinado/demo/scope-maintainer/repo-inactivo*, no calidad | ≥ 50% |
 | Repos distintos con merge | **8** | crecer sostenido |
-| Contribuciones en `active/` | **22 en review** (airi #2414/#2415 + delta/mystmd/soldeer/harper/RustPython/sktime/aeon/image/statsforecast/coreutils/sed/numbat/jq/gum/Daft #7508/sail #2580/nushell #19021/foundry #16841 + **iggy #4173/conftest #1425 nuevos**); onefetch/tract/findutils/diplomat/git-cliff mergeados; AMICI/nannou/yq cerrados; OZ #6620 en espera, documenso filtro-0 | en review |
+| Contribuciones en `active/` | **22 en review** (airi #2414/#2415 + delta/mystmd/soldeer/harper/RustPython/sktime/aeon/image/statsforecast/coreutils/sed/numbat/jq/gum/Daft #7508/sail #2580/nushell #19021/foundry #16841 + **iggy #4173/conftest #1425/goauthentik #26111 nuevos**); onefetch/tract/findutils/diplomat/git-cliff mergeados; AMICI/nannou/yq cerrados; OZ #6620 en espera; documenso/bevy filtro-0/no-fix | en review |
 | Higiene (secretos/deps vulnerables introducidas) | 0 | **0 siempre** (lo fuerza el gate) |
 
 ## Contribuciones (registro)
@@ -71,6 +71,8 @@ _Última actualización: 2026-09-13_
 | C038 | apache/iggy #4164 → [#4173](https://github.com/apache/iggy/pull/4173) | Rust+PyO3/streaming (4.9k★) | 🟡 review (scouting 2026-09-13: mergea externos a diario, IA permitida) — good-first-issue: el SDK Python de `update_user()` pasaba `default()`; expone `options` kwarg (patrón de `update_stream`); 53 tests + clippy/ruff verdes; DCO | — | — |
 | C039 | open-policy-agent/conftest #1396 → [#1425](https://github.com/open-policy-agent/conftest/pull/1425) | Go/policy-as-code (3.3k★) | 🟡 review (scouting 2026-09-13: repo pro-agente, añade AGENTS.md) — SARIF `ruleId` genérico (`main/deny`) → deriva el nombre específico de `properties.query`; golden + unit tests; go test/vet/lint verdes; DCO | — | — |
 | C040 | documenso/documenso #3365 | TS/e-signature (15k★) | ⚪ **filtro-0 (no external PRs)** 2026-09-13 (NO cuenta como enviado): fix listo local (fallback de fuente Caveat con Latin-extended, 219 tests) pero el CONTRIBUTING **pausó los PRs externos** por seguridad ("will be closed with a request to open an issue"). Comentario-spec con el diagnóstico dejado en el issue (lo que ellos piden ahora) | — | — |
+| C041 | goauthentik/authentik #25476 → [#26111](https://github.com/goauthentik/authentik/pull/26111) | Go+Python/identidad-SSO (25.5k★) | 🟡 review (scouting 2026-09-13: mergea externos en horas, `bug/confirmed`) — `login_hint` se arrastraba en `next` → loop "Not You?"; fix root-cause en `CancelView` (limpia solo `login_hint`, preserva el resto); 2 tests que fallan sin el fix; ruff verde (pytest requiere infra multi-tenant → CI) | — | — |
+| C042 | bevyengine/bevy #25473 | Rust/game-engine (48k★) | ⚪ **no-fix / issue mal caracterizado** 2026-09-13 (NO cuenta como enviado): investigado a fondo — no es el macro `bsn!` sino un overflow del trait-solver de rustc (blanket impl recursivo `IntoIterator for &Res<T>` enmascara el E0283). El "fix macro-local" que asume el label NO resuelve el síntoma (probado). Comentario con la causa raíz dejado para el maintainer | — | — |
 
 > ✅ **Nota de reputación:** **7 merges reales en 7 repos distintos** (~73k★ combinadas) — servo #496 (servo
 > **veta IA**, vetado), **airi #2408** (48.5k★), **boa #5500** (7.5k★, motor JS en Rust), **onefetch #1853**
@@ -147,6 +149,7 @@ _Última actualización: 2026-09-13_
 | 2026-09-13 | 🎯 **3ª ronda de scouting (foco Solidity/EVM):** PR **foundry [#16841](https://github.com/foundry-rs/foundry/pull/16841)** (`forge lint --report-unused-suppressions`, spec del maintainer, con disclosure IA). **OZ #6620 en espera**: fix listo pero el maintainer lo tiene *gated* hasta un 2º consumidor del helper. **viem descartado** (cierra fixes de externos sin merge; CONTRIBUTING "humans, not bots"). Enviados 37→38; en review 21. | **7** |
 | 2026-09-13 | 🟢 **8º MERGE: git-cliff [#1627](https://github.com/orhun/git-cliff/pull/1627)** (orhun) — cerró el ciclo tras el review (1 commit limpio + fixture del caso relativo #1369). 🔧 **Daft #7508**: CI `style`/mypy en rojo → arreglado (los `@overload` de `__call__` debían quedar pegados a la impl; el helper nuevo se había colado en medio); mypy del repo verde local. Pull Shark **8/16**. | **8** |
 | 2026-09-13 | 🎯 **4ª ronda de scouting (diversificación):** 2 PRs — **iggy [#4173](https://github.com/apache/iggy/pull/4173)** (SDK Python, Rust/streaming) y **conftest [#1425](https://github.com/open-policy-agent/conftest/pull/1425)** (SARIF ruleId, Go/policy). **documenso filtro-0** (pausó PRs externos por seguridad) → dejé comentario-spec en #3365. Filtro acumulado: 5 vetos atrapados (marimo/polars/viem/documenso/OZ) antes de gastar PR. Enviados 38→40; en review 22. | **8** |
+| 2026-09-13 | 🎯 **5ª ronda de scouting:** PR **goauthentik [#26111](https://github.com/goauthentik/authentik/pull/26111)** (bug confirmado `login_hint` loop; Go+Python/SSO — nicho nuevo). **bevy #25473 no-fix**: investigado, el issue está mal caracterizado (no es el macro sino un overflow del trait-solver de rustc) → comentario con la causa raíz para el maintainer. Enviados 40→41; en review 23. | **8** |
 
 ## Notas
 
