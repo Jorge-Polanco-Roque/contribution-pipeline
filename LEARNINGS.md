@@ -847,3 +847,20 @@ no fue código nuevo sino **atender el review a fondo** — y en un caso, un pin
   3. La tasa de aceptación baja por estos cierres NO es señal de mala calidad — separar en el ledger los cierres de
      *selección/política/scope* de los de *calidad* (estos siguen en 0).
 - ✅ Bien: cada cierre outward-facing se hizo **con orden explícita del accionista** y comentario de retiro cortés.
+
+---
+
+## 2026-09-14 — Convenciones de submission: PR template y no pisar al maintainer
+
+**Rellenar el PR template del repo al abrir — algunos bots cierran PRs sin él**
+- Contexto: topgrade #2337 fue cerrado por `github-actions[bot]` automáticamente porque abrí el PR con cuerpo libre en vez del template del repo (que lleva un "magic marker" oculto que el bot detecta). Alacritty va más lejos: su template exige afirmar "No LLMs were used" (veto de facto, no firmable con honestidad → filtro-0).
+- 🛠️ Reglas (→ proceso CLAUDE / gate F5):
+  1. Al abrir un PR, **usar el PR template del repo** (`.github/pull_request_template.md`), rellenar todas sus secciones y conservar cualquier marker/comment.
+  2. Si el template tiene sección de **AI involvement**, rellenarla con honestidad (encaja con la política de disclosure).
+  3. **Antes de invertir**, revisar el PR template además del CONTRIBUTING por cláusulas anti-LLM ("No LLMs were used") → si exige negar el uso de IA, es filtro-0.
+  4. Un cierre por bot-de-template es recuperable: si no reabre por API (422), abrir un PR nuevo desde la misma rama con el template correcto.
+
+**Cuando el maintainer commitea en tu rama (allow-edits), NO rebasar ni force-pushear**
+- Contexto: goauthentik #26111 — iba a rebasar sobre main para limpiar unos lint de fork-staleness, pero al hacer fetch descubrí que **Jens Langhammer (fundador de authentik) había commiteado directamente en mi rama** (cleanup + refactor) y la había aprobado. Un force-push habría pisado su trabajo.
+- ✅ Bien: el `--force-with-lease` rechazó el push (lease stale) y me obligó a mirar; deshice el rebase local y no toqué nada.
+- 🛠️ Regla: si el maintainer tiene "allow edits by maintainers" y ha commiteado en la rama, **no reescribas la historia** — deja que él la lleve al merge. Siempre `--force-with-lease`, nunca `--force`; si rechaza, fetch y reevaluar. (Refuerza la lección de unavatar/onefetch.) (→ proceso CLAUDE / SOUL §7)
