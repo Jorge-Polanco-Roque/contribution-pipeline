@@ -4,15 +4,15 @@
 > evento. El objetivo es **reputación pública en el GitHub del accionista**, no
 > dinero. North Star = tasa de aceptación de PRs.
 
-_Última actualización: 2026-09-14_
+_Última actualización: 2026-09-15_
 
 ## Consolidado
 
 | Métrica | Valor |
 |---|---|
 | ✅ PRs mergeados | **9** — smallvec#496 · airi#2408 · boa#5500 · onefetch#1853 · tract#2749 · findutils#857 · diplomat#1269 · git-cliff#1627 · [foundry#16841](https://github.com/foundry-rs/foundry/pull/16841) 🟢 |
-| 📤 PRs enviados (reales) | **44** (9 🟢 · 25 🟡 en review · 10 🔴 cerrados) + unavatar código mergeado vía #661 (sin crédito) |
-| 🎯 Tasa de aceptación (North Star) | **47%** (9/19 resueltos; 25 en review) — cierres de foco/scope/política, ninguno por calidad |
+| 📤 PRs enviados (reales) | **46** (9 🟢 · 27 🟡 en review · 10 🔴 cerrados) + unavatar código mergeado vía #661 (sin crédito) |
+| 🎯 Tasa de aceptación (North Star) | **47%** (9/19 resueltos; 27 en review) — cierres de foco/scope/política, ninguno por calidad |
 | 📦 Repos distintos con merge | **9** (+ foundry-rs/foundry) |
 | 🏅 GitHub Pull Shark | **9/16 para Bronze** (solo cuentan repos ajenos; faltan 7) |
 | ⭐ Estrellas / seguidores ganados | **0** |
@@ -23,7 +23,7 @@ _Última actualización: 2026-09-14_
 
 | KPI | Valor | Meta |
 |---|---|---|
-| PRs enviados | **38** | — |
+| PRs enviados | **46** | — |
 | Merges ganados | **9** ✅ (+ unavatar código vía #661, sin crédito) | ≥1 en 2 semanas (gate F0) |
 | **Tasa de aceptación** (North Star) | **44%** (8/18 resueltos) — cierres por *duplicado/política/declinado/demo/scope-maintainer/repo-inactivo*, no calidad | ≥ 50% |
 | Repos distintos con merge | **8** | crecer sostenido |
@@ -77,6 +77,8 @@ _Última actualización: 2026-09-14_
 | C044 | topgrade-rs/topgrade #527 → [#2338](https://github.com/topgrade-rs/topgrade/pull/2338) | Rust/CLI-updater (4.5k★) | 🟡 review — toolbx vs openSUSE toolbox (`require_containers_toolbx` vía `toolbox --version`). **#2337 lo cerró un bot por no usar el PR template → reabierto como #2338 con el template lleno** (AI-involvement declarado + magic marker) | — | — |
 | C045 | sharkdp/bat #1948 → [#4011](https://github.com/sharkdp/bat/pull/4011) | Rust/devtools (60k★) | 🟡 review (scouting 2026-09-13; doc-fix) — el README ya aclaraba `.tmTheme`, faltaba sincronizar el man page (lo que pidió el maintainer); verificado en el loader (syntect solo acepta `.tmTheme`); `bat.1.in` + CHANGELOG | — | — |
 | C046 | alacritty/alacritty #9047 | Rust/terminal (66k★) | ⚪ **filtro-0 (anti-LLM en PR template)** 2026-09-13 (NO cuenta como enviado): fix listo local (min window size incluye padding, causa endosada por chrisduerr) pero el **PR template exige afirmar "No LLMs were used"** — no se puede firmar con honestidad usando IA. No abierto. Lección: revisar el PR template, no solo el CONTRIBUTING | — | — |
+| C047 | astral-sh/ruff #28551 → [#28600](https://github.com/astral-sh/ruff/pull/28600) | Rust/Python-tooling (49.6k★) | 🟡 review (scouting 2026-09-15: repo **pro-IA explícito** — trae skills de Claude Code/Codex en `.agents/skills`; mergea externos a diario) — los 8 warnings de incompatibilidad del formatter hardcodeaban el *code* (`Q000`…) sin el nombre; ahora usan `Rule::x.name_and_code()` → `bad-quotes-inline-string (Q000)`. Fix confirmado por MichaReiser. 247 tests + clippy verdes | — | — |
+| C048 | astral-sh/ruff #28011 → [#28601](https://github.com/astral-sh/ruff/pull/28601) | Rust/Python-tooling (49.6k★) | 🟡 review — `exec-builtin` (S102) solo marcaba llamadas, no referencias (`map(exec, …)`); ahora las marca en preview, consistente con `eval`/S307. Gate de preview nuevo + `exec_used_reference` con guard anti-duplicados; fixture + test case; 83 tests + clippy verdes, snapshot preview limpio | — | — |
 
 > ✅ **Nota de reputación:** **7 merges reales en 7 repos distintos** (~73k★ combinadas) — servo #496 (servo
 > **veta IA**, vetado), **airi #2408** (48.5k★), **boa #5500** (7.5k★, motor JS en Rust), **onefetch #1853**
@@ -182,6 +184,7 @@ _Última actualización: 2026-09-14_
 | 2026-09-13 | 🎯 **6ª-7ª ronda de scouting:** 3 PRs — **woodpecker [#7141](https://github.com/woodpecker-ci/woodpecker/pull/7141)** (registry host:port, Go/CI), **topgrade [#2337](https://github.com/topgrade-rs/topgrade/pull/2337)** (toolbx vs openSUSE, Rust/CLI), **bat [#4011](https://github.com/sharkdp/bat/pull/4011)** (doc-sync man page). **alacritty filtro-0**: fix listo pero su PR template exige afirmar "No LLMs were used" → no se puede firmar con honestidad. Filtro acumulado: ~7 vetos atrapados. Enviados 41→44; en review 26. | **8** |
 | 2026-09-14 | 🟢 **9º MERGE: foundry [#16841](https://github.com/foundry-rs/foundry/pull/16841)** (forge lint unused-suppressions). 🟢 **goauthentik #26111 adoptado por el fundador** (Jens Langhammer commitea en la rama + aprueba → merge #10 encaminado; NO force-push). 🔧 **topgrade** reabierto como [#2338](https://github.com/topgrade-rs/topgrade/pull/2338) (un bot cerró #2337 por falta de PR template). 🔧 **bat #4011** CI arreglado (el changelog debe citar el nº del PR). Pull Shark **9/16**. | **9** |
 | 2026-09-14 | 🧠 **Galaxy Brain — 1ers intentos:** 2 respuestas publicadas en Discussions de **supabase** (Postgres): [#50335](https://github.com/supabase/supabase/discussions/50335) (pg_net queue ACLs) y [#50325](https://github.com/supabase/supabase/discussions/50325) (PUBLIC TEMP + PostGIS SECURITY DEFINER), ambas como 1er comentario en preguntas frescas sin responder. **Aprendizaje:** el scouting de snapshot de Q&A no sirve (las buenas ya están respondidas por otros); la ventana es pregunta <48h aún sin respuesta. Sequía de matches limpios (el pool fresco es bug reports/spam). 0/2 aceptadas aún (depende de los autores). | **9** |
+| 2026-09-15 | 🎯 **8ª ronda de scouting (repo pro-IA):** 2 PRs en **astral-sh/ruff** (49.6k★, trae skills de Claude Code/Codex → Filtro Cero PASS máximo, mergea externos a diario): **[#28600](https://github.com/astral-sh/ruff/pull/28600)** (nombres de regla en warnings del formatter, C047) y **[#28601](https://github.com/astral-sh/ruff/pull/28601)** (exec-builtin marca referencias, C048). Ambos con tests+clippy verdes, snapshots insta, disclosure IA. También rebase de nushell #19021 + coreutils #14264 (CONFLICTING→MERGEABLE). Enviados 44→46; en review 27. | **9** |
 | 2026-09-15 | 🧠 **Galaxy Brain — 2º lote (pivote de estrategia):** los repos gigantes están saturados de answer-farmers → pivote a **repos medianos de nicho sin farmers**. 4 respuestas publicadas (1er comentario, preguntas sin responder desde hace días/meses): **[sqlx #4325](https://github.com/transact-rs/sqlx/discussions/4325)** (duración de query), **[sqlx #4405](https://github.com/transact-rs/sqlx/discussions/4405)** (memoria de `fetch`, gotcha cursor PG), **[sqlx #4232](https://github.com/transact-rs/sqlx/discussions/4232)** (skip sqlx::test), **[egui #8091](https://github.com/emilk/egui/discussions/8091)** (borrow de `style_ui`). Todas confianza alta. Galaxy Brain: 6 publicadas, 0 aceptadas aún. | **9** |
 
 ## Notas
