@@ -112,20 +112,26 @@ _Última actualización: 2026-09-14_
 
 > Achievement independiente de Pull Shark: requiere **2 respuestas aceptadas** en
 > GitHub Discussions (categorías *answerable*). North Star propio = respuestas
-> aceptadas ÷ publicadas. **Aprendizaje clave:** las preguntas con respuesta
-> canónica se responden en horas por otros; la única ventana viable es una
-> pregunta **fresca (<48h) y aún sin responder** donde uno llega primero. El
-> scouting de *snapshot* de preguntas viejas no sirve (ya están respondidas).
+> aceptadas ÷ publicadas. **Aprendizajes clave:** (1) las preguntas con respuesta
+> canónica se responden en horas por otros; hay que llegar primero. (2) Los repos
+> **gigantes** (fastapi/next/pydantic) están **saturados de answer-farmers** (ventana
+> de 0-2h, imposible de cazar en sesión puntual). (3) **La estrategia que funciona:**
+> repos **medianos de nicho** (~1.5k-25k⭐, p.ej. sqlx/egui) con Q&A activas pero SIN
+> farmers, donde una pregunta técnica puede quedar **días/meses sin responder** y una
+> respuesta correcta tiene alta chance de aceptación.
 
 | ID | Repo #discussion | Nicho | Estado | Aceptada? |
 |---|---|---|---|---|
 | G001 | [supabase #50335](https://github.com/supabase/supabase/discussions/50335#discussioncomment-18435346) | Postgres/pg_net (⭐~80k) | 🟡 publicada 2026-09-14 (1er comentario, 0 previos) — por qué el `REVOKE` de `net` no hace nada: `postgres` no es el grantor (owner=`supabase_admin`) + `ON SCHEMA` no cubre el `SELECT` de las tablas + upgrades re-aplican grants; recomendación: no guardar el token en la cola, resolverlo en runtime. Confianza alta en la mecánica | — |
 | G002 | [supabase #50325](https://github.com/supabase/supabase/discussions/50325#discussioncomment-18435347) | Postgres/PostGIS (⭐~80k) | 🟡 publicada 2026-09-14 (1er comentario, 0 previos) — TEMP heredado de `PUBLIC` (revoke solo a nivel DB, riesgoso en hosted) + PostGIS `st_estimatedextent` SECURITY DEFINER (no revocable durablemente como `postgres`, upgrade re-aplica). Honesta sobre el límite del hosting; confianza media | — |
+| G003 | [sqlx #4325](https://github.com/transact-rs/sqlx/discussions/4325#discussioncomment-18442131) | Rust/DB (⭐~15k) | 🟡 publicada 2026-09-15 (1er comentario) — no hay API de duración en sqlx (solo logs/tracing); mídela con `Instant`; para tiempo server-side puro `EXPLAIN ANALYZE`. Confianza alta | — |
+| G004 | [sqlx #4405](https://github.com/transact-rs/sqlx/discussions/4405#discussioncomment-18442132) | Rust/DB (⭐~15k) | 🟡 publicada 2026-09-15 (1er comentario) — `fetch()` es lazy a nivel API (1 `Row` a la vez) vs `fetch_all()`=Vec; **gotcha:** sqlx no abre cursor server-side, PG envía todo el resultset → pico de memoria puede acercarse al total; para cota dura usar `DECLARE ... CURSOR`. Confianza alta | — |
+| G005 | [sqlx #4232](https://github.com/transact-rs/sqlx/discussions/4232#discussioncomment-18442133) | Rust/DB (⭐~15k) | 🟡 publicada 2026-09-15 (1er comentario) — no hay switch propio; `#[sqlx::test]` expande a `#[test]` normal → filtrado libtest (`cargo test -- --skip`) o feature-gate del módulo (`#[cfg(feature="db-tests")]`). Confianza alta | — |
+| G006 | [egui #8091](https://github.com/emilk/egui/discussions/8091#discussioncomment-18442134) | Rust/GUI (⭐~24k) | 🟡 publicada 2026-09-15 (1er comentario) — double-borrow de `style_ui` vía Deref: sacar el contexto a su binding (`let ctx = ui.ctx().clone(); ctx.style_ui(ui, ...)`), `Context` es `Arc` barato. Confianza alta | — |
 
-> **Estado:** 0/2 aceptadas (ambas recién publicadas). Falta que cada autor marque
-> *Mark as answer* (fuera de nuestro control). Revisar en 24-48h si aceptaron o
-> pidieron aclaración. Para el 2º accepted, 2ª pasada de scouting cuando rote la
-> cola de Q&A (FastAPI/pydantic rotan a diario).
+> **Estado:** 0/6 aceptadas (todas recién publicadas). Falta que cada autor marque
+> *Mark as answer* (fuera de nuestro control). Las 4 de sqlx/egui (G003-G006) son
+> apuestas fuertes (repos sin farmers, confianza alta). Revisar en 24-72h.
 
 ## Timeline de eventos
 
@@ -176,6 +182,7 @@ _Última actualización: 2026-09-14_
 | 2026-09-13 | 🎯 **6ª-7ª ronda de scouting:** 3 PRs — **woodpecker [#7141](https://github.com/woodpecker-ci/woodpecker/pull/7141)** (registry host:port, Go/CI), **topgrade [#2337](https://github.com/topgrade-rs/topgrade/pull/2337)** (toolbx vs openSUSE, Rust/CLI), **bat [#4011](https://github.com/sharkdp/bat/pull/4011)** (doc-sync man page). **alacritty filtro-0**: fix listo pero su PR template exige afirmar "No LLMs were used" → no se puede firmar con honestidad. Filtro acumulado: ~7 vetos atrapados. Enviados 41→44; en review 26. | **8** |
 | 2026-09-14 | 🟢 **9º MERGE: foundry [#16841](https://github.com/foundry-rs/foundry/pull/16841)** (forge lint unused-suppressions). 🟢 **goauthentik #26111 adoptado por el fundador** (Jens Langhammer commitea en la rama + aprueba → merge #10 encaminado; NO force-push). 🔧 **topgrade** reabierto como [#2338](https://github.com/topgrade-rs/topgrade/pull/2338) (un bot cerró #2337 por falta de PR template). 🔧 **bat #4011** CI arreglado (el changelog debe citar el nº del PR). Pull Shark **9/16**. | **9** |
 | 2026-09-14 | 🧠 **Galaxy Brain — 1ers intentos:** 2 respuestas publicadas en Discussions de **supabase** (Postgres): [#50335](https://github.com/supabase/supabase/discussions/50335) (pg_net queue ACLs) y [#50325](https://github.com/supabase/supabase/discussions/50325) (PUBLIC TEMP + PostGIS SECURITY DEFINER), ambas como 1er comentario en preguntas frescas sin responder. **Aprendizaje:** el scouting de snapshot de Q&A no sirve (las buenas ya están respondidas por otros); la ventana es pregunta <48h aún sin respuesta. Sequía de matches limpios (el pool fresco es bug reports/spam). 0/2 aceptadas aún (depende de los autores). | **9** |
+| 2026-09-15 | 🧠 **Galaxy Brain — 2º lote (pivote de estrategia):** los repos gigantes están saturados de answer-farmers → pivote a **repos medianos de nicho sin farmers**. 4 respuestas publicadas (1er comentario, preguntas sin responder desde hace días/meses): **[sqlx #4325](https://github.com/transact-rs/sqlx/discussions/4325)** (duración de query), **[sqlx #4405](https://github.com/transact-rs/sqlx/discussions/4405)** (memoria de `fetch`, gotcha cursor PG), **[sqlx #4232](https://github.com/transact-rs/sqlx/discussions/4232)** (skip sqlx::test), **[egui #8091](https://github.com/emilk/egui/discussions/8091)** (borrow de `style_ui`). Todas confianza alta. Galaxy Brain: 6 publicadas, 0 aceptadas aún. | **9** |
 
 ## Notas
 
