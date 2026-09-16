@@ -4,7 +4,7 @@
 > mejores suben a `active/`; los descartados bajan a `passed/` con su razón.
 > Objetivo: **reputación** (PRs mergeados en repos respetados), no dinero.
 
-_Última actualización: 2026-08-29._
+_Última actualización: 2026-09-16._
 
 ## Cómo se selecciona (resumen de SOUL §5)
 
@@ -33,6 +33,27 @@ raíz clara → nicho fuerte**.
 
 > El heredado `tools/scan_bounties.sh` (recencia + competencia) puede repurposarse
 > a scan de issues cuando definamos los repos objetivo. Por ahora, YAGNI.
+
+## Scouting 2026-09-16 (10ª ronda — criterio: MUY alta interacción del dueño) — verificado en vivo
+
+Fan-out de 4 nichos (Rust CLI, Python ML, gráficos, Go/infra). Todos con Filtro Cero PASS
+(sin cláusula anti-IA en CONTRIBUTING/PR template). **Cada issue reverificado en vivo antes de
+registrar** (estado + PR vinculado), tras descubrir que un scout se había fiado del estado "abierto".
+
+**Alto valor de reputación + dueño hiper-responsivo:**
+- **bootc-dev/bootc** (★2278, Red Hat) — [#2464](https://github.com/bootc-dev/bootc/issues/2464) flag `--target-imgref` en `bootc switch`. ✅ **LIMPIO**: OPEN, sin asignar, 0 PRs vinculados, `good first issue`. Esfuerzo **medio** (feature Rust + wiring + test). Externos mergean ~10h. **Mejor candidato de valor disponible.**
+- **pymc-devs/pymc** (★9753) — bugs numéricos `logcdf`; IA permitida (probado), `ricardoV94` triagea al minuto, externos mergean 0.8–14h. Ojo: #8435 (fresco) ya tiene PR #8436; el resto son de jul/jun (más duros). Requiere pescar uno fresco sin PR.
+- **astropy/astropy** (★5305) — mejor turnaround (~23h) pero issues frescos se reclaman en <1h → **evitar** (competir a esa velocidad = patrón bot que disparó AgentScan).
+
+**Merge rapidísimo pero BAJO valor (racha, no peso):**
+- webarkit/purecv (★25) #131 — dueño confirma bugs <24h, IA bienvenida (PR contra `dev`).
+- Coding-Moves/diskern (★6), Tollcraft/soroban-cost-linter (★30) — merges en minutos, IA-friendly explícito.
+
+**Descartados tras verificación en vivo:**
+- kubernetes-sigs/agent-sandbox #1529 — ❌ **ya resuelto en `main`** (el path stale `examples/coding-agent` no existe; README ya dice `examples/langchain`). PR sería no-op.
+- kubernetes-sigs/agent-sandbox #1629 — ❌ ya tiene PR vinculado (tomado).
+
+**Recordatorio anti-bot:** máx 1 PR/día, sin ráfagas de fork. Elegir UNO de esta lista, no varios.
 
 ## Shortlist R1 (recon en frío, 2026-08-29) — perfilados con `recon.sh`, todos GO ≥100★
 
