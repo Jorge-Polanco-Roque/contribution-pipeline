@@ -126,22 +126,29 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 <!-- PRS:START -->
 | PR | Repo | Cambio | Estado |
 |---|---|---|---|
-| [topgrade-rs/topgrade #2338](https://github.com/topgrade-rs/topgrade/pull/2338) | `topgrade-rs/topgrade` | fix(toolbx): don't mistake openSUSE's toolbox for containers toolbx | 🟡 abierto |
+| [bootc-dev/bootc #2467](https://github.com/bootc-dev/bootc/pull/2467) | `bootc-dev/bootc` | feat(switch): add --target-imgref to decouple pull source from upgrade origin | 🟡 abierto |
+| [rerun-io/rerun #12933](https://github.com/rerun-io/rerun/pull/12933) | `rerun-io/rerun` | Keep DebugLabels in release builds but ignore them for resource pooling | 🟡 abierto |
+| [typescript-eslint/typescript-eslint #12890](https://github.com/typescript-eslint/typescript-eslint/pull/12890) | `typescript-eslint/typescript-eslint` | fix(ast-spec): narrow ImportAttribute key and value to StringLiteral | 🔴 cerrado |
+| [cupy/cupy #10308](https://github.com/cupy/cupy/pull/10308) | `cupy/cupy` | Fix convolve/correlate method="direct" with non-contiguous in1 | 🔴 cerrado |
+| [zalando/skipper #4267](https://github.com/zalando/skipper/pull/4267) | `zalando/skipper` | test: wait for OPA instance readiness in TestServerResponseFilter | 🟢 mergeado |
+| [astral-sh/ruff #28601](https://github.com/astral-sh/ruff/pull/28601) | `astral-sh/ruff` | [flake8-bandit] Flag references to `exec` (S102) | 🔴 cerrado |
+| [astral-sh/ruff #28600](https://github.com/astral-sh/ruff/pull/28600) | `astral-sh/ruff` | Show rule names alongside codes in formatter incompatibility warnings | 🔴 cerrado |
+| [topgrade-rs/topgrade #2338](https://github.com/topgrade-rs/topgrade/pull/2338) | `topgrade-rs/topgrade` | fix(toolbx): don't mistake openSUSE's toolbox for containers toolbx | 🔴 cerrado |
 | [sharkdp/bat #4011](https://github.com/sharkdp/bat/pull/4011) | `sharkdp/bat` | docs: clarify supported custom theme format in the man page | 🟡 abierto |
 | [topgrade-rs/topgrade #2337](https://github.com/topgrade-rs/topgrade/pull/2337) | `topgrade-rs/topgrade` | fix(toolbx): don't mistake openSUSE's toolbox for containers toolbx | 🔴 cerrado |
 | [woodpecker-ci/woodpecker #7141](https://github.com/woodpecker-ci/woodpecker/pull/7141) | `woodpecker-ci/woodpecker` | fix(server): accept host:port registry addresses so credentials can match | 🟡 abierto |
-| [goauthentik/authentik #26111](https://github.com/goauthentik/authentik/pull/26111) | `goauthentik/authentik` | flows: strip login_hint from next on cancel to prevent loop | 🟡 abierto |
+| [goauthentik/authentik #26111](https://github.com/goauthentik/authentik/pull/26111) | `goauthentik/authentik` | flows: strip login_hint from next on cancel to prevent loop | 🟢 mergeado |
 | [open-policy-agent/conftest #1425](https://github.com/open-policy-agent/conftest/pull/1425) | `open-policy-agent/conftest` | fix(sarif): use specific rule names in SARIF ruleId | 🟡 abierto |
 | [apache/iggy #4173](https://github.com/apache/iggy/pull/4173) | `apache/iggy` | feat(python): expose update_user options | 🟢 mergeado |
 | [foundry-rs/foundry #16841](https://github.com/foundry-rs/foundry/pull/16841) | `foundry-rs/foundry` | feat(lint): report unused inline suppressions | 🟢 mergeado |
-| [nushell/nushell #19021](https://github.com/nushell/nushell/pull/19021) | `nushell/nushell` | feat(mkdir): add --fail-if-exists flag to error on existing directory | 🟡 abierto |
+| [nushell/nushell #19021](https://github.com/nushell/nushell/pull/19021) | `nushell/nushell` | feat(mkdir): add --fail-if-exists flag to error on existing directory | 🟢 mergeado |
 | [lakehq/sail #2580](https://github.com/lakehq/sail/pull/2580) | `lakehq/sail` | feat: support duplicated field names in nested Spark struct schemas | 🟡 abierto |
 | [Eventual-Inc/Daft #7508](https://github.com/Eventual-Inc/Daft/pull/7508) | `Eventual-Inc/Daft` | fix: validate @daft.func input types at planning time | 🟡 abierto |
 | [mario-eth/soldeer #406](https://github.com/mario-eth/soldeer/pull/406) | `mario-eth/soldeer` | feat(remappings): infer source directory suffix like forge | 🟡 abierto |
-| [jupyter-book/mystmd #3047](https://github.com/jupyter-book/mystmd/pull/3047) | `jupyter-book/mystmd` | fix(myst-to-typst): use label() for cross-references whose identifier has spaces | 🟡 abierto |
+| [jupyter-book/mystmd #3047](https://github.com/jupyter-book/mystmd/pull/3047) | `jupyter-book/mystmd` | fix(myst-to-typst): use label() for cross-references whose identifier has spaces | 🟢 mergeado |
 | [AMICI-dev/AMICI #3235](https://github.com/AMICI-dev/AMICI/pull/3235) | `AMICI-dev/AMICI` | Warn about observation-model observables absent from the PySB model | 🔴 cerrado |
 | [rust-diplomat/diplomat #1269](https://github.com/rust-diplomat/diplomat/pull/1269) | `rust-diplomat/diplomat` | fix: reject None in the nanobind char32_t caster instead of crashing | 🟢 mergeado |
-| [delta-io/delta-kernel-rs #3250](https://github.com/delta-io/delta-kernel-rs/pull/3250) | `delta-io/delta-kernel-rs` | fix: sign-extend negative decimal statistics in row-group skipping | 🟡 abierto |
+| [delta-io/delta-kernel-rs #3250](https://github.com/delta-io/delta-kernel-rs/pull/3250) | `delta-io/delta-kernel-rs` | fix: sign-extend negative decimal statistics in row-group skipping | 🟢 mergeado |
 | [orhun/git-cliff #1627](https://github.com/orhun/git-cliff/pull/1627) | `orhun/git-cliff` | fix(args): resolve --workdir to a repo-relative include path | 🟢 mergeado |
 | [charmbracelet/gum #1141](https://github.com/charmbracelet/gum/pull/1141) | `charmbracelet/gum` | fix(format): wrap markdown tables to terminal width | 🟡 abierto |
 | [mikefarah/yq #2849](https://github.com/mikefarah/yq/pull/2849) | `mikefarah/yq` | Preserve file permissions on in-place edits | 🔴 cerrado |
@@ -168,11 +175,8 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 | [moeru-ai/airi #2408](https://github.com/moeru-ai/airi/pull/2408) | `moeru-ai/airi` | fix(better-ws): publish the package so server-sdk installs | 🟢 mergeado |
 | [Automattic/harper #4253](https://github.com/Automattic/harper/pull/4253) | `Automattic/harper` | Add a linter for confusing `wary` and `weary` | 🟡 abierto |
 | [RustPython/RustPython #8610](https://github.com/RustPython/RustPython/pull/8610) | `RustPython/RustPython` | Give dict a CPython-style message for unhashable keys | 🟡 abierto |
-| [uutils/sed #544](https://github.com/uutils/sed/pull/544) | `uutils/sed` | Implement GNU R (read one line from file) command | 🟡 abierto |
-| [servo/rust-smallvec #500](https://github.com/servo/rust-smallvec/pull/500) | `servo/rust-smallvec` | Add try_with_capacity fallible constructor | 🔴 cerrado |
-| [servo/rust-smallvec #496](https://github.com/servo/rust-smallvec/pull/496) | `servo/rust-smallvec` | Implement arbitrary::Arbitrary for SmallVec | 🟢 mergeado |
 
-<sub>Actualizado automáticamente: 2026-09-14 (workflow semanal).</sub>
+<sub>Actualizado automáticamente: 2026-09-17 (workflow semanal).</sub>
 <!-- PRS:END -->
 
 > Detalle por contribución en [`contributions/`](contributions/). Selección + pre-lanzamiento en [`LAUNCH-PLAN.md`](LAUNCH-PLAN.md).
