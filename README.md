@@ -136,13 +136,13 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 | [topgrade-rs/topgrade #2338](https://github.com/topgrade-rs/topgrade/pull/2338) | `topgrade-rs/topgrade` | fix(toolbx): don't mistake openSUSE's toolbox for containers toolbx | 🔴 cerrado |
 | [sharkdp/bat #4011](https://github.com/sharkdp/bat/pull/4011) | `sharkdp/bat` | docs: clarify supported custom theme format in the man page | 🟡 abierto |
 | [topgrade-rs/topgrade #2337](https://github.com/topgrade-rs/topgrade/pull/2337) | `topgrade-rs/topgrade` | fix(toolbx): don't mistake openSUSE's toolbox for containers toolbx | 🔴 cerrado |
-| [woodpecker-ci/woodpecker #7141](https://github.com/woodpecker-ci/woodpecker/pull/7141) | `woodpecker-ci/woodpecker` | fix(server): accept host:port registry addresses so credentials can match | 🟡 abierto |
+| [woodpecker-ci/woodpecker #7141](https://github.com/woodpecker-ci/woodpecker/pull/7141) | `woodpecker-ci/woodpecker` | fix(server): accept host:port registry addresses so credentials can match | 🔴 cerrado |
 | [goauthentik/authentik #26111](https://github.com/goauthentik/authentik/pull/26111) | `goauthentik/authentik` | flows: strip login_hint from next on cancel to prevent loop | 🟢 mergeado |
 | [open-policy-agent/conftest #1425](https://github.com/open-policy-agent/conftest/pull/1425) | `open-policy-agent/conftest` | fix(sarif): use specific rule names in SARIF ruleId | 🟡 abierto |
 | [apache/iggy #4173](https://github.com/apache/iggy/pull/4173) | `apache/iggy` | feat(python): expose update_user options | 🟢 mergeado |
 | [foundry-rs/foundry #16841](https://github.com/foundry-rs/foundry/pull/16841) | `foundry-rs/foundry` | feat(lint): report unused inline suppressions | 🟢 mergeado |
 | [nushell/nushell #19021](https://github.com/nushell/nushell/pull/19021) | `nushell/nushell` | feat(mkdir): add --fail-if-exists flag to error on existing directory | 🟢 mergeado |
-| [lakehq/sail #2580](https://github.com/lakehq/sail/pull/2580) | `lakehq/sail` | feat: support duplicated field names in nested Spark struct schemas | 🟡 abierto |
+| [lakehq/sail #2580](https://github.com/lakehq/sail/pull/2580) | `lakehq/sail` | feat: support duplicated field names in nested Spark struct schemas | 🔴 cerrado |
 | [Eventual-Inc/Daft #7508](https://github.com/Eventual-Inc/Daft/pull/7508) | `Eventual-Inc/Daft` | fix: validate @daft.func input types at planning time | 🟡 abierto |
 | [mario-eth/soldeer #406](https://github.com/mario-eth/soldeer/pull/406) | `mario-eth/soldeer` | feat(remappings): infer source directory suffix like forge | 🟡 abierto |
 | [jupyter-book/mystmd #3047](https://github.com/jupyter-book/mystmd/pull/3047) | `jupyter-book/mystmd` | fix(myst-to-typst): use label() for cross-references whose identifier has spaces | 🟢 mergeado |
@@ -174,9 +174,8 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 | [uutils/coreutils #14264](https://github.com/uutils/coreutils/pull/14264) | `uutils/coreutils` | ls: honor LC_NUMERIC for the -h decimal separator | 🟡 abierto |
 | [moeru-ai/airi #2408](https://github.com/moeru-ai/airi/pull/2408) | `moeru-ai/airi` | fix(better-ws): publish the package so server-sdk installs | 🟢 mergeado |
 | [Automattic/harper #4253](https://github.com/Automattic/harper/pull/4253) | `Automattic/harper` | Add a linter for confusing `wary` and `weary` | 🟡 abierto |
-| [RustPython/RustPython #8610](https://github.com/RustPython/RustPython/pull/8610) | `RustPython/RustPython` | Give dict a CPython-style message for unhashable keys | 🟡 abierto |
 
-<sub>Actualizado automáticamente: 2026-09-17 (workflow semanal).</sub>
+<sub>Actualizado automáticamente: 2026-09-21 (workflow semanal).</sub>
 <!-- PRS:END -->
 
 > Detalle por contribución en [`contributions/`](contributions/). Selección + pre-lanzamiento en [`LAUNCH-PLAN.md`](LAUNCH-PLAN.md).
