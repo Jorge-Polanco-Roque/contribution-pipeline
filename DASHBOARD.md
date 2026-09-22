@@ -4,15 +4,15 @@
 > evento. El objetivo es **reputación pública en el GitHub del accionista**, no
 > dinero. North Star = tasa de aceptación de PRs.
 
-_Última actualización: 2026-09-21 (15 merges, Pull Shark ✅; 2 cierres anti-bot)_
+_Última actualización: 2026-09-21 (15 merges, Pull Shark ✅; 2 cierres anti-bot + bootc cerrado por scope)_
 
 ## Consolidado
 
 | Métrica | Valor |
 |---|---|
 | ✅ PRs mergeados (ajenos) | **15** — smallvec#496 · airi#2408 · boa#5500 · onefetch#1853 · tract#2749 · findutils#857 · diplomat#1269 · git-cliff#1627 · foundry#16841 · iggy#4173 · goauthentik#26111 · nushell#19021 · skipper#4267 · **mystmd#3047** · **delta-kernel#3250** 🟢 |
-| 📤 PRs enviados (reales) | **51** (15 🟢 · 19 🟡 en review · 17 🔴 cerrados) + unavatar código mergeado vía #661 (sin crédito) |
-| 🎯 Tasa de aceptación (North Star) | **47%** (15/32 resueltos; 19 en review) — cierres de foco/scope/política/duplicado/**anti-bot** (sail#2580, woodpecker#7141 el 09-21), ninguno por calidad |
+| 📤 PRs enviados (reales) | **51** (15 🟢 · 18 🟡 en review · 18 🔴 cerrados) + unavatar código mergeado vía #661 (sin crédito) |
+| 🎯 Tasa de aceptación (North Star) | **45%** (15/33 resueltos; 18 en review) — cierres de foco/scope/política/duplicado/**anti-bot** (sail#2580, woodpecker#7141 el 09-21), ninguno por calidad |
 | 📦 Repos distintos con merge | **15** |
 | 🏅 GitHub Pull Shark | ✅ **CONSEGUIDO (tier 16)** — el badge cuenta TODOS los PRs mergeados en repos públicos, **propios incluidos**: 32 totales (16 en Testing_Pipelines + 1 contribution-pipeline + 15 ajenos). La métrica de reputación real son los **15 merges ajenos**; el achievement se disparó sobre todo por Testing_Pipelines |
 | 🧠 GitHub Galaxy Brain | ✅ **CONSEGUIDO** 2026-09-15 (2 accepted answers: sqlx [#4232](https://github.com/launchbadge/sqlx/discussions/4232) · [#4325](https://github.com/launchbadge/sqlx/discussions/4325)) |
@@ -26,9 +26,9 @@ _Última actualización: 2026-09-21 (15 merges, Pull Shark ✅; 2 cierres anti-b
 |---|---|---|
 | PRs enviados | **51** | — |
 | Merges ganados | **15** ✅ (+ unavatar código vía #661, sin crédito) | ≥1 en 2 semanas (gate F0) |
-| **Tasa de aceptación** (North Star) | **47%** (15/32 resueltos) — cierres por *duplicado/política/declinado/demo/scope-maintainer/repo-inactivo/**anti-bot***, no calidad | ≥ 50% |
+| **Tasa de aceptación** (North Star) | **45%** (15/33 resueltos) — cierres por *duplicado/política/declinado/demo/scope-maintainer/repo-inactivo/**anti-bot**/**scope-diseño***, no calidad | ≥ 50% |
 | Repos distintos con merge | **15** | crecer sostenido |
-| Contribuciones en `active/` | **19 en review** (airi #2414/#2415 + soldeer #406 (CHANGES_REQUESTED, ya respondido+tests verdes)/harper/RustPython/sktime/aeon/image/statsforecast/coreutils/sed #544 (sylvestre revisó 09-21: 4 nits)/numbat/jq/gum/Daft #7508/conftest #1425/bat #4011 + **9ª ronda: rerun #12933** + **10ª ronda: bootc #2467** (CI verde tras rebase; Johan cuestiona el skip UKI/ostree 09-21)); onefetch/tract/findutils/diplomat/git-cliff/iggy/goauthentik/nushell #19021/skipper #4267/**mystmd #3047**/**delta-kernel #3250**/foundry #16841 mergeados; AMICI/nannou/yq/ruff/**tseslint #12890 (anti-bot)**/**topgrade #2338 (fork borrado)**/**cupy #10308 (ya resuelto en #10013)**/**sail #2580 (anti-bot 09-21)**/**woodpecker #7141 (anti-bot 09-21)** cerrados; OZ #6620 en espera; documenso/bevy/alacritty filtro-0/no-fix | en review |
+| Contribuciones en `active/` | **18 en review** (airi #2414/#2415 + soldeer #406 (CHANGES_REQUESTED, ya respondido+tests verdes)/harper/RustPython/sktime/aeon/image/statsforecast/coreutils/sed #544 (sylvestre revisó 09-21: 4 nits atendidos + squash + `cmd-R` pasa; espera re-review)/numbat/jq/gum/Daft #7508/conftest #1425/bat #4011 + **9ª ronda: rerun #12933**); onefetch/tract/findutils/diplomat/git-cliff/iggy/goauthentik/nushell #19021/skipper #4267/**mystmd #3047**/**delta-kernel #3250**/foundry #16841 mergeados; AMICI/nannou/yq/ruff/**tseslint #12890 (anti-bot)**/**topgrade #2338 (fork borrado)**/**cupy #10308 (ya resuelto en #10013)**/**sail #2580 (anti-bot 09-21)**/**woodpecker #7141 (anti-bot 09-21)**/**bootc #2467 (scope-diseño 09-21)** cerrados; OZ #6620 en espera; documenso/bevy/alacritty filtro-0/no-fix | en review |
 | Higiene (secretos/deps vulnerables introducidas) | 0 | **0 siempre** (lo fuerza el gate) |
 
 ## Contribuciones (registro)
@@ -37,7 +37,7 @@ _Última actualización: 2026-09-21 (15 merges, Pull Shark ✅; 2 cierres anti-b
 |---|---|---|---|---|---|
 | C001 | servo/rust-smallvec #494 → [#496](https://github.com/servo/rust-smallvec/pull/496) | Rust/data-structures | 🟢 **MERGEADO** | ✅ | — |
 | C002 | servo/rust-smallvec #416 → [#500](https://github.com/servo/rust-smallvec/pull/500) | Rust/data-structures | 🔴 cerrado (servo prohíbe IA) | — | — |
-| C003 | uutils/sed #394 → [#544](https://github.com/uutils/sed/pull/544) | Rust/devtools | 🟡 review (tests añadidos p/ sylvestre) | — | — |
+| C003 | uutils/sed #394 → [#544](https://github.com/uutils/sed/pull/544) | Rust/devtools | 🟡 review (**sylvestre revisó 09-21; 4 nits atendidos**: squash 5→1 commit `sed:`; confirmado que hace pasar el test `cmd-R` del GNU testsuite (mencionado en el commit); comentario "why" duplicado eliminado (queda en `named_readers`); `R` añadido al README junto a `W`. Rebase sobre main, fmt/tests verdes. Espera re-review) | — | — |
 | C004 | RustPython #8610 (dict unhashable msg) | Rust/lenguajes | 🟡 review (rebase +28 → **CI verde** (CodSpeed re-midió limpio); **puesto en cumplimiento AI policy** 2026-09-03: template restaurado + trailers `Assisted-by` + disclosure; youknowone respondido. luantaraschi con feedback técnico positivo) | — | — |
 | C005 | Automattic/harper #4253 (regla wary/weary) | Rust/devtools | 🟡 review (rebase→MERGEABLE; **testing con datos reales (GH code search) → afinado ToWary a `weary eye` singular, elimina falso positivo de "weary eyes"=tired**; test regresión; hippietrail atendido con transparencia) | — | — |
 | C006 | moeru-ai/airi #2359 → [#2408](https://github.com/moeru-ai/airi/pull/2408) | TS/AI-companion | 🟢 **MERGEADO** | ✅ | — |
@@ -84,7 +84,7 @@ _Última actualización: 2026-09-21 (15 merges, Pull Shark ✅; 2 cierres anti-b
 | C050 | cupy/cupy #10303 → [#10308](https://github.com/cupy/cupy/pull/10308) | Python/GPU-scientific (12.3k★) | 🟡 review (9ª ronda: mergea externos a diario, sin veto IA) — correctness: `convolve/correlate(method="direct")` con `in1` de strides negativos (p.ej. `cupy.flip`) lee fuera de rango (kernel indexa desde `&x[0]`=base del buffer); fix `ascontiguousarray(in1)` en `_direct_correlate` + 2 tests. **Sin GPU local → verificación de runtime delegada a CI** (declarado en el PR); lint verde | — | — |
 | C051 | typescript-eslint/typescript-eslint #12874 → [#12890](https://github.com/typescript-eslint/typescript-eslint/pull/12890) | TS/linter-devtool (16.4k★) | 🔴 **cerrado por bot anti-automatización** (`agentscanapp-bot`/AgentScan, auto-close) 2026-09-16 — NO por calidad (CI/netlify verdes). Flageó la cuenta como "automation" (score 11/100): evidencia = ráfaga de 13 forks en 24h + comentario-issue→PR en <5 min (skipper). El fix era correcto (type refinement, test que falla sin él). **Lección: la cadencia de automatización rápida quema la reputación de la cuenta. Decisión: dejarlo cerrado; ritmo humano lento en adelante** | — | — |
 | C052 | rerun-io/rerun #8640 → [#12933](https://github.com/rerun-io/rerun/pull/12933) | Rust/gráficos-wgpu (11.4k★) | 🟡 review (9ª ronda: merges de externos casi diarios; repo vigilante de calidad) — conservar `DebugLabel` de recursos GPU en release pero excluirlo del `Hash/Eq` del pool: impls manuales gated por `cfg(debug_assertions)` en `Label` (1 sitio cubre 7+ descriptores); `cargo test` debug+release + clippy/fmt verdes. Confianza alta; changelog a decidir por el maintainer | — | — |
-| C053 | bootc-dev/bootc #2464 → [#2467](https://github.com/bootc-dev/bootc/pull/2467) | Rust/infra-systems (2.3k★, Red Hat) | 🟡 review (10ª ronda: criterio "dueño hiper-responsivo", externos mergean ~10h) — `--target-imgref` en `bootc switch` para desacoplar la **fuente** del pull (p.ej. containers-storage tras `podman load` sin red) del **origin** persistido para upgrades; **reusa el patrón de `bootc install`** (`InstallTargetOpts`/`target_imgref` que `deploy::pull` ya aceptaba y switch pasaba como `None`). **Verificado en Docker Fedora (entorno CI): compila + test de parsing + fmt + clippy sin warnings nuevas**; DCO firmado ✅. Diff mínimo (2 archivos, 116 líneas) | — | — |
+| C053 | bootc-dev/bootc #2464 → [#2467](https://github.com/bootc-dev/bootc/pull/2467) | Rust/infra-systems (2.3k★, Red Hat) | 🔴 **cerrado por scope-diseño** (por el accionista) 2026-09-21 — `--target-imgref` en `bootc switch` para desacoplar fuente-del-pull del origin persistido. Se implementó también el backend composefs + tmt test (CI verde tras rebase). **No por calidad**: Johan cuestionó (con razón) que el desacople debería funcionar en UKI también y que mi test lo enmascaraba usando una imagen derivada; hacerlo bien (UKI + caso recovery de digest idéntico + guard fs-verity + reboot/upgrade verification) es un rediseño mayor que él mismo llamó "más complicado". Cerrado cortésmente dejando la puerta abierta, en vez de arrastrar un PR de alcance creciente | — | — |
 
 > ✅ **Nota de reputación:** **7 merges reales en 7 repos distintos** (~73k★ combinadas) — servo #496 (servo
 > **veta IA**, vetado), **airi #2408** (48.5k★), **boa #5500** (7.5k★, motor JS en Rust), **onefetch #1853**
