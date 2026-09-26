@@ -4,17 +4,17 @@
 > evento. El objetivo es **reputación pública en el GitHub del accionista**, no
 > dinero. North Star = tasa de aceptación de PRs.
 
-_Última actualización: 2026-09-22 (15 merges, Pull Shark ✅; poda: numbat/bat cerrados por repo-dormido)_
+_Última actualización: 2026-09-25 (16 merges — sed #544 mergeado por sylvestre)_
 
 ## Consolidado
 
 | Métrica | Valor |
 |---|---|
-| ✅ PRs mergeados (ajenos) | **15** — smallvec#496 · airi#2408 · boa#5500 · onefetch#1853 · tract#2749 · findutils#857 · diplomat#1269 · git-cliff#1627 · foundry#16841 · iggy#4173 · goauthentik#26111 · nushell#19021 · skipper#4267 · **mystmd#3047** · **delta-kernel#3250** 🟢 |
-| 📤 PRs enviados (reales) | **51** (15 🟢 · 16 🟡 en review · 20 🔴 cerrados) + unavatar código mergeado vía #661 (sin crédito) |
-| 🎯 Tasa de aceptación (North Star) | **43%** (15/35 resueltos; 16 en review) — cierres de foco/scope/política/duplicado/**anti-bot** (sail#2580, woodpecker#7141) / **repo-dormido** (numbat#888, bat#4011 el 09-22), ninguno por calidad |
-| 📦 Repos distintos con merge | **15** |
-| 🏅 GitHub Pull Shark | ✅ **CONSEGUIDO (tier 16)** — el badge cuenta TODOS los PRs mergeados en repos públicos, **propios incluidos**: 32 totales (16 en Testing_Pipelines + 1 contribution-pipeline + 15 ajenos). La métrica de reputación real son los **15 merges ajenos**; el achievement se disparó sobre todo por Testing_Pipelines |
+| ✅ PRs mergeados (ajenos) | **16** — smallvec#496 · airi#2408 · boa#5500 · onefetch#1853 · tract#2749 · findutils#857 · diplomat#1269 · git-cliff#1627 · foundry#16841 · iggy#4173 · goauthentik#26111 · nushell#19021 · skipper#4267 · mystmd#3047 · delta-kernel#3250 · **sed#544** 🟢 |
+| 📤 PRs enviados (reales) | **51** (16 🟢 · 15 🟡 en review · 20 🔴 cerrados) + unavatar código mergeado vía #661 (sin crédito) |
+| 🎯 Tasa de aceptación (North Star) | **44%** (16/36 resueltos; 15 en review) — cierres de foco/scope/política/duplicado/**anti-bot** (sail#2580, woodpecker#7141) / **repo-dormido** (numbat#888, bat#4011), ninguno por calidad |
+| 📦 Repos distintos con merge | **16** |
+| 🏅 GitHub Pull Shark | ✅ **CONSEGUIDO (tier 16)** — el badge cuenta TODOS los PRs mergeados en repos públicos, **propios incluidos**: 33 totales (16 en Testing_Pipelines + 1 contribution-pipeline + 16 ajenos). La métrica de reputación real son los **16 merges ajenos**; el achievement se disparó sobre todo por Testing_Pipelines |
 | 🧠 GitHub Galaxy Brain | ✅ **CONSEGUIDO** 2026-09-15 (2 accepted answers: sqlx [#4232](https://github.com/launchbadge/sqlx/discussions/4232) · [#4325](https://github.com/launchbadge/sqlx/discussions/4325)) |
 | ⭐ Estrellas / seguidores ganados | **0** |
 | 🔥 Racha de actividad (semanas seguidas con ≥1 aporte) | **2** |
@@ -25,10 +25,10 @@ _Última actualización: 2026-09-22 (15 merges, Pull Shark ✅; poda: numbat/bat
 | KPI | Valor | Meta |
 |---|---|---|
 | PRs enviados | **51** | — |
-| Merges ganados | **15** ✅ (+ unavatar código vía #661, sin crédito) | ≥1 en 2 semanas (gate F0) |
-| **Tasa de aceptación** (North Star) | **43%** (15/35 resueltos) — cierres por *duplicado/política/declinado/demo/scope-maintainer/repo-inactivo/**anti-bot**/**scope-diseño***, no calidad | ≥ 50% |
-| Repos distintos con merge | **15** | crecer sostenido |
-| Contribuciones en `active/` | **16 en review** (airi #2414/#2415 + soldeer #406 (CHANGES_REQUESTED, ya respondido+tests verdes)/harper/RustPython/sktime/aeon/image/statsforecast/coreutils/sed #544 (sylvestre revisó 09-21: 4 nits atendidos + squash + `cmd-R` pasa; espera re-review)/jq/gum/Daft #7508/conftest #1425 + **9ª ronda: rerun #12933**); onefetch/tract/findutils/diplomat/git-cliff/iggy/goauthentik/nushell #19021/skipper #4267/**mystmd #3047**/**delta-kernel #3250**/foundry #16841 mergeados; AMICI/nannou/yq/ruff/**tseslint #12890 (anti-bot)**/**topgrade #2338 (fork borrado)**/**cupy #10308 (ya resuelto en #10013)**/**sail #2580 (anti-bot 09-21)**/**woodpecker #7141 (anti-bot 09-21)**/**bootc #2467 (scope-diseño 09-21)**/**numbat #888 + bat #4011 (repo-dormido 09-22)** cerrados; OZ #6620 en espera; documenso/bevy/alacritty filtro-0/no-fix | en review |
+| Merges ganados | **16** ✅ (+ unavatar código vía #661, sin crédito) | ≥1 en 2 semanas (gate F0) |
+| **Tasa de aceptación** (North Star) | **44%** (16/36 resueltos) — cierres por *duplicado/política/declinado/demo/scope-maintainer/repo-inactivo/**anti-bot**/**scope-diseño***, no calidad | ≥ 50% |
+| Repos distintos con merge | **16** | crecer sostenido |
+| Contribuciones en `active/` | **15 en review** (airi #2414/#2415 + soldeer #406 (CHANGES_REQUESTED, ya respondido+tests verdes)/harper/RustPython/sktime/image/statsforecast/coreutils/jq/gum/Daft #7508/conftest #1425 + **aeon #3773** (baraline 09-24: pidió test float32→float32; añadido, "good to go" prometido) + **rerun #12933** (Wumpf 09-24: CHANGES_REQUESTED, rediseño Hash/Eq)); onefetch/tract/findutils/diplomat/git-cliff/iggy/goauthentik/nushell #19021/skipper #4267/**mystmd #3047**/**delta-kernel #3250**/foundry #16841/**sed #544** mergeados; AMICI/nannou/yq/ruff/**tseslint #12890 (anti-bot)**/**topgrade #2338 (fork borrado)**/**cupy #10308 (ya resuelto en #10013)**/**sail #2580 (anti-bot 09-21)**/**woodpecker #7141 (anti-bot 09-21)**/**bootc #2467 (scope-diseño 09-21)**/**numbat #888 + bat #4011 (repo-dormido 09-22)** cerrados; OZ #6620 en espera; documenso/bevy/alacritty filtro-0/no-fix | en review |
 | Higiene (secretos/deps vulnerables introducidas) | 0 | **0 siempre** (lo fuerza el gate) |
 
 ## Contribuciones (registro)
@@ -37,7 +37,7 @@ _Última actualización: 2026-09-22 (15 merges, Pull Shark ✅; poda: numbat/bat
 |---|---|---|---|---|---|
 | C001 | servo/rust-smallvec #494 → [#496](https://github.com/servo/rust-smallvec/pull/496) | Rust/data-structures | 🟢 **MERGEADO** | ✅ | — |
 | C002 | servo/rust-smallvec #416 → [#500](https://github.com/servo/rust-smallvec/pull/500) | Rust/data-structures | 🔴 cerrado (servo prohíbe IA) | — | — |
-| C003 | uutils/sed #394 → [#544](https://github.com/uutils/sed/pull/544) | Rust/devtools | 🟡 review (**sylvestre revisó 09-21; 4 nits atendidos**: squash 5→1 commit `sed:`; confirmado que hace pasar el test `cmd-R` del GNU testsuite (mencionado en el commit); comentario "why" duplicado eliminado (queda en `named_readers`); `R` añadido al README junto a `W`. Rebase sobre main, fmt/tests verdes. Espera re-review) | — | — |
+| C003 | uutils/sed #394 → [#544](https://github.com/uutils/sed/pull/544) | Rust/devtools | 🟢 **MERGEADO** (sylvestre) 2026-09-25 — comando GNU `R` (lee una línea de archivo); hace pasar el test `cmd-R` del GNU testsuite. Cerrado tras atender los 4 nits de sylvestre (squash a 1 commit, README, comentario). El nudge del 09-17 tras entregar los tests lo destrabó | ✅ | — |
 | C004 | RustPython #8610 (dict unhashable msg) | Rust/lenguajes | 🟡 review (rebase +28 → **CI verde** (CodSpeed re-midió limpio); **puesto en cumplimiento AI policy** 2026-09-03: template restaurado + trailers `Assisted-by` + disclosure; youknowone respondido. luantaraschi con feedback técnico positivo) | — | — |
 | C005 | Automattic/harper #4253 (regla wary/weary) | Rust/devtools | 🟡 review (rebase→MERGEABLE; **testing con datos reales (GH code search) → afinado ToWary a `weary eye` singular, elimina falso positivo de "weary eyes"=tired**; test regresión; hippietrail atendido con transparencia) | — | — |
 | C006 | moeru-ai/airi #2359 → [#2408](https://github.com/moeru-ai/airi/pull/2408) | TS/AI-companion | 🟢 **MERGEADO** | ✅ | — |
@@ -49,7 +49,7 @@ _Última actualización: 2026-09-22 (15 merges, Pull Shark ✅; poda: numbat/bat
 | C014 | nannou-org/nannou #1095 → [#1096](https://github.com/nannou-org/nannou/pull/1096) | Rust/gráficos | 🔴 **cerrado por foco** (nosotros) 2026-09-11 — **repo inactivo**: último push 2026-07-15 (~2 meses), 0 PRs mergeados desde que abrí el mío, sin review. Maintainer efectivamente ausente → cierre de limpieza (reabrible). Fix correcto. | — | — |
 | C015 | sonos/tract #2646 → [#2749](https://github.com/sonos/tract/pull/2749) | Rust/ML-inferencia | 🟢 **MERGEADO** (kali) 2026-09-08 — SimplifiedLayerNormalization→RMS norm (silent correctness bug); pulido de review: scale no unitario + corrección del bias | ✅ | — |
 | C016 | sktime #10966 → [#10967](https://github.com/sktime/sktime/pull/10967) | Python/ML | 🟡 review (**bug real de Evilander corregido** 2026-09-03: instance-loss en `nested_univ` por round-trip lossy vía `pd-multiindex`; fix reconstruye preservando instancias vacías + test de regresión (11 pass); pusheado) | — | — |
-| C017 | aeon #3722 → [#3773](https://github.com/aeon-toolkit/aeon/pull/3773) | Python/ML | 🟡 review (all-contributors) | — | — |
+| C017 | aeon #3722 → [#3773](https://github.com/aeon-toolkit/aeon/pull/3773) | Python/ML | 🟡 review — preservar dtype float32 en el zero-padding de `shift_scale_invariant` (numba TypingError). **baraline revisó 09-24: pidió un test float32→float32**; añadido (assert de que `best_shift` devuelve array float32 para input float32) + respondido. baraline prometió "good to go" tras el test → **alta P(merge)** | — | — |
 | C018 | Nixtla/statsforecast #1202 → [#1225](https://github.com/Nixtla/statsforecast/pull/1225) | Python/forecasting | 🟡 review (CLA firmado; all-contributors) | — | — |
 | C020 | moeru-ai/airi #2255 → [#2413](https://github.com/moeru-ai/airi/pull/2413) | TS/AI-companion | 🔴 **cerrado** (feature ruby `needs-more-info` declinada) | — | — |
 | C021 | moeru-ai/airi #2366 → [#2414](https://github.com/moeru-ai/airi/pull/2414) | TS/AI-companion | 🟡 review (Codex P1 atendido: fix movido a chunker activo) | — | — |
