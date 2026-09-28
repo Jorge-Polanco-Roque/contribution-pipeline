@@ -126,7 +126,7 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 <!-- PRS:START -->
 | PR | Repo | Cambio | Estado |
 |---|---|---|---|
-| [bootc-dev/bootc #2467](https://github.com/bootc-dev/bootc/pull/2467) | `bootc-dev/bootc` | feat(switch): add --target-imgref to decouple pull source from upgrade origin | 🟡 abierto |
+| [bootc-dev/bootc #2467](https://github.com/bootc-dev/bootc/pull/2467) | `bootc-dev/bootc` | feat(switch): add --target-imgref to decouple pull source from upgrade origin | 🔴 cerrado |
 | [rerun-io/rerun #12933](https://github.com/rerun-io/rerun/pull/12933) | `rerun-io/rerun` | Keep DebugLabels in release builds but ignore them for resource pooling | 🟡 abierto |
 | [typescript-eslint/typescript-eslint #12890](https://github.com/typescript-eslint/typescript-eslint/pull/12890) | `typescript-eslint/typescript-eslint` | fix(ast-spec): narrow ImportAttribute key and value to StringLiteral | 🔴 cerrado |
 | [cupy/cupy #10308](https://github.com/cupy/cupy/pull/10308) | `cupy/cupy` | Fix convolve/correlate method="direct" with non-contiguous in1 | 🔴 cerrado |
@@ -134,7 +134,7 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 | [astral-sh/ruff #28601](https://github.com/astral-sh/ruff/pull/28601) | `astral-sh/ruff` | [flake8-bandit] Flag references to `exec` (S102) | 🔴 cerrado |
 | [astral-sh/ruff #28600](https://github.com/astral-sh/ruff/pull/28600) | `astral-sh/ruff` | Show rule names alongside codes in formatter incompatibility warnings | 🔴 cerrado |
 | [topgrade-rs/topgrade #2338](https://github.com/topgrade-rs/topgrade/pull/2338) | `topgrade-rs/topgrade` | fix(toolbx): don't mistake openSUSE's toolbox for containers toolbx | 🔴 cerrado |
-| [sharkdp/bat #4011](https://github.com/sharkdp/bat/pull/4011) | `sharkdp/bat` | docs: clarify supported custom theme format in the man page | 🟡 abierto |
+| [sharkdp/bat #4011](https://github.com/sharkdp/bat/pull/4011) | `sharkdp/bat` | docs: clarify supported custom theme format in the man page | 🔴 cerrado |
 | [topgrade-rs/topgrade #2337](https://github.com/topgrade-rs/topgrade/pull/2337) | `topgrade-rs/topgrade` | fix(toolbx): don't mistake openSUSE's toolbox for containers toolbx | 🔴 cerrado |
 | [woodpecker-ci/woodpecker #7141](https://github.com/woodpecker-ci/woodpecker/pull/7141) | `woodpecker-ci/woodpecker` | fix(server): accept host:port registry addresses so credentials can match | 🔴 cerrado |
 | [goauthentik/authentik #26111](https://github.com/goauthentik/authentik/pull/26111) | `goauthentik/authentik` | flows: strip login_hint from next on cancel to prevent loop | 🟢 mergeado |
@@ -154,7 +154,7 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 | [mikefarah/yq #2849](https://github.com/mikefarah/yq/pull/2849) | `mikefarah/yq` | Preserve file permissions on in-place edits | 🔴 cerrado |
 | [jqlang/jq #3623](https://github.com/jqlang/jq/pull/3623) | `jqlang/jq` | Fix inconsistent `delpaths` behavior with mixed negative indices | 🟡 abierto |
 | [o2sh/onefetch #1853](https://github.com/o2sh/onefetch/pull/1853) | `o2sh/onefetch` | Suggest reftable migration when HEAD can't be read | 🟢 mergeado |
-| [sharkdp/numbat #888](https://github.com/sharkdp/numbat/pull/888) | `sharkdp/numbat` | Load currency units on demand for `info` and `list` commands | 🟡 abierto |
+| [sharkdp/numbat #888](https://github.com/sharkdp/numbat/pull/888) | `sharkdp/numbat` | Load currency units on demand for `info` and `list` commands | 🔴 cerrado |
 | [uutils/findutils #857](https://github.com/uutils/findutils/pull/857) | `uutils/findutils` | fix(find): output nothing when -mindepth exceeds -maxdepth | 🟢 mergeado |
 | [moeru-ai/airi #2422](https://github.com/moeru-ai/airi/pull/2422) | `moeru-ai/airi` | fix(stage-tamagotchi): clamp restored main-window bounds onto an available display | 🔴 cerrado |
 | [moeru-ai/airi #2415](https://github.com/moeru-ai/airi/pull/2415) | `moeru-ai/airi` | fix(stage-ui): deliver sends issued during the transport prepare phase | 🟡 abierto |
@@ -175,7 +175,7 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 | [moeru-ai/airi #2408](https://github.com/moeru-ai/airi/pull/2408) | `moeru-ai/airi` | fix(better-ws): publish the package so server-sdk installs | 🟢 mergeado |
 | [Automattic/harper #4253](https://github.com/Automattic/harper/pull/4253) | `Automattic/harper` | Add a linter for confusing `wary` and `weary` | 🟡 abierto |
 
-<sub>Actualizado automáticamente: 2026-09-21 (workflow semanal).</sub>
+<sub>Actualizado automáticamente: 2026-09-28 (workflow semanal).</sub>
 <!-- PRS:END -->
 
 > Detalle por contribución en [`contributions/`](contributions/). Selección + pre-lanzamiento en [`LAUNCH-PLAN.md`](LAUNCH-PLAN.md).
