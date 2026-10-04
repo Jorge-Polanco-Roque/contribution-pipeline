@@ -4,15 +4,15 @@
 > evento. El objetivo es **reputación pública en el GitHub del accionista**, no
 > dinero. North Star = tasa de aceptación de PRs.
 
-_Última actualización: 2026-09-26 (16 merges; rerun #12933 rediseño evaluado + plan comentado a Wumpf)_
+_Última actualización: 2026-10-04 (16 merges; airi #2414/#2415 cerrados — duplicado + scope)_
 
 ## Consolidado
 
 | Métrica | Valor |
 |---|---|
 | ✅ PRs mergeados (ajenos) | **16** — smallvec#496 · airi#2408 · boa#5500 · onefetch#1853 · tract#2749 · findutils#857 · diplomat#1269 · git-cliff#1627 · foundry#16841 · iggy#4173 · goauthentik#26111 · nushell#19021 · skipper#4267 · mystmd#3047 · delta-kernel#3250 · **sed#544** 🟢 |
-| 📤 PRs enviados (reales) | **51** (16 🟢 · 15 🟡 en review · 20 🔴 cerrados) + unavatar código mergeado vía #661 (sin crédito) |
-| 🎯 Tasa de aceptación (North Star) | **44%** (16/36 resueltos; 15 en review) — cierres de foco/scope/política/duplicado/**anti-bot** (sail#2580, woodpecker#7141) / **repo-dormido** (numbat#888, bat#4011), ninguno por calidad |
+| 📤 PRs enviados (reales) | **51** (16 🟢 · 13 🟡 en review · 22 🔴 cerrados) + unavatar código mergeado vía #661 (sin crédito) |
+| 🎯 Tasa de aceptación (North Star) | **42%** (16/38 resueltos; 13 en review) — cierres de foco/scope/política/duplicado/**anti-bot** (sail#2580, woodpecker#7141) / **repo-dormido** (numbat#888, bat#4011) / **airi #2414 duplicado + #2415 scope** (10-04), ninguno por calidad |
 | 📦 Repos distintos con merge | **16** |
 | 🏅 GitHub Pull Shark | ✅ **CONSEGUIDO (tier 16)** — el badge cuenta TODOS los PRs mergeados en repos públicos, **propios incluidos**: 33 totales (16 en Testing_Pipelines + 1 contribution-pipeline + 16 ajenos). La métrica de reputación real son los **16 merges ajenos**; el achievement se disparó sobre todo por Testing_Pipelines |
 | 🧠 GitHub Galaxy Brain | ✅ **CONSEGUIDO** 2026-09-15 (2 accepted answers: sqlx [#4232](https://github.com/launchbadge/sqlx/discussions/4232) · [#4325](https://github.com/launchbadge/sqlx/discussions/4325)) |
@@ -26,9 +26,9 @@ _Última actualización: 2026-09-26 (16 merges; rerun #12933 rediseño evaluado 
 |---|---|---|
 | PRs enviados | **51** | — |
 | Merges ganados | **16** ✅ (+ unavatar código vía #661, sin crédito) | ≥1 en 2 semanas (gate F0) |
-| **Tasa de aceptación** (North Star) | **44%** (16/36 resueltos) — cierres por *duplicado/política/declinado/demo/scope-maintainer/repo-inactivo/**anti-bot**/**scope-diseño***, no calidad | ≥ 50% |
+| **Tasa de aceptación** (North Star) | **42%** (16/38 resueltos) — cierres por *duplicado/política/declinado/demo/scope-maintainer/repo-inactivo/**anti-bot**/**scope-diseño***, no calidad | ≥ 50% |
 | Repos distintos con merge | **16** | crecer sostenido |
-| Contribuciones en `active/` | **15 en review** (airi #2414/#2415 + soldeer #406 (CHANGES_REQUESTED, ya respondido+tests verdes)/harper/RustPython/sktime/image/statsforecast/coreutils/jq/gum/Daft #7508/conftest #1425 + **aeon #3773** (baraline 09-24: pidió test float32→float32; añadido, "good to go" prometido) + **rerun #12933** (Wumpf 09-24: rediseño Hash/Eq; evaluado 09-26 = acotado (8 descs, 1 crate); plan del wrapper comentado, espera respuesta de Wumpf)); onefetch/tract/findutils/diplomat/git-cliff/iggy/goauthentik/nushell #19021/skipper #4267/**mystmd #3047**/**delta-kernel #3250**/foundry #16841/**sed #544** mergeados; AMICI/nannou/yq/ruff/**tseslint #12890 (anti-bot)**/**topgrade #2338 (fork borrado)**/**cupy #10308 (ya resuelto en #10013)**/**sail #2580 (anti-bot 09-21)**/**woodpecker #7141 (anti-bot 09-21)**/**bootc #2467 (scope-diseño 09-21)**/**numbat #888 + bat #4011 (repo-dormido 09-22)** cerrados; OZ #6620 en espera; documenso/bevy/alacritty filtro-0/no-fix | en review |
+| Contribuciones en `active/` | **13 en review** (soldeer #406 (CHANGES_REQUESTED, ya respondido+tests verdes)/harper/RustPython/sktime/image/statsforecast/coreutils/jq/gum/Daft #7508 + **conftest #1425** (jalseth 09-30: aceptado, mergea cuando exista el branch releases/0.x) + **aeon #3773** (baraline 09-24: pidió test float32→float32; añadido+verde, espera re-approve) + **rerun #12933** (Wumpf 09-24: rediseño Hash/Eq; evaluado = acotado; plan comentado, espera respuesta)); onefetch/tract/findutils/diplomat/git-cliff/iggy/goauthentik/nushell #19021/skipper #4267/**mystmd #3047**/**delta-kernel #3250**/foundry #16841/**sed #544** mergeados; AMICI/nannou/yq/ruff/**tseslint #12890 (anti-bot)**/**topgrade #2338 (fork borrado)**/**cupy #10308 (ya resuelto en #10013)**/**sail #2580 (anti-bot 09-21)**/**woodpecker #7141 (anti-bot 09-21)**/**bootc #2467 (scope-diseño 09-21)**/**numbat #888 + bat #4011 (repo-dormido 09-22)**/**airi #2414 (duplicado) + #2415 (scope) 10-04** cerrados; OZ #6620 en espera; documenso/bevy/alacritty filtro-0/no-fix | en review |
 | Higiene (secretos/deps vulnerables introducidas) | 0 | **0 siempre** (lo fuerza el gate) |
 
 ## Contribuciones (registro)
@@ -52,8 +52,8 @@ _Última actualización: 2026-09-26 (16 merges; rerun #12933 rediseño evaluado 
 | C017 | aeon #3722 → [#3773](https://github.com/aeon-toolkit/aeon/pull/3773) | Python/ML | 🟡 review — preservar dtype float32 en el zero-padding de `shift_scale_invariant` (numba TypingError). **baraline revisó 09-24: pidió un test float32→float32**; añadido (assert de que `best_shift` devuelve array float32 para input float32) + respondido. baraline prometió "good to go" tras el test → **alta P(merge)** | — | — |
 | C018 | Nixtla/statsforecast #1202 → [#1225](https://github.com/Nixtla/statsforecast/pull/1225) | Python/forecasting | 🟡 review (CLA firmado; all-contributors) | — | — |
 | C020 | moeru-ai/airi #2255 → [#2413](https://github.com/moeru-ai/airi/pull/2413) | TS/AI-companion | 🔴 **cerrado** (feature ruby `needs-more-info` declinada) | — | — |
-| C021 | moeru-ai/airi #2366 → [#2414](https://github.com/moeru-ai/airi/pull/2414) | TS/AI-companion | 🟡 review (Codex P1 atendido: fix movido a chunker activo) | — | — |
-| C022 | moeru-ai/airi #2305 → [#2415](https://github.com/moeru-ai/airi/pull/2415) | TS/AI-companion | 🟡 review (Codex P2 atendido: bloque ROOT CAUSE) | — | — |
+| C021 | moeru-ai/airi #2366 → [#2414](https://github.com/moeru-ai/airi/pull/2414) | TS/AI-companion | 🔴 **cerrado por DUPLICADO** 2026-10-04 — 0xSelenicDove (maintainer) reapareció tras ~3 semanas y señaló que #2369 (mameikagou) arregla la misma causa raíz; pidió consolidar en un PR. Cerrado cediendo a #2369; **no por calidad** (fix correcto: grapheme clusters + CRLF). Dejé los tests/CRLF a disposición de ese PR | — | — |
+| C022 | moeru-ai/airi #2305 → [#2415](https://github.com/moeru-ai/airi/pull/2415) | TS/AI-companion | 🔴 **cerrado por scope** 2026-10-04 — 0xSelenicDove pidió (válido) retry-trigger + preservar orden + cubrir rechazo en estado ready para la cola de sends; es lógica nueva no trivial, cerrado para no dejarlo stale. **No por calidad**: el fix de la fase prepare era correcto | — | — |
 | C023 | moeru-ai/airi #2181 → [#2422](https://github.com/moeru-ai/airi/pull/2422) | TS/Electron-desktop | 🔴 **cerrado** ("Duplicated" por @nekomeowww) | — | — |
 | C024 | moeru-ai/airi #2400 → [#2412](https://github.com/moeru-ai/airi/pull/2412) | TS/Electron-desktop | 🔴 **cerrado por autor** (2026-09-03): el fix era correcto (cap+scroll del drawer en ventana pequeña), pero nayounsang pidió video/GIF y el demo no logró mostrarlo fielmente en la app Electron real → cerrado por decisión del accionista | — | — |
 | C025 | uutils/findutils #778 → [#857](https://github.com/uutils/findutils/pull/857) | Rust/devtools | 🟢 **MERGEADO** (cakebaker) 2026-09-09 — mindepth>maxdepth→vacío, compat GNU; test de integración pedido por sylvestre añadido | ✅ | — |
