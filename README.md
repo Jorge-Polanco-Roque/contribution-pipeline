@@ -144,7 +144,7 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 | [nushell/nushell #19021](https://github.com/nushell/nushell/pull/19021) | `nushell/nushell` | feat(mkdir): add --fail-if-exists flag to error on existing directory | 🟢 mergeado |
 | [lakehq/sail #2580](https://github.com/lakehq/sail/pull/2580) | `lakehq/sail` | feat: support duplicated field names in nested Spark struct schemas | 🔴 cerrado |
 | [Eventual-Inc/Daft #7508](https://github.com/Eventual-Inc/Daft/pull/7508) | `Eventual-Inc/Daft` | fix: validate @daft.func input types at planning time | 🟡 abierto |
-| [mario-eth/soldeer #406](https://github.com/mario-eth/soldeer/pull/406) | `mario-eth/soldeer` | feat(remappings): infer source directory suffix like forge | 🟡 abierto |
+| [mario-eth/soldeer #406](https://github.com/mario-eth/soldeer/pull/406) | `mario-eth/soldeer` | feat(remappings): infer source directory suffix like forge | 🔴 cerrado |
 | [jupyter-book/mystmd #3047](https://github.com/jupyter-book/mystmd/pull/3047) | `jupyter-book/mystmd` | fix(myst-to-typst): use label() for cross-references whose identifier has spaces | 🟢 mergeado |
 | [AMICI-dev/AMICI #3235](https://github.com/AMICI-dev/AMICI/pull/3235) | `AMICI-dev/AMICI` | Warn about observation-model observables absent from the PySB model | 🔴 cerrado |
 | [rust-diplomat/diplomat #1269](https://github.com/rust-diplomat/diplomat/pull/1269) | `rust-diplomat/diplomat` | fix: reject None in the nanobind char32_t caster instead of crashing | 🟢 mergeado |
@@ -157,8 +157,8 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 | [sharkdp/numbat #888](https://github.com/sharkdp/numbat/pull/888) | `sharkdp/numbat` | Load currency units on demand for `info` and `list` commands | 🔴 cerrado |
 | [uutils/findutils #857](https://github.com/uutils/findutils/pull/857) | `uutils/findutils` | fix(find): output nothing when -mindepth exceeds -maxdepth | 🟢 mergeado |
 | [moeru-ai/airi #2422](https://github.com/moeru-ai/airi/pull/2422) | `moeru-ai/airi` | fix(stage-tamagotchi): clamp restored main-window bounds onto an available display | 🔴 cerrado |
-| [moeru-ai/airi #2415](https://github.com/moeru-ai/airi/pull/2415) | `moeru-ai/airi` | fix(stage-ui): deliver sends issued during the transport prepare phase | 🟡 abierto |
-| [moeru-ai/airi #2414](https://github.com/moeru-ai/airi/pull/2414) | `moeru-ai/airi` | fix(pipelines-audio): preserve multi-code-unit grapheme clusters in TTS chunking | 🟡 abierto |
+| [moeru-ai/airi #2415](https://github.com/moeru-ai/airi/pull/2415) | `moeru-ai/airi` | fix(stage-ui): deliver sends issued during the transport prepare phase | 🔴 cerrado |
+| [moeru-ai/airi #2414](https://github.com/moeru-ai/airi/pull/2414) | `moeru-ai/airi` | fix(pipelines-audio): preserve multi-code-unit grapheme clusters in TTS chunking | 🔴 cerrado |
 | [moeru-ai/airi #2413](https://github.com/moeru-ai/airi/pull/2413) | `moeru-ai/airi` | feat(stage-ui): support separate display text and TTS pronunciation via ruby annotations | 🔴 cerrado |
 | [scikit-image/scikit-image #8306](https://github.com/scikit-image/scikit-image/pull/8306) | `scikit-image/scikit-image` | Fix pyramid_laplacian to build a reconstructable Laplacian pyramid | 🔴 cerrado |
 | [Nixtla/statsforecast #1225](https://github.com/Nixtla/statsforecast/pull/1225) | `Nixtla/statsforecast` | docs: document both ConformalSeasonalPool interval thresholds and validate n_samples | 🟡 abierto |
@@ -175,7 +175,7 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 | [moeru-ai/airi #2408](https://github.com/moeru-ai/airi/pull/2408) | `moeru-ai/airi` | fix(better-ws): publish the package so server-sdk installs | 🟢 mergeado |
 | [Automattic/harper #4253](https://github.com/Automattic/harper/pull/4253) | `Automattic/harper` | Add a linter for confusing `wary` and `weary` | 🟡 abierto |
 
-<sub>Actualizado automáticamente: 2026-09-28 (workflow semanal).</sub>
+<sub>Actualizado automáticamente: 2026-10-05 (workflow semanal).</sub>
 <!-- PRS:END -->
 
 > Detalle por contribución en [`contributions/`](contributions/). Selección + pre-lanzamiento en [`LAUNCH-PLAN.md`](LAUNCH-PLAN.md).
