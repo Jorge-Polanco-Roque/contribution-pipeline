@@ -175,7 +175,7 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 | [moeru-ai/airi #2408](https://github.com/moeru-ai/airi/pull/2408) | `moeru-ai/airi` | fix(better-ws): publish the package so server-sdk installs | 🟢 mergeado |
 | [Automattic/harper #4253](https://github.com/Automattic/harper/pull/4253) | `Automattic/harper` | Add a linter for confusing `wary` and `weary` | 🟡 abierto |
 
-<sub>Actualizado automáticamente: 2026-10-12 (workflow semanal).</sub>
+<sub>Actualizado automáticamente: 2026-10-19 (workflow semanal).</sub>
 <!-- PRS:END -->
 
 > Detalle por contribución en [`contributions/`](contributions/). Selección + pre-lanzamiento en [`LAUNCH-PLAN.md`](LAUNCH-PLAN.md).
