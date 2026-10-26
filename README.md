@@ -127,7 +127,7 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 | PR | Repo | Cambio | Estado |
 |---|---|---|---|
 | [bootc-dev/bootc #2467](https://github.com/bootc-dev/bootc/pull/2467) | `bootc-dev/bootc` | feat(switch): add --target-imgref to decouple pull source from upgrade origin | 🔴 cerrado |
-| [rerun-io/rerun #12933](https://github.com/rerun-io/rerun/pull/12933) | `rerun-io/rerun` | Keep DebugLabels in release builds but ignore them for resource pooling | 🟡 abierto |
+| [rerun-io/rerun #12933](https://github.com/rerun-io/rerun/pull/12933) | `rerun-io/rerun` | Keep DebugLabels in release builds but ignore them for resource pooling | 🔴 cerrado |
 | [typescript-eslint/typescript-eslint #12890](https://github.com/typescript-eslint/typescript-eslint/pull/12890) | `typescript-eslint/typescript-eslint` | fix(ast-spec): narrow ImportAttribute key and value to StringLiteral | 🔴 cerrado |
 | [cupy/cupy #10308](https://github.com/cupy/cupy/pull/10308) | `cupy/cupy` | Fix convolve/correlate method="direct" with non-contiguous in1 | 🔴 cerrado |
 | [zalando/skipper #4267](https://github.com/zalando/skipper/pull/4267) | `zalando/skipper` | test: wait for OPA instance readiness in TestServerResponseFilter | 🟢 mergeado |
@@ -175,7 +175,7 @@ PRs bajo la cuenta del accionista (`Jorge-Polanco-Roque`) — estado **actualiza
 | [moeru-ai/airi #2408](https://github.com/moeru-ai/airi/pull/2408) | `moeru-ai/airi` | fix(better-ws): publish the package so server-sdk installs | 🟢 mergeado |
 | [Automattic/harper #4253](https://github.com/Automattic/harper/pull/4253) | `Automattic/harper` | Add a linter for confusing `wary` and `weary` | 🟡 abierto |
 
-<sub>Actualizado automáticamente: 2026-10-19 (workflow semanal).</sub>
+<sub>Actualizado automáticamente: 2026-10-26 (workflow semanal).</sub>
 <!-- PRS:END -->
 
 > Detalle por contribución en [`contributions/`](contributions/). Selección + pre-lanzamiento en [`LAUNCH-PLAN.md`](LAUNCH-PLAN.md).
